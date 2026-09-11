@@ -1,0 +1,4 @@
+﻿track,model,status,notes
+B0,no_storage_reference,IMPLEMENTED,causal forecast + R0
+B1,recent_completed_same_clock + MILP + R0,IMPLEMENTED,locked baseline
+Candidate,ForecastProvider interface,INTERFACE_ONLY,no advanced model added

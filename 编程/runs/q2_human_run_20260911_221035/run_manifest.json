@@ -1,0 +1,116 @@
+{
+  "run_id": "q2_human_run_20260911_221035",
+  "question_id": "Q2",
+  "stage": 5,
+  "status": "HUMAN_RUN_UNREVIEWED_CANDIDATE",
+  "run_status": "HUMAN_RUN_UNREVIEWED_CANDIDATE",
+  "final_competition_result": false,
+  "created_at": "2026-09-11T22:10:36+08:00",
+  "started_at": "2026-09-11T22:10:36+08:00",
+  "finished_at": "2026-09-11T22:11:05+08:00",
+  "model_version": "M2-Q2-CAUSAL-MILP-R0-v1.0",
+  "forecast_version": "recent_completed_same_clock-v1.0",
+  "data_version": "PREP-TIME-REV-20260911T170805+0800",
+  "input_paths": {
+    "price": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\预处理审计输出_时间口径修订版\\normalized\\attachment1_single_day.csv",
+    "actual": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\预处理审计输出_时间口径修订版\\normalized\\attachment2_actual_long.csv",
+    "official_result2_template": "F:\\2026数模国赛\\国赛团队共享工作区\\C题\\附件\\附件5\\result2.xlsx"
+  },
+  "input_sha256": {
+    "price": "695E14DD02D011E24AE8CE1C5CD7BFF4CA963F5C92FA884BACC0386059AD07E3",
+    "actual": "00DA155528AFC173776F59E620C8AEFCD661A5C5D8520472CE3AA9F0A91631ED",
+    "official_result2_template": "1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47"
+  },
+  "input_manifest_sha256": "E489553660EB610271F2B192272BF1EB94BDE3D88CECE3D40048792349EE1B06",
+  "audit_summary_sha256": "95F8E17FC0428EFAA4B2BD256D2E6B51C7F5066B2835C9F6B17EB88D3A916AED",
+  "code_version_or_hashes": {
+    "__init__.py": "524318EC5A1CE8D637257091D17AFC6B6745398A119E29E153D0AE26B7677C10",
+    "cli.py": "EF9A6CCB1E0F6485332568586DF2FEE234EB335B9B8E9F4006E147564BC8B240",
+    "config.py": "C3FCAF5C585ABED18E4AD7EFED750421C242F7983BF0D2A0D05B4A9944B30BA9",
+    "data.py": "725B303A3AACF0E101B997324026220FF57CB112F6D02DF8E303EEEFA965AC34",
+    "evidence.py": "2E809E501791B1B507D6512F644D30360DDC29D78C9E8451519F78DCB2A7C6B9",
+    "export_validation.py": "84F700CE5CCCFD498F693B26C834CF73641D86593059DC62604766CB8F3C8F24",
+    "exporter.py": "C30823785DB570515DCB4C74902A92191F3E2950EB0F6B493A808F8501408ECA",
+    "forecast.py": "E874D8A9D444CE4B1C168FAA11B005682F6E352AB02FB6FA77554C8339033AF0",
+    "integrity.py": "FA30B961A8CC9251BF35079B43A88902612BDD2A9943809BDC8D1B74E64860B8",
+    "planner.py": "00D89811658803A658C8367640A2F75D7E05F59C980A8C254AC19ACD0CD8C3AB",
+    "prediction_metrics.py": "92B852C7CD6A8FE608F1F4F14E1A7F73683E793A80E0A1ED29C694A994ACE6D6",
+    "replay.py": "0F02C9C1CC68915948F404EB974D4D8570420FE4DAED5C388C252943D85661DC",
+    "runner.py": "32A4808E0A52809C33588235B4F59FF9E2D1CA3CE1C7B4AF2B87EE20195BAABC",
+    "time_axis.py": "0CF790A8BF8E8EB8DC07FFFD5CCA762A5BE00EBBB1763B86F1BE40357707825A",
+    "validation.py": "BEF9211F79218DF51D713B3E099074AA1D3B521427BB9BC9383E53F34DB91CFB"
+  },
+  "config_sha256": "AEF1AD3AD55207CA2054085680AB7EAFB590B487A6F9D6AE37D32B8DA33869E5",
+  "environment": {
+    "python": "3.13.11 | packaged by Anaconda, Inc. | (main, Dec 10 2025, 21:21:58) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "executable": "D:\\conda\\python.exe"
+  },
+  "solver_name": "HiGHS",
+  "solver_version": "1.15.1",
+  "predictor_versions": {
+    "load": "recent_completed_same_clock-v1.0",
+    "pv": "recent_completed_same_clock-v1.0"
+  },
+  "random_seeds": {
+    "predictor": "NOT_APPLICABLE_DETERMINISTIC",
+    "optimization": "NOT_APPLICABLE_DETERMINISTIC_MILP"
+  },
+  "information_cutoff_policy": "source_interval_end <= decision_time",
+  "output_period": {
+    "start": "2025-02-01",
+    "end": "2025-12-31",
+    "template_days": 334
+  },
+  "git": {
+    "git_head": "700ad4302b490439018210f89367096e0b4b8a07",
+    "git_dirty": true
+  },
+  "git_head": "700ad4302b490439018210f89367096e0b4b8a07",
+  "git_dirty": true,
+  "warnings_count": 1,
+  "failures_count": 0,
+  "warnings": [
+    "WARNING-Q2-INPUT-ROUNDING-001"
+  ],
+  "last_completed_template_date": "2025-12-31",
+  "failed_template_date": null,
+  "required_outputs": [
+    "run_manifest.json",
+    "config_snapshot.json",
+    "model_selection.csv",
+    "predictions_load.csv",
+    "predictions_pv.csv",
+    "dispatch_timeseries.csv",
+    "daily_metrics.csv",
+    "monthly_metrics.csv",
+    "metrics_summary.csv",
+    "prediction_metrics.csv",
+    "assertions.json",
+    "solver_days.csv",
+    "solver.log",
+    "warnings_and_failures.log",
+    "result2_candidate.xlsx",
+    "export_validation.json",
+    "human_feedback.md"
+  ],
+  "run_completed_at": "2026-09-11T22:11:05+08:00",
+  "assertions_passed": true,
+  "export_validation_passed": true,
+  "warmup_cost_yuan_separate_not_in_formal": 2840072.947204787,
+  "formal_q2_total_cost_yuan": 22835273.50642545,
+  "formal_output_days": 334,
+  "solver_days": 365,
+  "export": {
+    "candidate_path": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\runs\\q2_human_run_20260911_221035\\result2_candidate.xlsx",
+    "candidate_sha256": "4209AFE9C84E38B93548037F662549A4B8DD5CE78BD369C65688A3E47750D30A",
+    "official_template_path": "F:\\2026数模国赛\\国赛团队共享工作区\\C题\\附件\\附件5\\result2.xlsx",
+    "official_sha256_before": "1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47",
+    "official_sha256_after": "1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47",
+    "official_template_unchanged": true,
+    "plan_days": 334,
+    "storage_rows": 2004,
+    "emergency_event_rows": 4584
+  },
+  "official_result2_sha256_after": "1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47"
+}
