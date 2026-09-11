@@ -45,9 +45,19 @@ class Q2ExportRoundtripTests(unittest.TestCase):
             workbook.close()
 
             config = Q2Config(
-                "toy", "toy", "toy", root / "price.csv", root / "actual.csv",
-                template, "highs", date(2025, 1, 1), date(2025, 2, 1),
-                date(2025, 12, 31), Q2Parameters(),
+                model_version="toy",
+                forecast_version="toy",
+                data_version="toy",
+                normalized_price_input=root / "price.csv",
+                normalized_actual_input=root / "actual.csv",
+                official_result2_template=template,
+                audit_manifest=root / "manifest.json",
+                audit_summary=root / "audit_summary.json",
+                solver_name="highs",
+                warmup_start=date(2025, 1, 1),
+                output_start=date(2025, 2, 1),
+                output_end=date(2025, 12, 31),
+                parameters=Q2Parameters(),
             )
             def replay_for(day: date):
                 if day == date(2025, 1, 31):

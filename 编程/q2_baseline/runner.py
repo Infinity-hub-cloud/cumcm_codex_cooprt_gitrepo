@@ -12,9 +12,11 @@ from q1_baseline.solver_backend import HighsPyBackend, backend_by_name
 
 from .config import Q2Config, load_config
 from .data import Q2InputData, read_q2_inputs
+from .evidence import flush_failure_evidence
 from .export_validation import validate_result2_candidate
 from .exporter import export_result2_candidate
 from .forecast import ForecastDay, RecentCompletedSameClockPredictor
+from .integrity import verify_input_integrity
 from .planner import (
     DailyPlan,
     cold_start_plan,
@@ -23,6 +25,7 @@ from .planner import (
     solve_daily_plan,
 )
 from .replay import ReplayDay, replay_r0
+from .prediction_metrics import build_prediction_observations, evaluate_prediction_observations
 from .time_axis import date_range
 from .validation import records_to_dict, validate_day
 
@@ -31,6 +34,7 @@ REQUIRED_OUTPUTS = (
     "run_manifest.json", "config_snapshot.json", "model_selection.csv",
     "predictions_load.csv", "predictions_pv.csv", "dispatch_timeseries.csv",
     "daily_metrics.csv", "monthly_metrics.csv", "metrics_summary.csv",
+    "prediction_metrics.csv",
     "assertions.json", "solver_days.csv", "solver.log",
     "warnings_and_failures.log", "result2_candidate.xlsx",
     "export_validation.json", "human_feedback.md",
@@ -39,6 +43,7 @@ REQUIRED_OUTPUTS = (
 
 def validate_input_only(config_path: str | Path) -> dict[str, Any]:
     config = load_config(Path(config_path))
+    integrity = verify_input_integrity(config)
     data = read_q2_inputs(config.normalized_price_input, config.normalized_actual_input, config.parameters)
     from openpyxl import load_workbook
 
@@ -77,10 +82,13 @@ def validate_input_only(config_path: str | Path) -> dict[str, Any]:
         "feb1_all_sources_causal": all(row.source_interval_end is None or row.source_interval_end <= row.decision_time for row in feb1.rows),
         "jan31_slot144_forbidden_at_feb1_decision": jan31_slot144.interval_end > feb1.rows[0].decision_time,
         "input_sha256": {
-            "price": sha256_file(config.normalized_price_input),
-            "actual": sha256_file(config.normalized_actual_input),
-            "result2_template": sha256_file(config.official_result2_template),
+            "price": integrity["verified_input_sha256"]["price"],
+            "actual": integrity["verified_input_sha256"]["actual"],
+            "result2_template": integrity["verified_input_sha256"]["official_result2"],
         },
+        "input_manifest_sha256": integrity["input_manifest_sha256"],
+        "audit_summary_sha256": integrity["audit_summary_sha256"],
+        "data_version": integrity["data_version"],
     }
 
 
@@ -99,7 +107,7 @@ def _feedback_template(config: Q2Config, output_dir: Path) -> str:
     return f"""# Q2 人工运行反馈（待填写）
 
 - 当前阶段：5
-- 当前状态：Q2待人工运行
+- 当前状态：Q2待人工正式运行
 - 模型版本：{config.model_version}
 - 预测版本：{config.forecast_version}
 - 数据版本：{config.data_version}
@@ -110,6 +118,8 @@ def _feedback_template(config: Q2Config, output_dir: Path) -> str:
 - 365日SOC链及Q2-SOC-BRIDGE-001：待回填
 - Q2-COLDSTART-001边界：待回填
 - 因果性/leakage断言：待回填
+- 三个正式输入SHA-256硬门：待回填
+- 预测评价（overall/month/season）：待回填
 - Solver逐日状态、MIP gap与日志：待回填
 - 全部断言是否通过：待回填
 - result2_candidate.xlsx回读是否通过：待回填
@@ -184,9 +194,9 @@ def _dispatch_rows(
                 "pv_actual_kwh": actual.pv_kwh,
                 "pv_pred_kwh": pred_pv_kwh,
                 "price_actual": data.price[i],
-                "price_pred": data.price[i],
+                "price_pred": "",
                 "grid_plan_kwh": replay.plan.G[i],
-                "grid_final_kwh": replay.plan.G[i],
+                "grid_final_kwh": "",
                 "grid_emergency_kwh": replay.emergency_kwh[i],
                 "charge_bus_kwh": replay.plan.C[i],
                 "discharge_bus_kwh": replay.plan.D[i],
@@ -222,24 +232,47 @@ DISPATCH_FIELDS = [
 
 def run_q2(config_path: str | Path, output_dir: str | Path) -> Path:
     """Explicit human-run entry point for the full Jan warmup + Feb-Dec Q2 run."""
-    config = load_config(Path(config_path))
+    config_path_resolved = Path(config_path).resolve()
+    config = load_config(config_path_resolved)
+    # Q2-PRE-RUN-PATCH-001 hard gate: no CSV read, prediction, model build,
+    # backend initialization, or solver call may occur before this succeeds.
+    integrity = verify_input_integrity(config)
     data = read_q2_inputs(config.normalized_price_input, config.normalized_actual_input, config.parameters)
-    backend = backend_by_name(config.solver_name)
-    if isinstance(backend, HighsPyBackend):
-        backend.require_available()
     destination = Path(output_dir).resolve()
     if destination.exists():
         raise FileExistsError(f"refusing to overwrite existing run directory: {destination}")
     destination.mkdir(parents=True)
     write_json(destination / "config_snapshot.json", config.snapshot())
     (destination / "solver.log").write_text("Q2 daily solver evidence\n", encoding="utf-8")
-    (destination / "warnings_and_failures.log").write_text("No warning recorded before run.\n", encoding="utf-8")
+    rounding_warning = (
+        "WARNING-Q2-INPUT-ROUNDING-001: normalized CSV kWh values use four decimals; "
+        "maximum observed kW/6 difference is about 5.0e-5 kWh. The 5.1e-5 kWh "
+        "input-contract tolerance is used only for raw power/energy consistency, "
+        "not for MILP feasibility, SOC residual, or balance residual tolerances.\n"
+    )
+    (destination / "warnings_and_failures.log").write_text(rounding_warning, encoding="utf-8")
     (destination / "human_feedback.md").write_text(_feedback_template(config, destination), encoding="utf-8")
+    _write_csv(destination / "model_selection.csv", ["track", "model", "status", "notes"], [
+        {"track": "B0", "model": "no_storage_reference", "status": "IMPLEMENTED", "notes": "causal forecast + R0"},
+        {"track": "B1", "model": "recent_completed_same_clock + MILP + R0", "status": "IMPLEMENTED", "notes": "locked baseline"},
+        {"track": "Candidate", "model": "ForecastProvider interface", "status": "INTERFACE_ONLY", "notes": "no advanced model added"},
+    ])
+    started_at = timestamp()
+    git = git_snapshot(config_path_resolved.parents[2])
+    code_hashes = {
+        path.name: sha256_file(path)
+        for path in sorted(Path(__file__).resolve().parent.glob("*.py"))
+    }
     manifest: dict[str, Any] = {
+        "run_id": destination.name,
+        "question_id": "Q2",
         "stage": 5,
         "status": "HUMAN_RUN_UNREVIEWED",
+        "run_status": "HUMAN_RUN_UNREVIEWED",
         "final_competition_result": False,
-        "created_at": timestamp(),
+        "created_at": started_at,
+        "started_at": started_at,
+        "finished_at": None,
         "model_version": config.model_version,
         "forecast_version": config.forecast_version,
         "data_version": config.data_version,
@@ -249,26 +282,59 @@ def run_q2(config_path: str | Path, output_dir: str | Path) -> Path:
             "official_result2_template": str(config.official_result2_template),
         },
         "input_sha256": {
-            "price": sha256_file(config.normalized_price_input),
-            "actual": sha256_file(config.normalized_actual_input),
-            "official_result2_template": sha256_file(config.official_result2_template),
-            "config": sha256_file(Path(config_path).resolve()),
+            "price": integrity["verified_input_sha256"]["price"],
+            "actual": integrity["verified_input_sha256"]["actual"],
+            "official_result2_template": integrity["verified_input_sha256"]["official_result2"],
         },
+        "input_manifest_sha256": integrity["input_manifest_sha256"],
+        "audit_summary_sha256": integrity["audit_summary_sha256"],
+        "code_version_or_hashes": code_hashes,
+        "config_sha256": sha256_file(config_path_resolved),
         "environment": environment_snapshot(),
-        "git": git_snapshot(Path(config_path).resolve().parents[2]),
+        "solver_name": config.solver_name,
+        "solver_version": "PENDING_HUMAN_RUN",
+        "predictor_versions": {
+            "load": config.forecast_version,
+            "pv": config.forecast_version,
+        },
+        "random_seeds": {
+            "predictor": "NOT_APPLICABLE_DETERMINISTIC",
+            "optimization": "NOT_APPLICABLE_DETERMINISTIC_MILP",
+        },
+        "information_cutoff_policy": "source_interval_end <= decision_time",
+        "output_period": {
+            "start": config.output_start.isoformat(),
+            "end": config.output_end.isoformat(),
+            "template_days": 334,
+        },
+        "git": git,
+        "git_head": git["git_head"],
+        "git_dirty": git["git_dirty"],
+        "warnings_count": 1,
+        "failures_count": 0,
+        "warnings": ["WARNING-Q2-INPUT-ROUNDING-001"],
+        "last_completed_template_date": None,
+        "failed_template_date": None,
         "required_outputs": list(REQUIRED_OUTPUTS),
     }
+    write_json(destination / "run_manifest.json", manifest)
+    forecasts: list[ForecastDay] = []
+    b0_replays: list[ReplayDay] = []
+    b1_replays: list[ReplayDay] = []
+    assertion_days: list[dict[str, Any]] = []
+    daily_metric_rows: list[dict[str, Any]] = []
+    solver_rows: list[dict[str, Any]] = []
+    active_day: date | None = None
+    last_completed_day: date | None = None
     try:
+        backend = backend_by_name(config.solver_name)
+        if isinstance(backend, HighsPyBackend):
+            backend.require_available()
         predictor = RecentCompletedSameClockPredictor(data, config.forecast_version)
-        forecasts: list[ForecastDay] = []
-        b0_replays: list[ReplayDay] = []
-        b1_replays: list[ReplayDay] = []
-        assertion_days: list[dict[str, Any]] = []
-        daily_metric_rows: list[dict[str, Any]] = []
-        solver_rows: list[dict[str, Any]] = []
         previous_b1: DailyPlan | None = None
 
         for day in date_range(config.warmup_start, config.output_end):
+            active_day = day
             forecast = predictor.forecast_day(day)
             forecasts.append(forecast)
             if previous_b1 is None:
@@ -305,6 +371,8 @@ def run_q2(config_path: str | Path, output_dir: str | Path) -> Path:
                         master.write("\n")
                 if native_log.is_file():
                     native_log.unlink()
+            manifest["solver_name"] = b1_plan.solver_name
+            manifest["solver_version"] = b1_plan.solver_version
             b1_replay = replay_r0(b1_plan, actual, data.price, config.parameters)
             b1_replays.append(b1_replay)
             previous_b1 = b1_plan
@@ -340,9 +408,36 @@ def run_q2(config_path: str | Path, output_dir: str | Path) -> Path:
             with (destination / "solver.log").open("a", encoding="utf-8") as handle:
                 handle.write(f"===== {day.isoformat()} structured evidence =====\n")
                 handle.write(json.dumps(solver_rows[-1], ensure_ascii=False) + "\n")
+            last_completed_day = day
+            manifest["last_completed_template_date"] = day.isoformat()
+            _write_csv(
+                destination / "solver_days.csv",
+                list(solver_rows[0].keys()),
+                solver_rows,
+            )
+            write_json(
+                destination / "assertions.json",
+                {
+                    "passed": all(row["passed"] for row in assertion_days),
+                    "incomplete": day != config.output_end,
+                    "daily": assertion_days,
+                },
+            )
+            write_json(destination / "run_manifest.json", manifest)
+
+        active_day = None
 
         _write_csv(destination / "predictions_load.csv", PREDICTION_FIELDS, _prediction_rows(forecasts, "load"))
         _write_csv(destination / "predictions_pv.csv", PREDICTION_FIELDS, _prediction_rows(forecasts, "pv"))
+        prediction_observations = build_prediction_observations(
+            forecasts, data, config.output_start, config.output_end
+        )
+        prediction_metric_rows = evaluate_prediction_observations(prediction_observations)
+        _write_csv(
+            destination / "prediction_metrics.csv",
+            list(prediction_metric_rows[0].keys()),
+            prediction_metric_rows,
+        )
         forecast_by_date = {item.template_date: item for item in forecasts}
         _write_csv(
             destination / "dispatch_timeseries.csv",
@@ -393,12 +488,25 @@ def run_q2(config_path: str | Path, output_dir: str | Path) -> Path:
                     "status": "HUMAN_RUN_UNREVIEWED",
                     "notes": "warmup excluded from formal total" if row["period"] == "warmup" else "formal Q2 output",
                 })
+        for row in prediction_metric_rows:
+            summary_rows.append(
+                {
+                    "run_id": destination.name,
+                    "question_id": "Q2",
+                    "model_id": config.forecast_version,
+                    "baseline_id": "B1_RECENT_SAME_CLOCK_MILP_R0",
+                    "split": "formal_output",
+                    "period": f"{row['scope']}:{row['group']}",
+                    "metric": f"{row['series']}.{row['metric']}",
+                    "value": row["value"],
+                    "unit": row["unit"],
+                    "direction": "min" if row["metric"] not in {"sample_count", "valid_coverage", "peak_sample_count", "daylight_sample_count", "ramp_sample_count", "peak_threshold_p90"} else "descriptive",
+                    "sample_count": row["sample_count"],
+                    "status": "POSTHOC_EVALUATION_ONLY",
+                    "notes": row["definition"],
+                }
+            )
         _write_csv(destination / "metrics_summary.csv", list(summary_rows[0].keys()), summary_rows)
-        _write_csv(destination / "model_selection.csv", ["track", "model", "status", "notes"], [
-            {"track": "B0", "model": "no_storage_reference", "status": "IMPLEMENTED", "notes": "causal forecast + R0"},
-            {"track": "B1", "model": "recent_completed_same_clock + MILP + R0", "status": "IMPLEMENTED", "notes": "locked baseline"},
-            {"track": "Candidate", "model": "ForecastProvider interface", "status": "INTERFACE_ONLY", "notes": "no advanced model added"},
-        ])
         assertion_payload = {
             "passed": all(row["passed"] for row in assertion_days),
             "q2_coldstart_001": {
@@ -423,23 +531,80 @@ def run_q2(config_path: str | Path, output_dir: str | Path) -> Path:
             raise RuntimeError("result2 candidate reread validation failed")
         formal_b1 = next(row for row in summary_wide if row["period"] == "formal_output" and str(row["baseline"]).startswith("B1"))
         warmup_b1 = next(row for row in summary_wide if row["period"] == "warmup" and str(row["baseline"]).startswith("B1"))
+        solved_rows = [row for row in solver_rows if row["solver_name"] != "NONE"]
+        finished_at = timestamp()
         manifest.update({
-            "run_completed_at": timestamp(),
+            "run_completed_at": finished_at,
+            "finished_at": finished_at,
             "status": "HUMAN_RUN_UNREVIEWED_CANDIDATE",
+            "run_status": "HUMAN_RUN_UNREVIEWED_CANDIDATE",
+            "solver_name": solved_rows[-1]["solver_name"] if solved_rows else "NONE",
+            "solver_version": solved_rows[-1]["solver_version"] if solved_rows else "N/A",
             "assertions_passed": True,
             "export_validation_passed": True,
             "warmup_cost_yuan_separate_not_in_formal": warmup_b1["total_cost_yuan"],
             "formal_q2_total_cost_yuan": formal_b1["total_cost_yuan"],
             "formal_output_days": 334,
             "solver_days": len(solver_rows),
+            "failures_count": 0,
+            "last_completed_template_date": config.output_end.isoformat(),
+            "failed_template_date": None,
             "export": export_record,
             "official_result2_sha256_after": sha256_file(config.official_result2_template),
         })
         write_json(destination / "run_manifest.json", manifest)
         return destination
     except Exception as exc:
-        manifest.update({"run_completed_at": timestamp(), "status": "FAILED_OR_INCOMPLETE", "error_type": type(exc).__name__, "error": str(exc)})
-        write_json(destination / "run_manifest.json", manifest)
-        with (destination / "warnings_and_failures.log").open("a", encoding="utf-8") as handle:
-            handle.write(f"{timestamp()} {type(exc).__name__}: {exc}\n")
+        if active_day is not None and not any(
+            row.get("template_date") == active_day.isoformat() for row in solver_rows
+        ):
+            solver_rows.append(
+                {
+                    "template_date": active_day.isoformat(),
+                    "period": _period(config, active_day),
+                    "status": "FAILED_OR_INCOMPLETE",
+                    "solver_name": config.solver_name,
+                    "solver_version": manifest.get("solver_version", "UNKNOWN"),
+                    "termination_condition": f"{type(exc).__name__}: {exc}",
+                    "mip_gap": "",
+                    "runtime_seconds": "",
+                }
+            )
+        if active_day is not None:
+            native_log = destination / f"_solver_native_{active_day.isoformat()}.log"
+            if native_log.is_file():
+                with (destination / "solver.log").open("a", encoding="utf-8") as master:
+                    master.write(f"\n===== {active_day.isoformat()} failed native solver log =====\n")
+                    master.write(native_log.read_text(encoding="utf-8", errors="replace"))
+                    master.write("\n")
+        manifest.update({"error_type": type(exc).__name__, "error": str(exc)})
+        flush_failure_evidence(
+            destination,
+            manifest,
+            solver_rows,
+            assertion_days,
+            last_completed_template_date=last_completed_day,
+            failed_template_date=active_day,
+            error=exc,
+        )
+        try:
+            if forecasts:
+                _write_csv(destination / "predictions_load.csv", PREDICTION_FIELDS, _prediction_rows(forecasts, "load"))
+                _write_csv(destination / "predictions_pv.csv", PREDICTION_FIELDS, _prediction_rows(forecasts, "pv"))
+            if daily_metric_rows:
+                _write_csv(destination / "daily_metrics.csv", list(daily_metric_rows[0].keys()), daily_metric_rows)
+            available_replays = b0_replays + b1_replays
+            if available_replays:
+                partial_forecasts = {item.template_date: item for item in forecasts}
+                _write_csv(
+                    destination / "dispatch_timeseries.csv",
+                    DISPATCH_FIELDS,
+                    _dispatch_rows(config, data, partial_forecasts, available_replays),
+                )
+        except Exception as evidence_exc:
+            with (destination / "warnings_and_failures.log").open("a", encoding="utf-8") as handle:
+                handle.write(
+                    f"{timestamp()} SECONDARY_EVIDENCE_FLUSH_FAILURE "
+                    f"{type(evidence_exc).__name__}: {evidence_exc}\n"
+                )
         raise

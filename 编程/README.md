@@ -5,7 +5,7 @@
 ## 当前阶段状态
 
 - 当前阶段：5（问题1已通过；问题2因果基线代码生成）
-- 当前状态：Q2待人工运行
+- 当前状态：Q2待人工正式运行
 - 人工授权：`HUMAN-OVERRIDE-CODE-001 = CONFIRMED`
 - 时间门禁：`Q1-TIME-MAPPING-PASS = CONFIRMED`
 - 模型版本：`M1-Q1-MILP-v1.3-instant-left-hold`
@@ -43,5 +43,6 @@ Q1 已经由人工运行并通过门禁；既有 Q1 包与证据保持不变。
 - 人工操作：`Q2_人工运行说明.md`
 - 状态：`Q2-CAUSALITY-GATE-PASS`、`Q2-COLDSTART-001 = CONFIRMED`、`Q2-SOC-BRIDGE-001 = CONFIRMED`；代码已生成，未执行正式求解。
 - 边界：只实现 B0、B1 和 Candidate 接口；不含问题3，不读取附件3/4，不覆盖官方 `result2.xlsx`。
+- 预运行返修：`Q2-PRE-RUN-PATCH-001` 已加入正式输入SHA-256硬门、事后预测评价、统一manifest、公共dispatch空值语义及失败证据落盘。
 
 Q2 的无 Solver 检查及正式人工运行命令见 `Q2_人工运行说明.md`。运行目录若已存在会被拒绝。
