@@ -66,6 +66,9 @@ class HighsPyBackend:
 
         highs = highspy.Highs()
         highs.setOptionValue("output_flag", True)
+        highs.setOptionValue(
+            "log_to_console", bool(getattr(params, "solver_console_output", True))
+        )
         highs.setOptionValue("log_file", str(log_path))
         highs.setOptionValue("time_limit", float(params.time_limit_seconds))
         highs.setOptionValue("mip_rel_gap", float(params.mip_rel_gap))
@@ -122,4 +125,3 @@ def backend_by_name(name: str) -> MILPBackend:
     if name.lower() == "highs":
         return HighsPyBackend()
     raise ValueError(f"unsupported MILP backend: {name}")
-

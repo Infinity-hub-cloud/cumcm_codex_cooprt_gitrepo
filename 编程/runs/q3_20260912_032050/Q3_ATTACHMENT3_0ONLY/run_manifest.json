@@ -1,0 +1,72 @@
+{
+  "question_id": "Q3",
+  "stage": 5,
+  "track": "Q3_ATTACHMENT3_0ONLY",
+  "model_version": "M3-Q3-ROLLING-4ISSUE-v1.0",
+  "q2_frozen_model_version": "M2-Q2-EXPERIMENT-weekday_buffer-v1.0",
+  "run_status": "HUMAN_RUN_UNREVIEWED_CANDIDATE",
+  "final_competition_result": false,
+  "created_at": "2026-09-12T03:22:25.286551+08:00",
+  "data_version": "PREP-TIME-REV-20260911T170805+0800",
+  "integrity": {
+    "data_version": "PREP-TIME-REV-20260911T170805+0800",
+    "verified_input_sha256": {
+      "price": "695E14DD02D011E24AE8CE1C5CD7BFF4CA963F5C92FA884BACC0386059AD07E3",
+      "actual": "00DA155528AFC173776F59E620C8AEFCD661A5C5D8520472CE3AA9F0A91631ED",
+      "attachment3_long": "B9F67A02CC979DDE70E9045E7B18A32DC9B1FBCC002C23AEB04DAAA697452328",
+      "attachment3_mapped": "5830C5F598039F765CDDA4C70E8B14FE152AC7C7D3BDDA031737A98CAB5D8DFD",
+      "official_result3": "C59DA470CABD0BE23F602C95C8AA9D11EC224A0CDAC216B3E1F218E65D006BDC"
+    },
+    "input_manifest_sha256": "E489553660EB610271F2B192272BF1EB94BDE3D88CECE3D40048792349EE1B06",
+    "audit_summary_sha256": "95F8E17FC0428EFAA4B2BD256D2E6B51C7F5066B2835C9F6B17EB88D3A916AED",
+    "audit_status": "PASS",
+    "q2_reference_manifest_sha256": "7661EB804A73A1546A455D2A3E7883D276AB1672379AC8F2A22B58952C624716",
+    "warning": "WARNING-Q3-MANIFEST-NORMALIZED-001: normalized CSV hashes are locked from the formal handoff because audit/manifest.json lists raw inputs only"
+  },
+  "issue_set_minutes": [
+    0
+  ],
+  "issue_set_experiment": null,
+  "midnight_sequence": "Q3-MIDNIGHT-SEQUENCE-001",
+  "environment": {
+    "python": "3.13.11 | packaged by Anaconda, Inc. | (main, Dec 10 2025, 21:21:58) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "solver_name": "highs",
+  "formal_output_days": 334,
+  "assertions_passed": true,
+  "export_validation_passed": true,
+  "metrics": {
+    "total_cost": 18696686.002541125,
+    "planned_purchase_cost": 14031972.96026358,
+    "downward_penalty": 2.4306245904881506e-13,
+    "upward_adjustment_cost": 0.0,
+    "emergency_purchase_cost": 4664713.042277543,
+    "emergency_energy": 1090236.5708855968,
+    "spill_energy": 4402333.020253188,
+    "planned_grid_energy": 22478731.380641457,
+    "final_grid_energy": 22478731.380641457,
+    "total_charge": 6460238.90617823,
+    "total_discharge": 5232793.5140043665,
+    "adjust_down_energy": 1.1368683772161603e-12,
+    "adjust_up_energy": 0.0,
+    "adjustment_count": 0.0,
+    "soc_min": 1200.0000000000286,
+    "soc_max": 10800.000000000333,
+    "soc_boundary_hits": 33772.0,
+    "solver_runtime_seconds": 0.3452472002245486,
+    "failed_updates": 0.0,
+    "infeasible_updates": 0.0
+  },
+  "export": {
+    "candidate_path": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\runs\\q3_20260912_032050\\Q3_ATTACHMENT3_0ONLY\\result3_candidate.xlsx",
+    "candidate_sha256": "37777721A2DF6BA5F1FF05C04B214C6968B4D544B88087B9DA9B6946AA0EB69D",
+    "official_template_path": "F:\\2026数模国赛\\国赛团队共享工作区\\C题\\附件\\附件5\\result3.xlsx",
+    "official_sha256_before": "C59DA470CABD0BE23F602C95C8AA9D11EC224A0CDAC216B3E1F218E65D006BDC",
+    "official_sha256_after": "C59DA470CABD0BE23F602C95C8AA9D11EC224A0CDAC216B3E1F218E65D006BDC",
+    "official_template_unchanged": true,
+    "plan_days": 334,
+    "storage_rows": 2004,
+    "emergency_event_rows": 3628
+  }
+}

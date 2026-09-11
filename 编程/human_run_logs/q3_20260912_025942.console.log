@@ -1,0 +1,111 @@
+﻿**********************
+Windows PowerShell 脚本开始
+开始时间: 20260912025942
+用户名: NICASIO\16068
+RunAs 用户: NICASIO\16068
+配置名称: 
+计算机: NICASIO (Microsoft Windows NT 10.0.26200.0)
+主机应用程序: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+进程 ID: 15108
+PSVersion: 5.1.26100.9444
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9444
+BuildVersion: 10.0.26100.9444
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+已启动脚本，输出文件为 human_run_logs/q3_20260912_025942.console.log
+PS F:\2026数模国赛\国赛团队共享工作区\编程> python --version
+
+PS F:\2026数模国赛\国赛团队共享工作区\编程> python -m pip show numpy openpyxl highspy
+
+PS F:\2026数模国赛\国赛团队共享工作区\编程> python -m q3_baseline.cli --config config/q3_baseline.json doctor
+
+PS F:\2026数模国赛\国赛团队共享工作区\编程> python -m compileall -q q1_baseline q2_baseline q3_baseline tests
+
+PS F:\2026数模国赛\国赛团队共享工作区\编程> if ($LASTEXITCODE -ne 0) { throw 'Python compile check failed' }
+PS F:\2026数模国赛\国赛团队共享工作区\编程> $env:RUN_Q1_SOLVER_INTEGRATION = '0'
+PS F:\2026数模国赛\国赛团队共享工作区\编程> $env:RUN_Q2_SOLVER_INTEGRATION = '0'
+PS F:\2026数模国赛\国赛团队共享工作区\编程> $env:RUN_Q3_SOLVER_INTEGRATION = '0'
+PS F:\2026数模国赛\国赛团队共享工作区\编程> python -m unittest discover -s tests -v
+
+PS F:\2026数模国赛\国赛团队共享工作区\编程> if ($LASTEXITCODE -ne 0) { throw 'Non-solver tests failed' }
+PS F:\2026数模国赛\国赛团队共享工作区\编程> python -m q3_baseline.cli --config config/q3_baseline.json validate-input
+
+PS F:\2026数模国赛\国赛团队共享工作区\编程> if ($LASTEXITCODE -ne 0) { throw 'Q3 input/hash/alignment gate failed' }
+PS F:\2026数模国赛\国赛团队共享工作区\编程> $env:RUN_Q3_SOLVER_INTEGRATION = '1'
+PS F:\2026数模国赛\国赛团队共享工作区\编程> try {
+    python -m unittest tests.test_q3_solver_integration -v
+    if ($LASTEXITCODE -ne 0) { throw 'Q3 toy solver test failed' }
+}
+finally {
+    $env:RUN_Q3_SOLVER_INTEGRATION = '0'
+}
+
+PS F:\2026数模国赛\国赛团队共享工作区\编程> $q3Root = "runs/q3_$q3Stamp"
+PS F:\2026数模国赛\国赛团队共享工作区\编程> Write-Output "Q3 output root: $q3Root"
+Q3 output root: runs/q3_20260912_025942
+PS F:\2026数模国赛\国赛团队共享工作区\编程> python -m q3_baseline.cli `
+  --config config/q3_baseline.json `
+  run `
+  --track REF_Q2_FROZEN `
+  --output-dir "$q3Root/REF_Q2_FROZEN"
+
+PS F:\2026数模国赛\国赛团队共享工作区\编程> if ($LASTEXITCODE -ne 0) { throw 'Q2 frozen reference failed' }
+PS F:\2026数模国赛\国赛团队共享工作区\编程> python -m q3_baseline.cli `
+  --config config/q3_baseline.json `
+  run `
+  --track Q3_ATTACHMENT3_0ONLY `
+  --output-dir "$q3Root/Q3_ATTACHMENT3_0ONLY"
+
+PS F:\2026数模国赛\国赛团队共享工作区\编程> if ($LASTEXITCODE -ne 0) { throw 'Q3 0-only failed' }
+>> TerminatingError():“Q3 0-only failed”
+Q3 0-only failed
+Q3 0-only failed
+所在位置 行:1 字符: 28
++ if ($LASTEXITCODE -ne 0) { throw 'Q3 0-only failed' }
++                            ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Q3 0-only failed:String) [], RuntimeException
+    + FullyQualifiedErrorId : Q3 0-only failed
+
+PS F:\2026数模国赛\国赛团队共享工作区\编程> python -m q3_baseline.cli `
+  --config config/q3_baseline.json `
+  run `
+  --track Q3_ROLLING_4ISSUE `
+  --output-dir "$q3Root/Q3_ROLLING_4ISSUE"
+
+PS F:\2026数模国赛\国赛团队共享工作区\编程> if ($LASTEXITCODE -ne 0) { throw 'Q3 rolling failed' }
+>> TerminatingError():“Q3 rolling failed”
+Q3 rolling failed
+Q3 rolling failed
+所在位置 行:1 字符: 28
++ if ($LASTEXITCODE -ne 0) { throw 'Q3 rolling failed' }
++                            ~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Q3 rolling failed:String) [], RuntimeException
+    + FullyQualifiedErrorId : Q3 rolling failed
+
+PS F:\2026数模国赛\国赛团队共享工作区\编程> python -m q3_baseline.cli `
+  --config config/q3_baseline.json `
+  run `
+  --track Q3_NOSTORAGE_REFERENCE `
+  --output-dir "$q3Root/Q3_NOSTORAGE_REFERENCE"
+
+PS F:\2026数模国赛\国赛团队共享工作区\编程> TerminatingError():“管道已被停止。”
+>> TerminatingError():“管道已被停止。”
+PS F:\2026数模国赛\国赛团队共享工作区\编程> if ($LASTEXITCODE -ne 0) { throw 'Q3 no-storage failed' }
+>> TerminatingError():“Q3 no-storage failed”
+Q3 no-storage failed
+Q3 no-storage failed
+所在位置 行:1 字符: 28
++ if ($LASTEXITCODE -ne 0) { throw 'Q3 no-storage failed' }
++                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Q3 no-storage failed:String) [], RuntimeException
+    + FullyQualifiedErrorId : Q3 no-storage failed
+
+PS F:\2026数模国赛\国赛团队共享工作区\编程> exit
+**********************
+Windows PowerShell 脚本结束
+结束时间: 20260912030926
+**********************

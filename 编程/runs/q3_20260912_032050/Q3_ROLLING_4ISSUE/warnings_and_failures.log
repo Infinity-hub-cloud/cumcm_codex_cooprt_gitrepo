@@ -1,0 +1,36 @@
+Traceback (most recent call last):
+  File "F:\2026数模国赛\国赛团队共享工作区\编程\q3_baseline\cli.py", line 146, in main
+    output = run_q3_track(
+        args.config,
+    ...<2 lines>...
+        issue_set_name=args.issue_set,
+    )
+  File "F:\2026数模国赛\国赛团队共享工作区\编程\q3_baseline\runner.py", line 310, in run_q3_track
+    _update_suffix(
+    ~~~~~~~~~~~~~~^
+        plan=plan,
+        ^^^^^^^^^^
+    ...<13 lines>...
+        no_storage=no_storage,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "F:\2026数模国赛\国赛团队共享工作区\编程\q3_baseline\runner.py", line 128, in _update_suffix
+    objective, gap, status, termination, runtime = solve_and_apply_adjustment(
+                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        plan,
+        ^^^^^
+    ...<7 lines>...
+        no_storage=no_storage,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "F:\2026数模国赛\国赛团队共享工作区\编程\q3_baseline\planner.py", line 299, in solve_and_apply_adjustment
+    problem = build_adjustment_milp(
+        plan.G[sl],
+    ...<5 lines>...
+        no_storage=no_storage,
+    )
+  File "F:\2026数模国赛\国赛团队共享工作区\编程\q3_baseline\planner.py", line 138, in build_adjustment_milp
+    raise ValueError("current SOC is outside physical bounds")
+ValueError: current SOC is outside physical bounds

@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "candidate_is_separate_file",
+      "passed": true,
+      "detail": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\runs\\q3_20260912_032050\\Q3_NOSTORAGE_REFERENCE\\result3_candidate.xlsx"
+    },
+    {
+      "name": "candidate_exists",
+      "passed": true,
+      "detail": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\runs\\q3_20260912_032050\\Q3_NOSTORAGE_REFERENCE\\result3_candidate.xlsx"
+    },
+    {
+      "name": "sheet_names",
+      "passed": true,
+      "detail": [
+        "计划购电量",
+        "调整购电量",
+        "充放电量",
+        "紧急购电量"
+      ]
+    },
+    {
+      "name": "计划购电量_dimensions",
+      "passed": true,
+      "detail": [
+        335,
+        147
+      ]
+    },
+    {
+      "name": "计划购电量_slot_order",
+      "passed": true,
+      "detail": [
+        "0:10-0:20",
+        "0:00-0:10+1"
+      ]
+    },
+    {
+      "name": "计划购电量_all_values",
+      "passed": true,
+      "detail": {
+        "errors": 0,
+        "max_error": 0.0
+      }
+    },
+    {
+      "name": "调整购电量_dimensions",
+      "passed": true,
+      "detail": [
+        335,
+        147
+      ]
+    },
+    {
+      "name": "调整购电量_slot_order",
+      "passed": true,
+      "detail": [
+        "0:10-0:20",
+        "0:00-0:10+1"
+      ]
+    },
+    {
+      "name": "调整购电量_all_values",
+      "passed": true,
+      "detail": {
+        "errors": 0,
+        "max_error": 0.0
+      }
+    },
+    {
+      "name": "no_formulas",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "no_template_ellipsis",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "official_template_unchanged",
+      "passed": true,
+      "detail": "C59DA470CABD0BE23F602C95C8AA9D11EC224A0CDAC216B3E1F218E65D006BDC"
+    }
+  ],
+  "candidate_sha256": "4E0A840988FEF38782162C4716DD2C2553E5978CE3EC31DADF994B69E739342D",
+  "official_sha256": "C59DA470CABD0BE23F602C95C8AA9D11EC224A0CDAC216B3E1F218E65D006BDC"
+}

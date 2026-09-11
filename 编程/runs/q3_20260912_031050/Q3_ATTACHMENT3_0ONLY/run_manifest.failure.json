@@ -1,0 +1,9 @@
+{
+  "question_id": "Q3",
+  "track": "Q3_ATTACHMENT3_0ONLY",
+  "run_status": "FAILED",
+  "requested_output_dir": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\runs\\q3_20260912_031050\\Q3_ATTACHMENT3_0ONLY",
+  "failure_evidence_dir": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\runs\\q3_20260912_031050\\Q3_ATTACHMENT3_0ONLY",
+  "error_type": "AttributeError",
+  "error": "'Q3Parameters' object has no attribute 'tolerance'"
+}

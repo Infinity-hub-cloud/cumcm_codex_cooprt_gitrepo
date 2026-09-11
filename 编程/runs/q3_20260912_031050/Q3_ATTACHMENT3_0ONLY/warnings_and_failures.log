@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "F:\2026数模国赛\国赛团队共享工作区\编程\q3_baseline\cli.py", line 146, in main
+    output = run_q3_track(
+        args.config,
+    ...<2 lines>...
+        issue_set_name=args.issue_set,
+    )
+  File "F:\2026数模国赛\国赛团队共享工作区\编程\q3_baseline\runner.py", line 358, in run_q3_track
+    sum(
+    ~~~^
+        abs(value - config.parameters.soc_min) <= config.parameters.tolerance
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        for value in (row.soc_before, row.soc_after)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "F:\2026数模国赛\国赛团队共享工作区\编程\q3_baseline\runner.py", line 359, in <genexpr>
+    abs(value - config.parameters.soc_min) <= config.parameters.tolerance
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Q3Parameters' object has no attribute 'tolerance'

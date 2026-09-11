@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "numerical_validation": {
+    "passed": true,
+    "failures": [],
+    "max_balance_residual": 4.547473508864641e-13,
+    "max_soc_residual": 0.0,
+    "qmax_charge_internal": 833.3333333333333,
+    "qmax_discharge_internal": 833.3333333333333,
+    "executed_intervals": 52560,
+    "plan_versions": 52924
+  },
+  "checks": {
+    "input_hash_gate": true,
+    "attachment3_long_mapped": {
+      "long_rows": 35040,
+      "mapped_rows": 210240,
+      "mismatches": 0
+    },
+    "direct_overlap_143": true,
+    "slot144_fallback": true,
+    "issue_datetime_lte_decision_time": true,
+    "executed_history_immutable": true,
+    "initial_G_immutable": true,
+    "load_forecast_frozen": true,
+    "soc_continuous": true,
+    "r0_balance": true,
+    "dec31_no_fictitious_issue": true
+  }
+}

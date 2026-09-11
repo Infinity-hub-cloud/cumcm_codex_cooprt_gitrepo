@@ -1,0 +1,2 @@
+WARNING-Q3-MANIFEST-NORMALIZED-001: audit/manifest.json lacks normalized CSV entries; formal handoff hashes were enforced.
+WARNING-Q3-PLAN-SURPLUS-001: W_pred is retained in planning balance for physical feasibility; actual W is computed only after replay.

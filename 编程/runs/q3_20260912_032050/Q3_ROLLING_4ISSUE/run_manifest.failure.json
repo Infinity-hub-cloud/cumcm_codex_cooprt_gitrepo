@@ -1,0 +1,9 @@
+{
+  "question_id": "Q3",
+  "track": "Q3_ROLLING_4ISSUE",
+  "run_status": "FAILED",
+  "requested_output_dir": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\runs\\q3_20260912_032050\\Q3_ROLLING_4ISSUE",
+  "failure_evidence_dir": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\runs\\q3_20260912_032050\\Q3_ROLLING_4ISSUE",
+  "error_type": "ValueError",
+  "error": "current SOC is outside physical bounds"
+}

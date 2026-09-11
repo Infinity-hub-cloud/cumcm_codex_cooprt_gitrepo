@@ -1,0 +1,149 @@
+{
+  "run_id": "weekday_buffer",
+  "question_id": "Q2",
+  "stage": 5,
+  "status": "HUMAN_RUN_UNREVIEWED_CANDIDATE",
+  "run_status": "HUMAN_RUN_UNREVIEWED_CANDIDATE",
+  "final_competition_result": false,
+  "created_at": "2026-09-12T00:22:07+08:00",
+  "started_at": "2026-09-12T00:22:07+08:00",
+  "finished_at": "2026-09-12T00:22:48+08:00",
+  "model_version": "M2-Q2-EXPERIMENT-weekday_buffer-v1.0",
+  "forecast_version": "q2-weekday_buffer-v1.0",
+  "experiment": "weekday_buffer",
+  "baseline_id": "B1_WEEKDAY_BUFFER_MILP_R0",
+  "experiment_settings": {
+    "load_strategy": "weekday",
+    "pv_strategy": "recent",
+    "use_buffer": true,
+    "buffer_history_days": 28,
+    "buffer_min_samples": 7,
+    "buffer_quantile": 0.8,
+    "selection_status": "FIXED_ABLATION_EXPLORATORY_NOT_HELD_OUT",
+    "prediction_metrics_use": "raw point forecasts, excluding risk buffer"
+  },
+  "data_version": "PREP-TIME-REV-20260911T170805+0800",
+  "input_paths": {
+    "price": "D:\\Users\\LENOVO\\Desktop\\数学建模\\国赛团队共享工作区\\编程\\预处理审计输出_时间口径修订版\\normalized\\attachment1_single_day.csv",
+    "actual": "D:\\Users\\LENOVO\\Desktop\\数学建模\\国赛团队共享工作区\\编程\\预处理审计输出_时间口径修订版\\normalized\\attachment2_actual_long.csv",
+    "official_result2_template": "D:\\Users\\LENOVO\\Desktop\\数学建模\\国赛团队共享工作区\\C题\\附件\\附件5\\result2.xlsx"
+  },
+  "input_sha256": {
+    "price": "695E14DD02D011E24AE8CE1C5CD7BFF4CA963F5C92FA884BACC0386059AD07E3",
+    "actual": "00DA155528AFC173776F59E620C8AEFCD661A5C5D8520472CE3AA9F0A91631ED",
+    "official_result2_template": "1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47"
+  },
+  "input_manifest_sha256": "E489553660EB610271F2B192272BF1EB94BDE3D88CECE3D40048792349EE1B06",
+  "audit_summary_sha256": "95F8E17FC0428EFAA4B2BD256D2E6B51C7F5066B2835C9F6B17EB88D3A916AED",
+  "code_version_or_hashes": {
+    "__init__.py": "60B96EB2542F4E216500D429D26BEA4B8BF8EACA7933C16385FDCC516C6A8A3B",
+    "candidate_forecast.py": "88A6FC82BC579AC5F243B919DE5254C45A944EA5331BC97402E1FB2B77CFC5DC",
+    "cli.py": "D71A0D4525D819D4EC361E73A3EE51B5A61E28B6F06060BF3592076FEB7FD1B1",
+    "config.py": "3D992760083B0401B1C5AA514D54E54B35DED5EDA08176F9BE46E87062EADDFE",
+    "data.py": "52518E8836011A04A8FF4F0DFEA797F4FE00F93AC158CFACCEBB3136082FED08",
+    "evidence.py": "0FCCEA4A01646F7C3FF7CB01BE6F00A2BABF2C52279F767C1651F6461ACFCB49",
+    "experiments.py": "AE9A27F2C3FAA05D1BD270D0AA2F16F66D87452E9AAF3A0FBA785E5EB14348C2",
+    "export_validation.py": "D81578CA6A34A5EC34A124350D40393CC79188C5FD57D61BC3E015FD740D1B06",
+    "exporter.py": "A4F98D131B8025A3586EFA082280A35D601685732183FA2FA8960584E2203E35",
+    "forecast.py": "95E3AA171C3DDC6694BB9D8DE48061E1FE73526201E4F4F97F67A4AFA776AAF7",
+    "integrity.py": "117E5C1F2AD23F732223AB9368D7DD2916E761E516DA636B33DEC7423FA785BF",
+    "planner.py": "18694B3C0F3640F426732D88884E2FCC36334749D3EB528B9B2B74411681A11C",
+    "prediction_metrics.py": "FEA9A4C44C7B2961EA9178757F7BEF55B4E250A556CF9037DD294060F36957BA",
+    "replay.py": "4917CA78028F27376A47B7DCAA26EBEDCA26C667F01845A1FF203B0DE06C6AB3",
+    "runner.py": "B5A3080587591C41AD865A569F746D4D307EAB99F45376B3860BAEB77158E8E1",
+    "time_axis.py": "2BBE71AB89455880A25E0F51C715D4FD02A1C083685A2E68E01FBD8563063570",
+    "validation.py": "442FFF365B1919446824AD77468AC7B58F116B9A32B5F7B8E51784EF1937CCA7"
+  },
+  "common_code_hashes": {
+    "__init__.py": "90D9C93851A455FD21807A41B52BA1623AF9AC2CEACE0C7EA975512DB068D28F",
+    "baseline.py": "911A91297092E8B0D75DCED330B0C8E4D0CBA6D0628480ACCE1AC2465A4A431E",
+    "cli.py": "E4691C2A016CE9D05686073E514AFE76FA87ED4822B7B7B95CFB6F44EDD38070",
+    "config.py": "1C90C04291967F0E64956CDE76B89CF9A4F7FD064608CBC5DA7AE3D9491C317A",
+    "data_contract.py": "5C978C0737BD465A6CE8BA4677A29E45EE2E735ACD24C80C19B0D952554BF86D",
+    "export_templates.py": "A03C631331DAF8E3E546739F8B7552001B5E0C269EC8030BB90D85C4ED030DDA",
+    "export_validation.py": "5E22BFEFD6E4EA4EA4DFAA3B0372000DD84F306E916310627BAAD8D11288385F",
+    "metrics.py": "09A1E89AB29AADA399010359863649376B40E099ECB7F042860BEA868D88F38E",
+    "milp.py": "C8406BC574E3457E2370ACE1E8781D4E0CD7C1E39A156E5F367F572A86E6AE60",
+    "normalized_reader.py": "39E30724A2AA8CBA8E005CF2688EC664F5980F77AAC7764FB61CC4F55E782FC6",
+    "optimize.py": "5CDD6A9E4ABF950A4A6B4FEEA663729FBF1587C86E0E782D114E38B32C1E19C5",
+    "parameters.py": "E0F773341B6A1EA184248081FFE932AA4BA74323AD257C900DB921EC2376BBFA",
+    "raw_reader.py": "28401FB3656E3CF4A1926C707ED704CF3BF9D3C312B9C2ADD3743B256E9BF82D",
+    "run_manifest.py": "B338D00A54CD2363EA1074046FEE08F2B12C18751F872A4EEA1A55E2EA2C64E4",
+    "runner.py": "683B36D6FC2EB22D96491E8AFBD4D9C4342816F945CC8405198F2C6133728349",
+    "solver_backend.py": "D67F8B0D63B58100BD73106FF87FC4519B3614D6A78345204D63D73FDAD99B70",
+    "time_index.py": "0AB3CAEDCEB6D89D24DD278C467879A378D0DCCE4EC43B68EA7C4020DCE1730E"
+  },
+  "config_sha256": "89E12E75B4E912E4B211891225AF8E465A1EC4ED68B7418F81FDC8C7BC0DC720",
+  "environment": {
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "executable": "D:\\python3.11\\python.exe"
+  },
+  "solver_name": "HiGHS",
+  "solver_version": "1.15.1",
+  "predictor_versions": {
+    "load": "q2-weekday_buffer-v1.0",
+    "pv": "q2-weekday_buffer-v1.0"
+  },
+  "random_seeds": {
+    "predictor": "NOT_APPLICABLE_DETERMINISTIC",
+    "optimization": "NOT_APPLICABLE_DETERMINISTIC_MILP"
+  },
+  "information_cutoff_policy": "source_interval_end <= decision_time",
+  "output_period": {
+    "start": "2025-02-01",
+    "end": "2025-12-31",
+    "template_days": 334
+  },
+  "git": {
+    "git_head": "b68744779ae5eafde8d069329ed3b1584554cff7",
+    "git_dirty": true
+  },
+  "git_head": "b68744779ae5eafde8d069329ed3b1584554cff7",
+  "git_dirty": true,
+  "warnings_count": 1,
+  "failures_count": 0,
+  "warnings": [
+    "WARNING-Q2-INPUT-ROUNDING-001"
+  ],
+  "last_completed_template_date": "2025-12-31",
+  "failed_template_date": null,
+  "required_outputs": [
+    "run_manifest.json",
+    "config_snapshot.json",
+    "model_selection.csv",
+    "predictions_load.csv",
+    "predictions_pv.csv",
+    "dispatch_timeseries.csv",
+    "daily_metrics.csv",
+    "monthly_metrics.csv",
+    "metrics_summary.csv",
+    "prediction_metrics.csv",
+    "assertions.json",
+    "solver_days.csv",
+    "solver.log",
+    "warnings_and_failures.log",
+    "result2_candidate.xlsx",
+    "export_validation.json",
+    "human_feedback.md"
+  ],
+  "run_completed_at": "2026-09-12T00:22:48+08:00",
+  "assertions_passed": true,
+  "export_validation_passed": true,
+  "warmup_cost_yuan_separate_not_in_formal": 2227067.592789365,
+  "formal_q2_total_cost_yuan": 15212046.690710831,
+  "formal_output_days": 334,
+  "solver_days": 365,
+  "export": {
+    "candidate_path": "D:\\Users\\LENOVO\\Desktop\\数学建模\\国赛团队共享工作区\\编程\\runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\result2_candidate.xlsx",
+    "candidate_sha256": "CEF7AE5579459E274BBE1387FB22F4A031081CB09AB62D34FF75237E6E8853FC",
+    "official_template_path": "D:\\Users\\LENOVO\\Desktop\\数学建模\\国赛团队共享工作区\\C题\\附件\\附件5\\result2.xlsx",
+    "official_sha256_before": "1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47",
+    "official_sha256_after": "1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47",
+    "official_template_unchanged": true,
+    "plan_days": 334,
+    "storage_rows": 2004,
+    "emergency_event_rows": 3861
+  },
+  "official_result2_sha256_after": "1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47"
+}

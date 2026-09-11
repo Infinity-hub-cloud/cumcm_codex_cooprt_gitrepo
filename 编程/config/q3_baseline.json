@@ -1,0 +1,43 @@
+{
+  "model_version": "M3-Q3-ROLLING-4ISSUE-v1.0",
+  "q2_frozen_model_version": "M2-Q2-EXPERIMENT-weekday_buffer-v1.0",
+  "data_version": "PREP-TIME-REV-20260911T170805+0800",
+  "normalized_price_input": "../预处理审计输出_时间口径修订版/normalized/attachment1_single_day.csv",
+  "normalized_actual_input": "../预处理审计输出_时间口径修订版/normalized/attachment2_actual_long.csv",
+  "attachment3_forecast_input": "../预处理审计输出_时间口径修订版/normalized/attachment3_forecast_long.csv",
+  "attachment3_mapped_input": "../预处理审计输出_时间口径修订版/normalized/attachment3_mapped_10min.csv",
+  "official_result3_template": "../../C题/附件/附件5/result3.xlsx",
+  "audit_manifest": "../预处理审计输出_时间口径修订版/audit/manifest.json",
+  "audit_summary": "../预处理审计输出_时间口径修订版/audit/audit_summary.json",
+  "q2_reference_run": "../runs/q2_low_complexity_20260912_002010/weekday_buffer",
+  "solver_name": "highs",
+  "warmup_start": "2025-01-01",
+  "output_start": "2025-02-01",
+  "output_end": "2025-12-31",
+  "issue_sets": {
+    "0only": [0],
+    "0_12": [0, 720],
+    "rolling4": [0, 360, 720, 1080]
+  },
+  "parameters": {
+    "interval_count": 144,
+    "delta_t": 0.16666666666666666,
+    "charge_efficiency": 0.9,
+    "discharge_efficiency": 0.9,
+    "soc_min": 1200.0,
+    "soc_max": 10800.0,
+    "charge_power_max": 5000.0,
+    "discharge_power_max": 5000.0,
+    "soc_initial": 6000.0,
+    "emergency_price_multiplier": 5.0,
+    "feasibility_tolerance": 1e-6,
+    "integrality_tolerance": 1e-6,
+    "aggregate_tolerance": 1e-5,
+    "input_energy_rounding_tolerance": 0.000051,
+    "mip_rel_gap": 1e-8,
+    "time_limit_seconds": 300.0,
+    "downward_adjustment_multiplier": 0.5,
+    "upward_adjustment_multiplier": 1.5,
+    "solver_console_output": false
+  }
+}

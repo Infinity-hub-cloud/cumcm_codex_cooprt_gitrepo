@@ -4,16 +4,18 @@
 
 ## 当前阶段状态
 
-2026-09-12更新：问题二四组实验`runs/q2_low_complexity_20260912_002010`全部完成且技术复核通过。推荐`weekday_buffer`的B1作为主模型候选，正式334模板日总费用15212046.69071083元；待人工验收，不是最终提交批准。
+2026-09-12更新：问题二主模型已由人工冻结为`M2-Q2-EXPERIMENT-weekday_buffer-v1.0`。`BLOCKER-Q3-TIME-001`已关闭；问题三四条轨道已完成人工运行，数值断言、候选Excel回读和价值分解已由人工验证通过。Q3滚动相对00:00-only改善，但相对冻结Q2费用更高，主模型是否冻结仍待人工明确决策。
 
 先读[Q2结果复核与定版建议](Q2_结果复核与定版建议_20260912.md)，再看[交付候选包](交付候选/Q2_20260912_weekday_buffer/README.md)。包中已有`result2.xlsx`、四日论文表1—3、指标/指纹和人工验收表；无需为补齐结果重跑四组。
 
-- 当前阶段：5（问题1已通过；问题2运行结果复核与候选定版）
-- 当前状态：Q2技术复核通过，推荐模型与交付候选待人工确认
+- 当前阶段：5（问题1已通过；问题2主模型已冻结；问题3四轨道已人工验证）
+- 当前状态：Q3运行与证据验收通过，主模型冻结决策待人工确认；未进入问题4
 - 人工授权：`HUMAN-OVERRIDE-CODE-001 = CONFIRMED`
 - 时间门禁：`Q1-TIME-MAPPING-PASS = CONFIRMED`
 - Q1模型版本：`M1-Q1-MILP-v1.3-instant-left-hold`
 - Q2推荐模型版本：`M2-Q2-EXPERIMENT-weekday_buffer-v1.0`
+- Q3模型版本：`M3-Q3-ROLLING-4ISSUE-v1.0`
+- Q3时间门禁：`Q3-TIME-ALIGNMENT-GATE-PASS`；`BLOCKER-Q3-TIME-001 = CLOSED`
 - 数据版本：`PREP-TIME-REV-20260911T170805+0800`
 - 已实现：公共配置/数据契约、B0闭式基线、B1 MILP构造、惰性 Solver backend、断言、候选工作簿导出与回读验证。
 - Q1状态：`Q1-STAGE5-GATE = PASSED`。
@@ -53,6 +55,17 @@ Q1 已经由人工运行并通过门禁；既有 Q1 包与证据保持不变。
 - 预运行返修：`Q2-PRE-RUN-PATCH-001` 已加入正式输入SHA-256硬门、事后预测评价、统一manifest、公共dispatch空值语义及失败证据落盘。
 
 Q2 的无 Solver 检查及正式人工运行命令见 `Q2_人工运行说明.md`。运行目录若已存在会被拒绝。
+
+## 问题3滚动光伏与购电调整（代码已生成，待人工运行）
+
+- 入口：`python -m q3_baseline.cli`
+- 配置：`config/q3_baseline.json`
+- 依赖：`requirements-q3.txt`
+- 人工操作与反馈文件：`Q3_人工运行说明.md`
+- 四轨道：`REF_Q2_FROZEN`、`Q3_ATTACHMENT3_0ONLY`、`Q3_ROLLING_4ISSUE`、`Q3_NOSTORAGE_REFERENCE`
+- 午夜顺序：先用当日00:00新issue最终确定前日slot144，再计算00:10 SOC，随后生成当日新模板G。
+- 时间匹配：只按`(interval_start, interval_end)`；初始slot144为`fallback_q2_pv`；不允许裸`interval_index == template_slot`。
+- 边界：本轮未运行全年Q3、未调用正式Solver、未生成真实`result3_candidate.xlsx`、未进入问题4。
 
 ## 文件分层
 

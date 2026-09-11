@@ -1,0 +1,45 @@
+{
+  "Value_Attachment3_Initial": -3484639.3118302934,
+  "Value_Intraday_Rolling": 267981.22593291104,
+  "Total_Q3_Improvement": -3216658.0858973823,
+  "component_savings_baseline_minus_candidate": {
+    "Attachment3_Initial_vs_REF_Q2_FROZEN": {
+      "total_cost": -3484639.3118302934,
+      "planned_purchase_cost": -357049.68861777335,
+      "adjustment_cost": -2.4306245904881506e-13,
+      "emergency_purchase_cost": -3127589.623212519,
+      "emergency_energy": -691557.3598122634,
+      "spill_energy": -901870.1265353635,
+      "storage_throughput": 764353.2508221753
+    },
+    "Intraday_Rolling_vs_Attachment3_Initial": {
+      "total_cost": 267981.22593291104,
+      "planned_purchase_cost": 0.0,
+      "adjustment_cost": -454832.1758269671,
+      "emergency_purchase_cost": 722813.4017598764,
+      "emergency_energy": 178553.35116781178,
+      "spill_energy": -307737.1744614821,
+      "storage_throughput": -153003.15368753485
+    },
+    "Q3_Rolling_vs_REF_Q2_FROZEN": {
+      "total_cost": -3216658.0858973823,
+      "planned_purchase_cost": -357049.68861777335,
+      "adjustment_cost": -454832.1758269671,
+      "emergency_purchase_cost": -2404776.221452642,
+      "emergency_energy": -513004.00864445156,
+      "spill_energy": -1209607.3009968456,
+      "storage_throughput": 611350.0971346404
+    },
+    "Storage_Q3_Rolling_vs_Q3_NoStorage": {
+      "total_cost": 3373045.8625759333,
+      "planned_purchase_cost": 3795983.2531013675,
+      "adjustment_cost": -38960.87510551314,
+      "emergency_purchase_cost": -383976.5154199223,
+      "emergency_energy": -76232.30750445148,
+      "spill_energy": 1309513.3065853296,
+      "storage_throughput": -11846035.573870132
+    }
+  },
+  "sign_convention": "positive means the candidate reduced the named cost/energy versus its baseline",
+  "Value_Storage_in_Q3_Rolling": 3373045.8625759333
+}
