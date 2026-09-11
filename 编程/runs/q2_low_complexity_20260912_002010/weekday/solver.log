@@ -1,0 +1,1459 @@
+Q2 daily solver evidence
+===== 2025-01-01 structured evidence =====
+{"template_date": "2025-01-01", "period": "warmup", "status": "COLD_START_NO_SOLVE", "solver_name": "NONE", "solver_version": "N/A", "termination_condition": "Q2-COLDSTART-001", "mip_gap": "", "runtime_seconds": 0.0}
+
+===== 2025-01-02 native solver log =====
+===== 2025-01-02 structured evidence =====
+{"template_date": "2025-01-02", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.0150989000003392}
+
+===== 2025-01-03 native solver log =====
+===== 2025-01-03 structured evidence =====
+{"template_date": "2025-01-03", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.1614610512332034e-16, "runtime_seconds": 0.012967199999820878}
+
+===== 2025-01-04 native solver log =====
+===== 2025-01-04 structured evidence =====
+{"template_date": "2025-01-04", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.021104100000229664}
+
+===== 2025-01-05 native solver log =====
+===== 2025-01-05 structured evidence =====
+{"template_date": "2025-01-05", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02148830000032831}
+
+===== 2025-01-06 native solver log =====
+===== 2025-01-06 structured evidence =====
+{"template_date": "2025-01-06", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01181910000013886}
+
+===== 2025-01-07 native solver log =====
+===== 2025-01-07 structured evidence =====
+{"template_date": "2025-01-07", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02239610000015091}
+
+===== 2025-01-08 native solver log =====
+===== 2025-01-08 structured evidence =====
+{"template_date": "2025-01-08", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.013474400000177411}
+
+===== 2025-01-09 native solver log =====
+===== 2025-01-09 structured evidence =====
+{"template_date": "2025-01-09", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.18950194490428e-16, "runtime_seconds": 0.022641600000042672}
+
+===== 2025-01-10 native solver log =====
+===== 2025-01-10 structured evidence =====
+{"template_date": "2025-01-10", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019481199999972887}
+
+===== 2025-01-11 native solver log =====
+===== 2025-01-11 structured evidence =====
+{"template_date": "2025-01-11", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020394900000155758}
+
+===== 2025-01-12 native solver log =====
+===== 2025-01-12 structured evidence =====
+{"template_date": "2025-01-12", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.1849238656380186e-16, "runtime_seconds": 0.01424170000018421}
+
+===== 2025-01-13 native solver log =====
+===== 2025-01-13 structured evidence =====
+{"template_date": "2025-01-13", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.1868038838833986e-16, "runtime_seconds": 0.015104999999948632}
+
+===== 2025-01-14 native solver log =====
+===== 2025-01-14 structured evidence =====
+{"template_date": "2025-01-14", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.022774999999910506}
+
+===== 2025-01-15 native solver log =====
+===== 2025-01-15 structured evidence =====
+{"template_date": "2025-01-15", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02496689999998125}
+
+===== 2025-01-16 native solver log =====
+===== 2025-01-16 structured evidence =====
+{"template_date": "2025-01-16", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.015543500000148924}
+
+===== 2025-01-17 native solver log =====
+===== 2025-01-17 structured evidence =====
+{"template_date": "2025-01-17", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.024186399999962305}
+
+===== 2025-01-18 native solver log =====
+===== 2025-01-18 structured evidence =====
+{"template_date": "2025-01-18", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.022515199999816105}
+
+===== 2025-01-19 native solver log =====
+===== 2025-01-19 structured evidence =====
+{"template_date": "2025-01-19", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 2.46225730234658e-16, "runtime_seconds": 0.012609799999609095}
+
+===== 2025-01-20 native solver log =====
+===== 2025-01-20 structured evidence =====
+{"template_date": "2025-01-20", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.017186900000069727}
+
+===== 2025-01-21 native solver log =====
+===== 2025-01-21 structured evidence =====
+{"template_date": "2025-01-21", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.027732300000025134}
+
+===== 2025-01-22 native solver log =====
+===== 2025-01-22 structured evidence =====
+{"template_date": "2025-01-22", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01268049999998766}
+
+===== 2025-01-23 native solver log =====
+===== 2025-01-23 structured evidence =====
+{"template_date": "2025-01-23", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02259280000043873}
+
+===== 2025-01-24 native solver log =====
+===== 2025-01-24 structured evidence =====
+{"template_date": "2025-01-24", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020399900000029447}
+
+===== 2025-01-25 native solver log =====
+===== 2025-01-25 structured evidence =====
+{"template_date": "2025-01-25", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02068920000010621}
+
+===== 2025-01-26 native solver log =====
+===== 2025-01-26 structured evidence =====
+{"template_date": "2025-01-26", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.025685300000077405}
+
+===== 2025-01-27 native solver log =====
+===== 2025-01-27 structured evidence =====
+{"template_date": "2025-01-27", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.024942400000327325}
+
+===== 2025-01-28 native solver log =====
+===== 2025-01-28 structured evidence =====
+{"template_date": "2025-01-28", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01840779999974984}
+
+===== 2025-01-29 native solver log =====
+===== 2025-01-29 structured evidence =====
+{"template_date": "2025-01-29", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.036761899999874004}
+
+===== 2025-01-30 native solver log =====
+===== 2025-01-30 structured evidence =====
+{"template_date": "2025-01-30", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.014246400000047288}
+
+===== 2025-01-31 native solver log =====
+===== 2025-01-31 structured evidence =====
+{"template_date": "2025-01-31", "period": "warmup", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.035979499999939435}
+
+===== 2025-02-01 native solver log =====
+===== 2025-02-01 structured evidence =====
+{"template_date": "2025-02-01", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.029590599999664846}
+
+===== 2025-02-02 native solver log =====
+===== 2025-02-02 structured evidence =====
+{"template_date": "2025-02-02", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01966939999965689}
+
+===== 2025-02-03 native solver log =====
+===== 2025-02-03 structured evidence =====
+{"template_date": "2025-02-03", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.029285900000104448}
+
+===== 2025-02-04 native solver log =====
+===== 2025-02-04 structured evidence =====
+{"template_date": "2025-02-04", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.025922199999968143}
+
+===== 2025-02-05 native solver log =====
+===== 2025-02-05 structured evidence =====
+{"template_date": "2025-02-05", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01311710000027233}
+
+===== 2025-02-06 native solver log =====
+===== 2025-02-06 structured evidence =====
+{"template_date": "2025-02-06", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.2908636046498926e-16, "runtime_seconds": 0.010335500000110187}
+
+===== 2025-02-07 native solver log =====
+===== 2025-02-07 structured evidence =====
+{"template_date": "2025-02-07", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.031282999999802996}
+
+===== 2025-02-08 native solver log =====
+===== 2025-02-08 structured evidence =====
+{"template_date": "2025-02-08", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.04707529999996041}
+
+===== 2025-02-09 native solver log =====
+===== 2025-02-09 structured evidence =====
+{"template_date": "2025-02-09", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01945290000003297}
+
+===== 2025-02-10 native solver log =====
+===== 2025-02-10 structured evidence =====
+{"template_date": "2025-02-10", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019145299999763665}
+
+===== 2025-02-11 native solver log =====
+===== 2025-02-11 structured evidence =====
+{"template_date": "2025-02-11", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.016234799999892857}
+
+===== 2025-02-12 native solver log =====
+===== 2025-02-12 structured evidence =====
+{"template_date": "2025-02-12", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02288929999986067}
+
+===== 2025-02-13 native solver log =====
+===== 2025-02-13 structured evidence =====
+{"template_date": "2025-02-13", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.022982500000125583}
+
+===== 2025-02-14 native solver log =====
+===== 2025-02-14 structured evidence =====
+{"template_date": "2025-02-14", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.021450000000186265}
+
+===== 2025-02-15 native solver log =====
+===== 2025-02-15 structured evidence =====
+{"template_date": "2025-02-15", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.04636800000025687}
+
+===== 2025-02-16 native solver log =====
+===== 2025-02-16 structured evidence =====
+{"template_date": "2025-02-16", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.0213792999998077}
+
+===== 2025-02-17 native solver log =====
+===== 2025-02-17 structured evidence =====
+{"template_date": "2025-02-17", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.018515999999635824}
+
+===== 2025-02-18 native solver log =====
+===== 2025-02-18 structured evidence =====
+{"template_date": "2025-02-18", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020324000000073283}
+
+===== 2025-02-19 native solver log =====
+===== 2025-02-19 structured evidence =====
+{"template_date": "2025-02-19", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.018402900000182854}
+
+===== 2025-02-20 native solver log =====
+===== 2025-02-20 structured evidence =====
+{"template_date": "2025-02-20", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.017730099999880622}
+
+===== 2025-02-21 native solver log =====
+===== 2025-02-21 structured evidence =====
+{"template_date": "2025-02-21", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01902650000010908}
+
+===== 2025-02-22 native solver log =====
+===== 2025-02-22 structured evidence =====
+{"template_date": "2025-02-22", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.027751399999942805}
+
+===== 2025-02-23 native solver log =====
+===== 2025-02-23 structured evidence =====
+{"template_date": "2025-02-23", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.022660499999801686}
+
+===== 2025-02-24 native solver log =====
+===== 2025-02-24 structured evidence =====
+{"template_date": "2025-02-24", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019979700000021694}
+
+===== 2025-02-25 native solver log =====
+===== 2025-02-25 structured evidence =====
+{"template_date": "2025-02-25", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020552200000111043}
+
+===== 2025-02-26 native solver log =====
+===== 2025-02-26 structured evidence =====
+{"template_date": "2025-02-26", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019227000000228145}
+
+===== 2025-02-27 native solver log =====
+===== 2025-02-27 structured evidence =====
+{"template_date": "2025-02-27", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02793210000027102}
+
+===== 2025-02-28 native solver log =====
+===== 2025-02-28 structured evidence =====
+{"template_date": "2025-02-28", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.07505319999972926}
+
+===== 2025-03-01 native solver log =====
+===== 2025-03-01 structured evidence =====
+{"template_date": "2025-03-01", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.06052349999981743}
+
+===== 2025-03-02 native solver log =====
+===== 2025-03-02 structured evidence =====
+{"template_date": "2025-03-02", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020078000000012253}
+
+===== 2025-03-03 native solver log =====
+===== 2025-03-03 structured evidence =====
+{"template_date": "2025-03-03", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.014985399999659421}
+
+===== 2025-03-04 native solver log =====
+===== 2025-03-04 structured evidence =====
+{"template_date": "2025-03-04", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03070720000005167}
+
+===== 2025-03-05 native solver log =====
+===== 2025-03-05 structured evidence =====
+{"template_date": "2025-03-05", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.021088500000132626}
+
+===== 2025-03-06 native solver log =====
+===== 2025-03-06 structured evidence =====
+{"template_date": "2025-03-06", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.022974499999691034}
+
+===== 2025-03-07 native solver log =====
+===== 2025-03-07 structured evidence =====
+{"template_date": "2025-03-07", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.030141399999592977}
+
+===== 2025-03-08 native solver log =====
+===== 2025-03-08 structured evidence =====
+{"template_date": "2025-03-08", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03159670000013648}
+
+===== 2025-03-09 native solver log =====
+===== 2025-03-09 structured evidence =====
+{"template_date": "2025-03-09", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.018955600000026607}
+
+===== 2025-03-10 native solver log =====
+===== 2025-03-10 structured evidence =====
+{"template_date": "2025-03-10", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01911470000004556}
+
+===== 2025-03-11 native solver log =====
+===== 2025-03-11 structured evidence =====
+{"template_date": "2025-03-11", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019642799999928684}
+
+===== 2025-03-12 native solver log =====
+===== 2025-03-12 structured evidence =====
+{"template_date": "2025-03-12", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.017837599999893428}
+
+===== 2025-03-13 native solver log =====
+===== 2025-03-13 structured evidence =====
+{"template_date": "2025-03-13", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019670199999836768}
+
+===== 2025-03-14 native solver log =====
+===== 2025-03-14 structured evidence =====
+{"template_date": "2025-03-14", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.026732100000117498}
+
+===== 2025-03-15 native solver log =====
+===== 2025-03-15 structured evidence =====
+{"template_date": "2025-03-15", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.05368989999988116}
+
+===== 2025-03-16 native solver log =====
+===== 2025-03-16 structured evidence =====
+{"template_date": "2025-03-16", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020028499999625637}
+
+===== 2025-03-17 native solver log =====
+===== 2025-03-17 structured evidence =====
+{"template_date": "2025-03-17", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01932459999989078}
+
+===== 2025-03-18 native solver log =====
+===== 2025-03-18 structured evidence =====
+{"template_date": "2025-03-18", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.031158100000084232}
+
+===== 2025-03-19 native solver log =====
+===== 2025-03-19 structured evidence =====
+{"template_date": "2025-03-19", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.0178568000001178}
+
+===== 2025-03-20 native solver log =====
+===== 2025-03-20 structured evidence =====
+{"template_date": "2025-03-20", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019383299999844894}
+
+===== 2025-03-21 native solver log =====
+===== 2025-03-21 structured evidence =====
+{"template_date": "2025-03-21", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.024922200000219163}
+
+===== 2025-03-22 native solver log =====
+===== 2025-03-22 structured evidence =====
+{"template_date": "2025-03-22", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.06603899999981877}
+
+===== 2025-03-23 native solver log =====
+===== 2025-03-23 structured evidence =====
+{"template_date": "2025-03-23", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.021663700000317476}
+
+===== 2025-03-24 native solver log =====
+===== 2025-03-24 structured evidence =====
+{"template_date": "2025-03-24", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.025158599999940634}
+
+===== 2025-03-25 native solver log =====
+===== 2025-03-25 structured evidence =====
+{"template_date": "2025-03-25", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020378100000016275}
+
+===== 2025-03-26 native solver log =====
+===== 2025-03-26 structured evidence =====
+{"template_date": "2025-03-26", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.022081299999626935}
+
+===== 2025-03-27 native solver log =====
+===== 2025-03-27 structured evidence =====
+{"template_date": "2025-03-27", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.033045099999981176}
+
+===== 2025-03-28 native solver log =====
+===== 2025-03-28 structured evidence =====
+{"template_date": "2025-03-28", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.030117499999960273}
+
+===== 2025-03-29 native solver log =====
+===== 2025-03-29 structured evidence =====
+{"template_date": "2025-03-29", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03799960000014835}
+
+===== 2025-03-30 native solver log =====
+===== 2025-03-30 structured evidence =====
+{"template_date": "2025-03-30", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03046700000004421}
+
+===== 2025-03-31 native solver log =====
+===== 2025-03-31 structured evidence =====
+{"template_date": "2025-03-31", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020678400000178954}
+
+===== 2025-04-01 native solver log =====
+===== 2025-04-01 structured evidence =====
+{"template_date": "2025-04-01", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020425600000180566}
+
+===== 2025-04-02 native solver log =====
+===== 2025-04-02 structured evidence =====
+{"template_date": "2025-04-02", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01947699999982433}
+
+===== 2025-04-03 native solver log =====
+===== 2025-04-03 structured evidence =====
+{"template_date": "2025-04-03", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01908030000004146}
+
+===== 2025-04-04 native solver log =====
+===== 2025-04-04 structured evidence =====
+{"template_date": "2025-04-04", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.311683289075761e-16, "runtime_seconds": 0.03672280000000683}
+
+===== 2025-04-05 native solver log =====
+===== 2025-04-05 structured evidence =====
+{"template_date": "2025-04-05", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.030325799999900482}
+
+===== 2025-04-06 native solver log =====
+===== 2025-04-06 structured evidence =====
+{"template_date": "2025-04-06", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019559899999876507}
+
+===== 2025-04-07 native solver log =====
+===== 2025-04-07 structured evidence =====
+{"template_date": "2025-04-07", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02246240000022226}
+
+===== 2025-04-08 native solver log =====
+===== 2025-04-08 structured evidence =====
+{"template_date": "2025-04-08", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.021869199999855482}
+
+===== 2025-04-09 native solver log =====
+===== 2025-04-09 structured evidence =====
+{"template_date": "2025-04-09", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.028482599999733793}
+
+===== 2025-04-10 native solver log =====
+===== 2025-04-10 structured evidence =====
+{"template_date": "2025-04-10", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020260599999801343}
+
+===== 2025-04-11 native solver log =====
+===== 2025-04-11 structured evidence =====
+{"template_date": "2025-04-11", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.06603809999978694}
+
+===== 2025-04-12 native solver log =====
+===== 2025-04-12 structured evidence =====
+{"template_date": "2025-04-12", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.027181999999811524}
+
+===== 2025-04-13 native solver log =====
+===== 2025-04-13 structured evidence =====
+{"template_date": "2025-04-13", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02218849999962913}
+
+===== 2025-04-14 native solver log =====
+===== 2025-04-14 structured evidence =====
+{"template_date": "2025-04-14", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020447300000341784}
+
+===== 2025-04-15 native solver log =====
+===== 2025-04-15 structured evidence =====
+{"template_date": "2025-04-15", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.030826799999886134}
+
+===== 2025-04-16 native solver log =====
+===== 2025-04-16 structured evidence =====
+{"template_date": "2025-04-16", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.0319139999996878}
+
+===== 2025-04-17 native solver log =====
+===== 2025-04-17 structured evidence =====
+{"template_date": "2025-04-17", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.021541999999953987}
+
+===== 2025-04-18 native solver log =====
+===== 2025-04-18 structured evidence =====
+{"template_date": "2025-04-18", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020261000000118656}
+
+===== 2025-04-19 native solver log =====
+===== 2025-04-19 structured evidence =====
+{"template_date": "2025-04-19", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.05307840000023134}
+
+===== 2025-04-20 native solver log =====
+===== 2025-04-20 structured evidence =====
+{"template_date": "2025-04-20", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02281600000014805}
+
+===== 2025-04-21 native solver log =====
+===== 2025-04-21 structured evidence =====
+{"template_date": "2025-04-21", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02013810000016747}
+
+===== 2025-04-22 native solver log =====
+===== 2025-04-22 structured evidence =====
+{"template_date": "2025-04-22", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03976199999988239}
+
+===== 2025-04-23 native solver log =====
+===== 2025-04-23 structured evidence =====
+{"template_date": "2025-04-23", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.021974999999656575}
+
+===== 2025-04-24 native solver log =====
+===== 2025-04-24 structured evidence =====
+{"template_date": "2025-04-24", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.028697700000066106}
+
+===== 2025-04-25 native solver log =====
+===== 2025-04-25 structured evidence =====
+{"template_date": "2025-04-25", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02523830000018279}
+
+===== 2025-04-26 native solver log =====
+===== 2025-04-26 structured evidence =====
+{"template_date": "2025-04-26", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.024058200000126817}
+
+===== 2025-04-27 native solver log =====
+===== 2025-04-27 structured evidence =====
+{"template_date": "2025-04-27", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03063090000023294}
+
+===== 2025-04-28 native solver log =====
+===== 2025-04-28 structured evidence =====
+{"template_date": "2025-04-28", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03449990000035541}
+
+===== 2025-04-29 native solver log =====
+===== 2025-04-29 structured evidence =====
+{"template_date": "2025-04-29", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019538399999873945}
+
+===== 2025-04-30 native solver log =====
+===== 2025-04-30 structured evidence =====
+{"template_date": "2025-04-30", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.029449099999965256}
+
+===== 2025-05-01 native solver log =====
+===== 2025-05-01 structured evidence =====
+{"template_date": "2025-05-01", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02894749999995838}
+
+===== 2025-05-02 native solver log =====
+===== 2025-05-02 structured evidence =====
+{"template_date": "2025-05-02", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.06298590000005788}
+
+===== 2025-05-03 native solver log =====
+===== 2025-05-03 structured evidence =====
+{"template_date": "2025-05-03", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02800550000029034}
+
+===== 2025-05-04 native solver log =====
+===== 2025-05-04 structured evidence =====
+{"template_date": "2025-05-04", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.029381700000158162}
+
+===== 2025-05-05 native solver log =====
+===== 2025-05-05 structured evidence =====
+{"template_date": "2025-05-05", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03147999999964668}
+
+===== 2025-05-06 native solver log =====
+===== 2025-05-06 structured evidence =====
+{"template_date": "2025-05-06", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.032614900000226044}
+
+===== 2025-05-07 native solver log =====
+===== 2025-05-07 structured evidence =====
+{"template_date": "2025-05-07", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020533099999738624}
+
+===== 2025-05-08 native solver log =====
+===== 2025-05-08 structured evidence =====
+{"template_date": "2025-05-08", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.022693100000196864}
+
+===== 2025-05-09 native solver log =====
+===== 2025-05-09 structured evidence =====
+{"template_date": "2025-05-09", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03319400000009409}
+
+===== 2025-05-10 native solver log =====
+===== 2025-05-10 structured evidence =====
+{"template_date": "2025-05-10", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01891929999965214}
+
+===== 2025-05-11 native solver log =====
+===== 2025-05-11 structured evidence =====
+{"template_date": "2025-05-11", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019510400000399386}
+
+===== 2025-05-12 native solver log =====
+===== 2025-05-12 structured evidence =====
+{"template_date": "2025-05-12", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.022103600000264123}
+
+===== 2025-05-13 native solver log =====
+===== 2025-05-13 structured evidence =====
+{"template_date": "2025-05-13", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03159740000000966}
+
+===== 2025-05-14 native solver log =====
+===== 2025-05-14 structured evidence =====
+{"template_date": "2025-05-14", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.029166799999984505}
+
+===== 2025-05-15 native solver log =====
+===== 2025-05-15 structured evidence =====
+{"template_date": "2025-05-15", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02929050000011557}
+
+===== 2025-05-16 native solver log =====
+===== 2025-05-16 structured evidence =====
+{"template_date": "2025-05-16", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02027300000008836}
+
+===== 2025-05-17 native solver log =====
+===== 2025-05-17 structured evidence =====
+{"template_date": "2025-05-17", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.026308099999823753}
+
+===== 2025-05-18 native solver log =====
+===== 2025-05-18 structured evidence =====
+{"template_date": "2025-05-18", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019364900000255147}
+
+===== 2025-05-19 native solver log =====
+===== 2025-05-19 structured evidence =====
+{"template_date": "2025-05-19", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03403500000013082}
+
+===== 2025-05-20 native solver log =====
+===== 2025-05-20 structured evidence =====
+{"template_date": "2025-05-20", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.030293799999981275}
+
+===== 2025-05-21 native solver log =====
+===== 2025-05-21 structured evidence =====
+{"template_date": "2025-05-21", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.030468200000086654}
+
+===== 2025-05-22 native solver log =====
+===== 2025-05-22 structured evidence =====
+{"template_date": "2025-05-22", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.025956800000130897}
+
+===== 2025-05-23 native solver log =====
+===== 2025-05-23 structured evidence =====
+{"template_date": "2025-05-23", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.021500800000012532}
+
+===== 2025-05-24 native solver log =====
+===== 2025-05-24 structured evidence =====
+{"template_date": "2025-05-24", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01893870000003517}
+
+===== 2025-05-25 native solver log =====
+===== 2025-05-25 structured evidence =====
+{"template_date": "2025-05-25", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020395000000007713}
+
+===== 2025-05-26 native solver log =====
+===== 2025-05-26 structured evidence =====
+{"template_date": "2025-05-26", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02021550000017669}
+
+===== 2025-05-27 native solver log =====
+===== 2025-05-27 structured evidence =====
+{"template_date": "2025-05-27", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.029678400000193506}
+
+===== 2025-05-28 native solver log =====
+===== 2025-05-28 structured evidence =====
+{"template_date": "2025-05-28", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03594900000007328}
+
+===== 2025-05-29 native solver log =====
+===== 2025-05-29 structured evidence =====
+{"template_date": "2025-05-29", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.0287134000000151}
+
+===== 2025-05-30 native solver log =====
+===== 2025-05-30 structured evidence =====
+{"template_date": "2025-05-30", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.030628600000000006}
+
+===== 2025-05-31 native solver log =====
+===== 2025-05-31 structured evidence =====
+{"template_date": "2025-05-31", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019848100000217528}
+
+===== 2025-06-01 native solver log =====
+===== 2025-06-01 structured evidence =====
+{"template_date": "2025-06-01", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.0219040999995741}
+
+===== 2025-06-02 native solver log =====
+===== 2025-06-02 structured evidence =====
+{"template_date": "2025-06-02", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020659799999975803}
+
+===== 2025-06-03 native solver log =====
+===== 2025-06-03 structured evidence =====
+{"template_date": "2025-06-03", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019774500000039552}
+
+===== 2025-06-04 native solver log =====
+===== 2025-06-04 structured evidence =====
+{"template_date": "2025-06-04", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01873299999988376}
+
+===== 2025-06-05 native solver log =====
+===== 2025-06-05 structured evidence =====
+{"template_date": "2025-06-05", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019047800000407733}
+
+===== 2025-06-06 native solver log =====
+===== 2025-06-06 structured evidence =====
+{"template_date": "2025-06-06", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.056892700000389596}
+
+===== 2025-06-07 native solver log =====
+===== 2025-06-07 structured evidence =====
+{"template_date": "2025-06-07", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.043472100000144565}
+
+===== 2025-06-08 native solver log =====
+===== 2025-06-08 structured evidence =====
+{"template_date": "2025-06-08", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02311779999990904}
+
+===== 2025-06-09 native solver log =====
+===== 2025-06-09 structured evidence =====
+{"template_date": "2025-06-09", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020935500000177854}
+
+===== 2025-06-10 native solver log =====
+===== 2025-06-10 structured evidence =====
+{"template_date": "2025-06-10", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02173559999982899}
+
+===== 2025-06-11 native solver log =====
+===== 2025-06-11 structured evidence =====
+{"template_date": "2025-06-11", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.5387266171570365e-16, "runtime_seconds": 0.0195411999998214}
+
+===== 2025-06-12 native solver log =====
+===== 2025-06-12 structured evidence =====
+{"template_date": "2025-06-12", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02364259999967544}
+
+===== 2025-06-13 native solver log =====
+===== 2025-06-13 structured evidence =====
+{"template_date": "2025-06-13", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.07188919999998689}
+
+===== 2025-06-14 native solver log =====
+===== 2025-06-14 structured evidence =====
+{"template_date": "2025-06-14", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03870509999978822}
+
+===== 2025-06-15 native solver log =====
+===== 2025-06-15 structured evidence =====
+{"template_date": "2025-06-15", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.017764299999726063}
+
+===== 2025-06-16 native solver log =====
+===== 2025-06-16 structured evidence =====
+{"template_date": "2025-06-16", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02107259999957023}
+
+===== 2025-06-17 native solver log =====
+===== 2025-06-17 structured evidence =====
+{"template_date": "2025-06-17", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.018756500000108645}
+
+===== 2025-06-18 native solver log =====
+===== 2025-06-18 structured evidence =====
+{"template_date": "2025-06-18", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.022407599999951344}
+
+===== 2025-06-19 native solver log =====
+===== 2025-06-19 structured evidence =====
+{"template_date": "2025-06-19", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01955290000023524}
+
+===== 2025-06-20 native solver log =====
+===== 2025-06-20 structured evidence =====
+{"template_date": "2025-06-20", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.026832800000192947}
+
+===== 2025-06-21 native solver log =====
+===== 2025-06-21 structured evidence =====
+{"template_date": "2025-06-21", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.055377300000145624}
+
+===== 2025-06-22 native solver log =====
+===== 2025-06-22 structured evidence =====
+{"template_date": "2025-06-22", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02027090000001408}
+
+===== 2025-06-23 native solver log =====
+===== 2025-06-23 structured evidence =====
+{"template_date": "2025-06-23", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.031191299999591138}
+
+===== 2025-06-24 native solver log =====
+===== 2025-06-24 structured evidence =====
+{"template_date": "2025-06-24", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 3.262190576482524e-16, "runtime_seconds": 0.02391650000026857}
+
+===== 2025-06-25 native solver log =====
+===== 2025-06-25 structured evidence =====
+{"template_date": "2025-06-25", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03390080000008311}
+
+===== 2025-06-26 native solver log =====
+===== 2025-06-26 structured evidence =====
+{"template_date": "2025-06-26", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.018939500000215048}
+
+===== 2025-06-27 native solver log =====
+===== 2025-06-27 structured evidence =====
+{"template_date": "2025-06-27", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019563899999866408}
+
+===== 2025-06-28 native solver log =====
+===== 2025-06-28 structured evidence =====
+{"template_date": "2025-06-28", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019779299999754585}
+
+===== 2025-06-29 native solver log =====
+===== 2025-06-29 structured evidence =====
+{"template_date": "2025-06-29", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.017676100000244332}
+
+===== 2025-06-30 native solver log =====
+===== 2025-06-30 structured evidence =====
+{"template_date": "2025-06-30", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02427350000016304}
+
+===== 2025-07-01 native solver log =====
+===== 2025-07-01 structured evidence =====
+{"template_date": "2025-07-01", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.022385500000382308}
+
+===== 2025-07-02 native solver log =====
+===== 2025-07-02 structured evidence =====
+{"template_date": "2025-07-02", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01925570000003063}
+
+===== 2025-07-03 native solver log =====
+===== 2025-07-03 structured evidence =====
+{"template_date": "2025-07-03", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.027665800000249874}
+
+===== 2025-07-04 native solver log =====
+===== 2025-07-04 structured evidence =====
+{"template_date": "2025-07-04", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01853080000000773}
+
+===== 2025-07-05 native solver log =====
+===== 2025-07-05 structured evidence =====
+{"template_date": "2025-07-05", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02592980000008538}
+
+===== 2025-07-06 native solver log =====
+===== 2025-07-06 structured evidence =====
+{"template_date": "2025-07-06", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.021651900000051683}
+
+===== 2025-07-07 native solver log =====
+===== 2025-07-07 structured evidence =====
+{"template_date": "2025-07-07", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01865410000027623}
+
+===== 2025-07-08 native solver log =====
+===== 2025-07-08 structured evidence =====
+{"template_date": "2025-07-08", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019827900000109366}
+
+===== 2025-07-09 native solver log =====
+===== 2025-07-09 structured evidence =====
+{"template_date": "2025-07-09", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019017499999790743}
+
+===== 2025-07-10 native solver log =====
+===== 2025-07-10 structured evidence =====
+{"template_date": "2025-07-10", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020454699999845616}
+
+===== 2025-07-11 native solver log =====
+===== 2025-07-11 structured evidence =====
+{"template_date": "2025-07-11", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.0192655000000741}
+
+===== 2025-07-12 native solver log =====
+===== 2025-07-12 structured evidence =====
+{"template_date": "2025-07-12", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.055847999999969034}
+
+===== 2025-07-13 native solver log =====
+===== 2025-07-13 structured evidence =====
+{"template_date": "2025-07-13", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01790130000017598}
+
+===== 2025-07-14 native solver log =====
+===== 2025-07-14 structured evidence =====
+{"template_date": "2025-07-14", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020500799999808805}
+
+===== 2025-07-15 native solver log =====
+===== 2025-07-15 structured evidence =====
+{"template_date": "2025-07-15", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019843199999741046}
+
+===== 2025-07-16 native solver log =====
+===== 2025-07-16 structured evidence =====
+{"template_date": "2025-07-16", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01934879999998884}
+
+===== 2025-07-17 native solver log =====
+===== 2025-07-17 structured evidence =====
+{"template_date": "2025-07-17", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.021484200000031706}
+
+===== 2025-07-18 native solver log =====
+===== 2025-07-18 structured evidence =====
+{"template_date": "2025-07-18", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.024245799999789597}
+
+===== 2025-07-19 native solver log =====
+===== 2025-07-19 structured evidence =====
+{"template_date": "2025-07-19", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.05939390000003186}
+
+===== 2025-07-20 native solver log =====
+===== 2025-07-20 structured evidence =====
+{"template_date": "2025-07-20", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01788269999997283}
+
+===== 2025-07-21 native solver log =====
+===== 2025-07-21 structured evidence =====
+{"template_date": "2025-07-21", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.018155700000079378}
+
+===== 2025-07-22 native solver log =====
+===== 2025-07-22 structured evidence =====
+{"template_date": "2025-07-22", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019655300000067655}
+
+===== 2025-07-23 native solver log =====
+===== 2025-07-23 structured evidence =====
+{"template_date": "2025-07-23", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01916979999987234}
+
+===== 2025-07-24 native solver log =====
+===== 2025-07-24 structured evidence =====
+{"template_date": "2025-07-24", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.4690511234129519e-16, "runtime_seconds": 0.026152800000090792}
+
+===== 2025-07-25 native solver log =====
+===== 2025-07-25 structured evidence =====
+{"template_date": "2025-07-25", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01965860000018438}
+
+===== 2025-07-26 native solver log =====
+===== 2025-07-26 structured evidence =====
+{"template_date": "2025-07-26", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.0803820999999516}
+
+===== 2025-07-27 native solver log =====
+===== 2025-07-27 structured evidence =====
+{"template_date": "2025-07-27", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.021026200000051176}
+
+===== 2025-07-28 native solver log =====
+===== 2025-07-28 structured evidence =====
+{"template_date": "2025-07-28", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.4812936867948465e-16, "runtime_seconds": 0.02034379999986413}
+
+===== 2025-07-29 native solver log =====
+===== 2025-07-29 structured evidence =====
+{"template_date": "2025-07-29", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.3922067318354082e-16, "runtime_seconds": 0.018452999999681197}
+
+===== 2025-07-30 native solver log =====
+===== 2025-07-30 structured evidence =====
+{"template_date": "2025-07-30", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020309200000156125}
+
+===== 2025-07-31 native solver log =====
+===== 2025-07-31 structured evidence =====
+{"template_date": "2025-07-31", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01813979999997173}
+
+===== 2025-08-01 native solver log =====
+===== 2025-08-01 structured evidence =====
+{"template_date": "2025-08-01", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.05071799999996074}
+
+===== 2025-08-02 native solver log =====
+===== 2025-08-02 structured evidence =====
+{"template_date": "2025-08-02", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.062164100000245526}
+
+===== 2025-08-03 native solver log =====
+===== 2025-08-03 structured evidence =====
+{"template_date": "2025-08-03", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019032700000025216}
+
+===== 2025-08-04 native solver log =====
+===== 2025-08-04 structured evidence =====
+{"template_date": "2025-08-04", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.7035874097863552e-16, "runtime_seconds": 0.02835000000004584}
+
+===== 2025-08-05 native solver log =====
+===== 2025-08-05 structured evidence =====
+{"template_date": "2025-08-05", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.031203500000174245}
+
+===== 2025-08-06 native solver log =====
+===== 2025-08-06 structured evidence =====
+{"template_date": "2025-08-06", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02029080000011163}
+
+===== 2025-08-07 native solver log =====
+===== 2025-08-07 structured evidence =====
+{"template_date": "2025-08-07", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020460000000184664}
+
+===== 2025-08-08 native solver log =====
+===== 2025-08-08 structured evidence =====
+{"template_date": "2025-08-08", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02067880000004152}
+
+===== 2025-08-09 native solver log =====
+===== 2025-08-09 structured evidence =====
+{"template_date": "2025-08-09", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.026600000000144064}
+
+===== 2025-08-10 native solver log =====
+===== 2025-08-10 structured evidence =====
+{"template_date": "2025-08-10", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03637140000000727}
+
+===== 2025-08-11 native solver log =====
+===== 2025-08-11 structured evidence =====
+{"template_date": "2025-08-11", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02874820000033651}
+
+===== 2025-08-12 native solver log =====
+===== 2025-08-12 structured evidence =====
+{"template_date": "2025-08-12", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02065519999996468}
+
+===== 2025-08-13 native solver log =====
+===== 2025-08-13 structured evidence =====
+{"template_date": "2025-08-13", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.021002599999974336}
+
+===== 2025-08-14 native solver log =====
+===== 2025-08-14 structured evidence =====
+{"template_date": "2025-08-14", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03018130000009478}
+
+===== 2025-08-15 native solver log =====
+===== 2025-08-15 structured evidence =====
+{"template_date": "2025-08-15", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.09776779999992868}
+
+===== 2025-08-16 native solver log =====
+===== 2025-08-16 structured evidence =====
+{"template_date": "2025-08-16", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.031829100000322796}
+
+===== 2025-08-17 native solver log =====
+===== 2025-08-17 structured evidence =====
+{"template_date": "2025-08-17", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03238240000018777}
+
+===== 2025-08-18 native solver log =====
+===== 2025-08-18 structured evidence =====
+{"template_date": "2025-08-18", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.0282030999997005}
+
+===== 2025-08-19 native solver log =====
+===== 2025-08-19 structured evidence =====
+{"template_date": "2025-08-19", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.028722900000047957}
+
+===== 2025-08-20 native solver log =====
+===== 2025-08-20 structured evidence =====
+{"template_date": "2025-08-20", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.642990566258621e-16, "runtime_seconds": 0.02184769999985292}
+
+===== 2025-08-21 native solver log =====
+===== 2025-08-21 structured evidence =====
+{"template_date": "2025-08-21", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01864720000003217}
+
+===== 2025-08-22 native solver log =====
+===== 2025-08-22 structured evidence =====
+{"template_date": "2025-08-22", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01893240000026708}
+
+===== 2025-08-23 native solver log =====
+===== 2025-08-23 structured evidence =====
+{"template_date": "2025-08-23", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.024028000000271277}
+
+===== 2025-08-24 native solver log =====
+===== 2025-08-24 structured evidence =====
+{"template_date": "2025-08-24", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019933900000069116}
+
+===== 2025-08-25 native solver log =====
+===== 2025-08-25 structured evidence =====
+{"template_date": "2025-08-25", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02227999999968233}
+
+===== 2025-08-26 native solver log =====
+===== 2025-08-26 structured evidence =====
+{"template_date": "2025-08-26", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.018755800000235467}
+
+===== 2025-08-27 native solver log =====
+===== 2025-08-27 structured evidence =====
+{"template_date": "2025-08-27", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.021300200000041514}
+
+===== 2025-08-28 native solver log =====
+===== 2025-08-28 structured evidence =====
+{"template_date": "2025-08-28", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019290400000045338}
+
+===== 2025-08-29 native solver log =====
+===== 2025-08-29 structured evidence =====
+{"template_date": "2025-08-29", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01937820000011925}
+
+===== 2025-08-30 native solver log =====
+===== 2025-08-30 structured evidence =====
+{"template_date": "2025-08-30", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020868200000222714}
+
+===== 2025-08-31 native solver log =====
+===== 2025-08-31 structured evidence =====
+{"template_date": "2025-08-31", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.642127319859834e-16, "runtime_seconds": 0.02154179999979533}
+
+===== 2025-09-01 native solver log =====
+===== 2025-09-01 structured evidence =====
+{"template_date": "2025-09-01", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019239700000071025}
+
+===== 2025-09-02 native solver log =====
+===== 2025-09-02 structured evidence =====
+{"template_date": "2025-09-02", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03140209999992294}
+
+===== 2025-09-03 native solver log =====
+===== 2025-09-03 structured evidence =====
+{"template_date": "2025-09-03", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.628945455828247e-16, "runtime_seconds": 0.021177800000259595}
+
+===== 2025-09-04 native solver log =====
+===== 2025-09-04 structured evidence =====
+{"template_date": "2025-09-04", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.565027670185555e-16, "runtime_seconds": 0.01957910000010088}
+
+===== 2025-09-05 native solver log =====
+===== 2025-09-05 structured evidence =====
+{"template_date": "2025-09-05", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02420899999970061}
+
+===== 2025-09-06 native solver log =====
+===== 2025-09-06 structured evidence =====
+{"template_date": "2025-09-06", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.07708890000003521}
+
+===== 2025-09-07 native solver log =====
+===== 2025-09-07 structured evidence =====
+{"template_date": "2025-09-07", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.022528299999976298}
+
+===== 2025-09-08 native solver log =====
+===== 2025-09-08 structured evidence =====
+{"template_date": "2025-09-08", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.029753900000287103}
+
+===== 2025-09-09 native solver log =====
+===== 2025-09-09 structured evidence =====
+{"template_date": "2025-09-09", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.021129199999904813}
+
+===== 2025-09-10 native solver log =====
+===== 2025-09-10 structured evidence =====
+{"template_date": "2025-09-10", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.04717479999999341}
+
+===== 2025-09-11 native solver log =====
+===== 2025-09-11 structured evidence =====
+{"template_date": "2025-09-11", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020525700000234792}
+
+===== 2025-09-12 native solver log =====
+===== 2025-09-12 structured evidence =====
+{"template_date": "2025-09-12", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.025179400000070018}
+
+===== 2025-09-13 native solver log =====
+===== 2025-09-13 structured evidence =====
+{"template_date": "2025-09-13", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.044276000000081694}
+
+===== 2025-09-14 native solver log =====
+===== 2025-09-14 structured evidence =====
+{"template_date": "2025-09-14", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.047374000000218075}
+
+===== 2025-09-15 native solver log =====
+===== 2025-09-15 structured evidence =====
+{"template_date": "2025-09-15", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02072169999973994}
+
+===== 2025-09-16 native solver log =====
+===== 2025-09-16 structured evidence =====
+{"template_date": "2025-09-16", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.04324110000015935}
+
+===== 2025-09-17 native solver log =====
+===== 2025-09-17 structured evidence =====
+{"template_date": "2025-09-17", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01960240000016711}
+
+===== 2025-09-18 native solver log =====
+===== 2025-09-18 structured evidence =====
+{"template_date": "2025-09-18", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.028710300000057032}
+
+===== 2025-09-19 native solver log =====
+===== 2025-09-19 structured evidence =====
+{"template_date": "2025-09-19", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03355539999984103}
+
+===== 2025-09-20 native solver log =====
+===== 2025-09-20 structured evidence =====
+{"template_date": "2025-09-20", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.04624169999988226}
+
+===== 2025-09-21 native solver log =====
+===== 2025-09-21 structured evidence =====
+{"template_date": "2025-09-21", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019219799999973475}
+
+===== 2025-09-22 native solver log =====
+===== 2025-09-22 structured evidence =====
+{"template_date": "2025-09-22", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.028595299999778945}
+
+===== 2025-09-23 native solver log =====
+===== 2025-09-23 structured evidence =====
+{"template_date": "2025-09-23", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020374500000343687}
+
+===== 2025-09-24 native solver log =====
+===== 2025-09-24 structured evidence =====
+{"template_date": "2025-09-24", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020658999999795924}
+
+===== 2025-09-25 native solver log =====
+===== 2025-09-25 structured evidence =====
+{"template_date": "2025-09-25", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019272799999725976}
+
+===== 2025-09-26 native solver log =====
+===== 2025-09-26 structured evidence =====
+{"template_date": "2025-09-26", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03125550000004296}
+
+===== 2025-09-27 native solver log =====
+===== 2025-09-27 structured evidence =====
+{"template_date": "2025-09-27", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.0616690000001654}
+
+===== 2025-09-28 native solver log =====
+===== 2025-09-28 structured evidence =====
+{"template_date": "2025-09-28", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.0203470000001289}
+
+===== 2025-09-29 native solver log =====
+===== 2025-09-29 structured evidence =====
+{"template_date": "2025-09-29", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020869200000106503}
+
+===== 2025-09-30 native solver log =====
+===== 2025-09-30 structured evidence =====
+{"template_date": "2025-09-30", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.7371809031001283e-16, "runtime_seconds": 0.019789200000104756}
+
+===== 2025-10-01 native solver log =====
+===== 2025-10-01 structured evidence =====
+{"template_date": "2025-10-01", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.023358699999789678}
+
+===== 2025-10-02 native solver log =====
+===== 2025-10-02 structured evidence =====
+{"template_date": "2025-10-02", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03200680000009015}
+
+===== 2025-10-03 native solver log =====
+===== 2025-10-03 structured evidence =====
+{"template_date": "2025-10-03", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.07898270000032426}
+
+===== 2025-10-04 native solver log =====
+===== 2025-10-04 structured evidence =====
+{"template_date": "2025-10-04", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.07726030000003448}
+
+===== 2025-10-05 native solver log =====
+===== 2025-10-05 structured evidence =====
+{"template_date": "2025-10-05", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.021974999999656575}
+
+===== 2025-10-06 native solver log =====
+===== 2025-10-06 structured evidence =====
+{"template_date": "2025-10-06", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03130979999968986}
+
+===== 2025-10-07 native solver log =====
+===== 2025-10-07 structured evidence =====
+{"template_date": "2025-10-07", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020780399999694055}
+
+===== 2025-10-08 native solver log =====
+===== 2025-10-08 structured evidence =====
+{"template_date": "2025-10-08", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.022173300000304152}
+
+===== 2025-10-09 native solver log =====
+===== 2025-10-09 structured evidence =====
+{"template_date": "2025-10-09", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020128699999986566}
+
+===== 2025-10-10 native solver log =====
+===== 2025-10-10 structured evidence =====
+{"template_date": "2025-10-10", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.199766797669768e-16, "runtime_seconds": 0.045882699999765464}
+
+===== 2025-10-11 native solver log =====
+===== 2025-10-11 structured evidence =====
+{"template_date": "2025-10-11", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.06883770000013101}
+
+===== 2025-10-12 native solver log =====
+===== 2025-10-12 structured evidence =====
+{"template_date": "2025-10-12", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.022626500000114902}
+
+===== 2025-10-13 native solver log =====
+===== 2025-10-13 structured evidence =====
+{"template_date": "2025-10-13", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020555999999942287}
+
+===== 2025-10-14 native solver log =====
+===== 2025-10-14 structured evidence =====
+{"template_date": "2025-10-14", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02205420000018421}
+
+===== 2025-10-15 native solver log =====
+===== 2025-10-15 structured evidence =====
+{"template_date": "2025-10-15", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.022077399999943736}
+
+===== 2025-10-16 native solver log =====
+===== 2025-10-16 structured evidence =====
+{"template_date": "2025-10-16", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019454700000096636}
+
+===== 2025-10-17 native solver log =====
+===== 2025-10-17 structured evidence =====
+{"template_date": "2025-10-17", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03923170000007303}
+
+===== 2025-10-18 native solver log =====
+===== 2025-10-18 structured evidence =====
+{"template_date": "2025-10-18", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03092069999956948}
+
+===== 2025-10-19 native solver log =====
+===== 2025-10-19 structured evidence =====
+{"template_date": "2025-10-19", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02041460000009465}
+
+===== 2025-10-20 native solver log =====
+===== 2025-10-20 structured evidence =====
+{"template_date": "2025-10-20", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02010149999978239}
+
+===== 2025-10-21 native solver log =====
+===== 2025-10-21 structured evidence =====
+{"template_date": "2025-10-21", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01939829999992071}
+
+===== 2025-10-22 native solver log =====
+===== 2025-10-22 structured evidence =====
+{"template_date": "2025-10-22", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.030832699999791657}
+
+===== 2025-10-23 native solver log =====
+===== 2025-10-23 structured evidence =====
+{"template_date": "2025-10-23", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.017471300000124756}
+
+===== 2025-10-24 native solver log =====
+===== 2025-10-24 structured evidence =====
+{"template_date": "2025-10-24", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.021264099999825703}
+
+===== 2025-10-25 native solver log =====
+===== 2025-10-25 structured evidence =====
+{"template_date": "2025-10-25", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.027265599999736878}
+
+===== 2025-10-26 native solver log =====
+===== 2025-10-26 structured evidence =====
+{"template_date": "2025-10-26", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020232599999872036}
+
+===== 2025-10-27 native solver log =====
+===== 2025-10-27 structured evidence =====
+{"template_date": "2025-10-27", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.018009299999903305}
+
+===== 2025-10-28 native solver log =====
+===== 2025-10-28 structured evidence =====
+{"template_date": "2025-10-28", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.0206081000001177}
+
+===== 2025-10-29 native solver log =====
+===== 2025-10-29 structured evidence =====
+{"template_date": "2025-10-29", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02246610000020155}
+
+===== 2025-10-30 native solver log =====
+===== 2025-10-30 structured evidence =====
+{"template_date": "2025-10-30", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.018762600000172824}
+
+===== 2025-10-31 native solver log =====
+===== 2025-10-31 structured evidence =====
+{"template_date": "2025-10-31", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.06351949999998396}
+
+===== 2025-11-01 native solver log =====
+===== 2025-11-01 structured evidence =====
+{"template_date": "2025-11-01", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02188849999993181}
+
+===== 2025-11-02 native solver log =====
+===== 2025-11-02 structured evidence =====
+{"template_date": "2025-11-02", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.020633799999814073}
+
+===== 2025-11-03 native solver log =====
+===== 2025-11-03 structured evidence =====
+{"template_date": "2025-11-03", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.0200566999997136}
+
+===== 2025-11-04 native solver log =====
+===== 2025-11-04 structured evidence =====
+{"template_date": "2025-11-04", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.031151000000136264}
+
+===== 2025-11-05 native solver log =====
+===== 2025-11-05 structured evidence =====
+{"template_date": "2025-11-05", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01797260000012102}
+
+===== 2025-11-06 native solver log =====
+===== 2025-11-06 structured evidence =====
+{"template_date": "2025-11-06", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02006409999967218}
+
+===== 2025-11-07 native solver log =====
+===== 2025-11-07 structured evidence =====
+{"template_date": "2025-11-07", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.05444020000004457}
+
+===== 2025-11-08 native solver log =====
+===== 2025-11-08 structured evidence =====
+{"template_date": "2025-11-08", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02928860000019995}
+
+===== 2025-11-09 native solver log =====
+===== 2025-11-09 structured evidence =====
+{"template_date": "2025-11-09", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.018574199999875418}
+
+===== 2025-11-10 native solver log =====
+===== 2025-11-10 structured evidence =====
+{"template_date": "2025-11-10", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02235419999988153}
+
+===== 2025-11-11 native solver log =====
+===== 2025-11-11 structured evidence =====
+{"template_date": "2025-11-11", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.017436199999792734}
+
+===== 2025-11-12 native solver log =====
+===== 2025-11-12 structured evidence =====
+{"template_date": "2025-11-12", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.017776099999991857}
+
+===== 2025-11-13 native solver log =====
+===== 2025-11-13 structured evidence =====
+{"template_date": "2025-11-13", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.018775600000026316}
+
+===== 2025-11-14 native solver log =====
+===== 2025-11-14 structured evidence =====
+{"template_date": "2025-11-14", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 2.0034607377383455e-16, "runtime_seconds": 0.050125499999921885}
+
+===== 2025-11-15 native solver log =====
+===== 2025-11-15 structured evidence =====
+{"template_date": "2025-11-15", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.04430579999961992}
+
+===== 2025-11-16 native solver log =====
+===== 2025-11-16 structured evidence =====
+{"template_date": "2025-11-16", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01749340000014854}
+
+===== 2025-11-17 native solver log =====
+===== 2025-11-17 structured evidence =====
+{"template_date": "2025-11-17", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.4695781233175128e-16, "runtime_seconds": 0.018359899999722984}
+
+===== 2025-11-18 native solver log =====
+===== 2025-11-18 structured evidence =====
+{"template_date": "2025-11-18", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.0197478999998566}
+
+===== 2025-11-19 native solver log =====
+===== 2025-11-19 structured evidence =====
+{"template_date": "2025-11-19", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.012948099999903206}
+
+===== 2025-11-20 native solver log =====
+===== 2025-11-20 structured evidence =====
+{"template_date": "2025-11-20", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019168399999671237}
+
+===== 2025-11-21 native solver log =====
+===== 2025-11-21 structured evidence =====
+{"template_date": "2025-11-21", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.024510100000043167}
+
+===== 2025-11-22 native solver log =====
+===== 2025-11-22 structured evidence =====
+{"template_date": "2025-11-22", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.030181399999946734}
+
+===== 2025-11-23 native solver log =====
+===== 2025-11-23 structured evidence =====
+{"template_date": "2025-11-23", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.025020999999924243}
+
+===== 2025-11-24 native solver log =====
+===== 2025-11-24 structured evidence =====
+{"template_date": "2025-11-24", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.0254598999999871}
+
+===== 2025-11-25 native solver log =====
+===== 2025-11-25 structured evidence =====
+{"template_date": "2025-11-25", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.0180700999999317}
+
+===== 2025-11-26 native solver log =====
+===== 2025-11-26 structured evidence =====
+{"template_date": "2025-11-26", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.021406800000022486}
+
+===== 2025-11-27 native solver log =====
+===== 2025-11-27 structured evidence =====
+{"template_date": "2025-11-27", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.023880399999598012}
+
+===== 2025-11-28 native solver log =====
+===== 2025-11-28 structured evidence =====
+{"template_date": "2025-11-28", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.04560720000017682}
+
+===== 2025-11-29 native solver log =====
+===== 2025-11-29 structured evidence =====
+{"template_date": "2025-11-29", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.03596759999982169}
+
+===== 2025-11-30 native solver log =====
+===== 2025-11-30 structured evidence =====
+{"template_date": "2025-11-30", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01122559999976147}
+
+===== 2025-12-01 native solver log =====
+===== 2025-12-01 structured evidence =====
+{"template_date": "2025-12-01", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.013592199999948207}
+
+===== 2025-12-02 native solver log =====
+===== 2025-12-02 structured evidence =====
+{"template_date": "2025-12-02", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01200010000002294}
+
+===== 2025-12-03 native solver log =====
+===== 2025-12-03 structured evidence =====
+{"template_date": "2025-12-03", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.017526600000110193}
+
+===== 2025-12-04 native solver log =====
+===== 2025-12-04 structured evidence =====
+{"template_date": "2025-12-04", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01456689999986338}
+
+===== 2025-12-05 native solver log =====
+===== 2025-12-05 structured evidence =====
+{"template_date": "2025-12-05", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.031041000000186614}
+
+===== 2025-12-06 native solver log =====
+===== 2025-12-06 structured evidence =====
+{"template_date": "2025-12-06", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.032189000000016676}
+
+===== 2025-12-07 native solver log =====
+===== 2025-12-07 structured evidence =====
+{"template_date": "2025-12-07", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.014507699999739998}
+
+===== 2025-12-08 native solver log =====
+===== 2025-12-08 structured evidence =====
+{"template_date": "2025-12-08", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.023469100000056642}
+
+===== 2025-12-09 native solver log =====
+===== 2025-12-09 structured evidence =====
+{"template_date": "2025-12-09", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.015413699999953678}
+
+===== 2025-12-10 native solver log =====
+===== 2025-12-10 structured evidence =====
+{"template_date": "2025-12-10", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.015542099999947823}
+
+===== 2025-12-11 native solver log =====
+===== 2025-12-11 structured evidence =====
+{"template_date": "2025-12-11", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.013235999999778869}
+
+===== 2025-12-12 native solver log =====
+===== 2025-12-12 structured evidence =====
+{"template_date": "2025-12-12", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02117610000004788}
+
+===== 2025-12-13 native solver log =====
+===== 2025-12-13 structured evidence =====
+{"template_date": "2025-12-13", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019497300000239193}
+
+===== 2025-12-14 native solver log =====
+===== 2025-12-14 structured evidence =====
+{"template_date": "2025-12-14", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.012990199999876495}
+
+===== 2025-12-15 native solver log =====
+===== 2025-12-15 structured evidence =====
+{"template_date": "2025-12-15", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.022732999999789172}
+
+===== 2025-12-16 native solver log =====
+===== 2025-12-16 structured evidence =====
+{"template_date": "2025-12-16", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.202002418017098e-16, "runtime_seconds": 0.03008140000019921}
+
+===== 2025-12-17 native solver log =====
+===== 2025-12-17 structured evidence =====
+{"template_date": "2025-12-17", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.012409299999944778}
+
+===== 2025-12-18 native solver log =====
+===== 2025-12-18 structured evidence =====
+{"template_date": "2025-12-18", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.012666499999795633}
+
+===== 2025-12-19 native solver log =====
+===== 2025-12-19 structured evidence =====
+{"template_date": "2025-12-19", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.0203470000001289}
+
+===== 2025-12-20 native solver log =====
+===== 2025-12-20 structured evidence =====
+{"template_date": "2025-12-20", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.0205206000000544}
+
+===== 2025-12-21 native solver log =====
+===== 2025-12-21 structured evidence =====
+{"template_date": "2025-12-21", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02062019999993936}
+
+===== 2025-12-22 native solver log =====
+===== 2025-12-22 structured evidence =====
+{"template_date": "2025-12-22", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.023795199999767647}
+
+===== 2025-12-23 native solver log =====
+===== 2025-12-23 structured evidence =====
+{"template_date": "2025-12-23", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.022885000000314903}
+
+===== 2025-12-24 native solver log =====
+===== 2025-12-24 structured evidence =====
+{"template_date": "2025-12-24", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.011658700000225508}
+
+===== 2025-12-25 native solver log =====
+===== 2025-12-25 structured evidence =====
+{"template_date": "2025-12-25", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.014740799999799492}
+
+===== 2025-12-26 native solver log =====
+===== 2025-12-26 structured evidence =====
+{"template_date": "2025-12-26", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.019629299999905925}
+
+===== 2025-12-27 native solver log =====
+===== 2025-12-27 structured evidence =====
+{"template_date": "2025-12-27", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.025719499999922846}
+
+===== 2025-12-28 native solver log =====
+===== 2025-12-28 structured evidence =====
+{"template_date": "2025-12-28", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.023671500000091328}
+
+===== 2025-12-29 native solver log =====
+===== 2025-12-29 structured evidence =====
+{"template_date": "2025-12-29", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.01173560000006546}
+
+===== 2025-12-30 native solver log =====
+===== 2025-12-30 structured evidence =====
+{"template_date": "2025-12-30", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 0.0, "runtime_seconds": 0.02208959999961735}
+
+===== 2025-12-31 native solver log =====
+===== 2025-12-31 structured evidence =====
+{"template_date": "2025-12-31", "period": "formal_output", "status": "OPTIMAL", "solver_name": "HiGHS", "solver_version": "1.15.1", "termination_condition": "Optimal", "mip_gap": 1.2516352612463603e-16, "runtime_seconds": 0.02328850000003513}

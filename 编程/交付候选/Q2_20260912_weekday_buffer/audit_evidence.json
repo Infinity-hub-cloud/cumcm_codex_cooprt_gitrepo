@@ -1,0 +1,1630 @@
+{
+  "suite": "D:\\Users\\LENOVO\\Desktop\\数学建模\\国赛团队共享工作区\\编程\\runs\\q2_low_complexity_20260912_002010",
+  "scope": "read-only independent CSV/workbook audit; no optimization invoked",
+  "arms": {
+    "baseline": {
+      "failures": [],
+      "checks": {
+        "all_105120_rows_and_unique_track_time": true,
+        "emergency_positive_part": true,
+        "spill_positive_part": true,
+        "cost_recomputed": true,
+        "soc_recomputed": true,
+        "soc_limits": true,
+        "power_limits_and_mutual_exclusion": true,
+        "all_daily_assertions": true,
+        "all_export_checks": true,
+        "B0_continuous_soc": true,
+        "B0_continuous_10min": true,
+        "B1_continuous_soc": true,
+        "B1_continuous_10min": true,
+        "predictions_load.csv_source_interval_end_no_future": true,
+        "predictions_load.csv_load_source_interval_end_no_future": true,
+        "predictions_load.csv_buffer_source_end_no_future": true,
+        "predictions_load.csv_cutoff_equals_decision": true,
+        "predictions_pv.csv_source_interval_end_no_future": true,
+        "predictions_pv.csv_load_source_interval_end_no_future": true,
+        "predictions_pv.csv_buffer_source_end_no_future": true,
+        "predictions_pv.csv_cutoff_equals_decision": true
+      },
+      "daily_assertion_records": 730,
+      "export_checks": 20,
+      "warnings": [
+        "WARNING-Q2-INPUT-ROUNDING-001"
+      ],
+      "human_feedback_pending": true,
+      "prediction_overall": [
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "MAE",
+          "value": 651.6096450266134,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "RMSE",
+          "value": 1129.2169618663152,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "nMAE",
+          "value": 0.14114042808733052,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "bias",
+          "value": -5.44794890635395,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "max_absolute_error",
+          "value": 4589.6173,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "error_p50",
+          "value": 187.89999999999964,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "error_p90",
+          "value": 2484.81675,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "error_p95",
+          "value": 2783.101025,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "error_p99",
+          "value": 3447.3627100000017,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "sample_count",
+          "value": 48096,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "valid_coverage",
+          "value": 1,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "peak_threshold_p90",
+          "value": 6590.1915,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "peak_MAE",
+          "value": 733.6079961122663,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "peak_max_absolute_error",
+          "value": 4589.6173,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "peak_sample_count",
+          "value": 4810,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "all_day_MAE",
+          "value": 185.34649152736193,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "all_day_RMSE",
+          "value": 375.17487813659034,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "bias",
+          "value": 0.7610173132900873,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "max_absolute_error",
+          "value": 3228.8724999999995,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "sample_count",
+          "value": 48096,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "valid_coverage",
+          "value": 1,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "daylight_MAE",
+          "value": 331.6338315997024,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "daylight_RMSE",
+          "value": 501.8495969876943,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "daylight_sample_count",
+          "value": 26880,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "ramp_MAE",
+          "value": 67.91579832921569,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "ramp_sample_count",
+          "value": 47762,
+          "sample_count": 48096
+        }
+      ],
+      "totals_recomputed": {
+        "B0": 24567320.99432995,
+        "B1": 22835273.506425463
+      },
+      "maximum_cost_residual": 9.094947017729282e-13,
+      "maximum_soc_residual": 3.3219293982256204e-10
+    },
+    "weekday": {
+      "failures": [],
+      "checks": {
+        "all_105120_rows_and_unique_track_time": true,
+        "emergency_positive_part": true,
+        "spill_positive_part": true,
+        "cost_recomputed": true,
+        "soc_recomputed": true,
+        "soc_limits": true,
+        "power_limits_and_mutual_exclusion": true,
+        "all_daily_assertions": true,
+        "all_export_checks": true,
+        "B0_continuous_soc": true,
+        "B0_continuous_10min": true,
+        "B1_continuous_soc": true,
+        "B1_continuous_10min": true,
+        "predictions_load.csv_source_interval_end_no_future": true,
+        "predictions_load.csv_load_source_interval_end_no_future": true,
+        "predictions_load.csv_buffer_source_end_no_future": true,
+        "predictions_load.csv_cutoff_equals_decision": true,
+        "predictions_pv.csv_source_interval_end_no_future": true,
+        "predictions_pv.csv_load_source_interval_end_no_future": true,
+        "predictions_pv.csv_buffer_source_end_no_future": true,
+        "predictions_pv.csv_cutoff_equals_decision": true
+      },
+      "daily_assertion_records": 730,
+      "export_checks": 20,
+      "warnings": [
+        "WARNING-Q2-INPUT-ROUNDING-001"
+      ],
+      "human_feedback_pending": true,
+      "prediction_overall": [
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "MAE",
+          "value": 176.7913137371091,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "RMSE",
+          "value": 244.2815857177465,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "nMAE",
+          "value": 0.03829348121751331,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "bias",
+          "value": 1.9610611048735886,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "max_absolute_error",
+          "value": 1364.9799999999996,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "error_p50",
+          "value": 131.33679999999958,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "error_p90",
+          "value": 375.4390000000001,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "error_p95",
+          "value": 515.0230749999998,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "error_p99",
+          "value": 834.7592150000008,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "sample_count",
+          "value": 48096,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "valid_coverage",
+          "value": 1,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "peak_threshold_p90",
+          "value": 6590.1915,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "peak_MAE",
+          "value": 222.49188912681913,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "peak_max_absolute_error",
+          "value": 1251.1599999999999,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "peak_sample_count",
+          "value": 4810,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "all_day_MAE",
+          "value": 185.34649152736193,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "all_day_RMSE",
+          "value": 375.17487813659034,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "bias",
+          "value": 0.7610173132900873,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "max_absolute_error",
+          "value": 3228.8724999999995,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "sample_count",
+          "value": 48096,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "valid_coverage",
+          "value": 1,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "daylight_MAE",
+          "value": 331.6338315997024,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "daylight_RMSE",
+          "value": 501.8495969876943,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "daylight_sample_count",
+          "value": 26880,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "ramp_MAE",
+          "value": 67.91579832921569,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "ramp_sample_count",
+          "value": 47762,
+          "sample_count": 48096
+        }
+      ],
+      "totals_recomputed": {
+        "B0": 19374617.232890416,
+        "B1": 16550429.813062578
+      },
+      "maximum_cost_residual": 9.094947017729282e-13,
+      "maximum_soc_residual": 3.979039320256561e-10
+    },
+    "recent_buffer": {
+      "failures": [],
+      "checks": {
+        "all_105120_rows_and_unique_track_time": true,
+        "emergency_positive_part": true,
+        "spill_positive_part": true,
+        "cost_recomputed": true,
+        "soc_recomputed": true,
+        "soc_limits": true,
+        "power_limits_and_mutual_exclusion": true,
+        "all_daily_assertions": true,
+        "all_export_checks": true,
+        "B0_continuous_soc": true,
+        "B0_continuous_10min": true,
+        "B1_continuous_soc": true,
+        "B1_continuous_10min": true,
+        "predictions_load.csv_source_interval_end_no_future": true,
+        "predictions_load.csv_load_source_interval_end_no_future": true,
+        "predictions_load.csv_buffer_source_end_no_future": true,
+        "predictions_load.csv_cutoff_equals_decision": true,
+        "predictions_pv.csv_source_interval_end_no_future": true,
+        "predictions_pv.csv_load_source_interval_end_no_future": true,
+        "predictions_pv.csv_buffer_source_end_no_future": true,
+        "predictions_pv.csv_cutoff_equals_decision": true
+      },
+      "daily_assertion_records": 730,
+      "export_checks": 20,
+      "warnings": [
+        "WARNING-Q2-INPUT-ROUNDING-001"
+      ],
+      "human_feedback_pending": true,
+      "prediction_overall": [
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "MAE",
+          "value": 651.6096450266134,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "RMSE",
+          "value": 1129.2169618663152,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "nMAE",
+          "value": 0.14114042808733052,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "bias",
+          "value": -5.44794890635395,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "max_absolute_error",
+          "value": 4589.6173,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "error_p50",
+          "value": 187.89999999999964,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "error_p90",
+          "value": 2484.81675,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "error_p95",
+          "value": 2783.101025,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "error_p99",
+          "value": 3447.3627100000017,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "sample_count",
+          "value": 48096,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "valid_coverage",
+          "value": 1,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "peak_threshold_p90",
+          "value": 6590.1915,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "peak_MAE",
+          "value": 733.6079961122663,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "peak_max_absolute_error",
+          "value": 4589.6173,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "peak_sample_count",
+          "value": 4810,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "all_day_MAE",
+          "value": 185.34649152736193,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "all_day_RMSE",
+          "value": 375.17487813659034,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "bias",
+          "value": 0.7610173132900873,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "max_absolute_error",
+          "value": 3228.8724999999995,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "sample_count",
+          "value": 48096,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "valid_coverage",
+          "value": 1,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "daylight_MAE",
+          "value": 331.6338315997024,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "daylight_RMSE",
+          "value": 501.8495969876943,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "daylight_sample_count",
+          "value": 26880,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "ramp_MAE",
+          "value": 67.91579832921569,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "ramp_sample_count",
+          "value": 47762,
+          "sample_count": 48096
+        }
+      ],
+      "totals_recomputed": {
+        "B0": 23911164.61864363,
+        "B1": 21171852.612290736
+      },
+      "maximum_cost_residual": 9.094947017729282e-13,
+      "maximum_soc_residual": 1.90084392670542e-10
+    },
+    "weekday_buffer": {
+      "failures": [],
+      "checks": {
+        "all_105120_rows_and_unique_track_time": true,
+        "emergency_positive_part": true,
+        "spill_positive_part": true,
+        "cost_recomputed": true,
+        "soc_recomputed": true,
+        "soc_limits": true,
+        "power_limits_and_mutual_exclusion": true,
+        "all_daily_assertions": true,
+        "all_export_checks": true,
+        "B0_continuous_soc": true,
+        "B0_continuous_10min": true,
+        "B1_continuous_soc": true,
+        "B1_continuous_10min": true,
+        "predictions_load.csv_source_interval_end_no_future": true,
+        "predictions_load.csv_load_source_interval_end_no_future": true,
+        "predictions_load.csv_buffer_source_end_no_future": true,
+        "predictions_load.csv_cutoff_equals_decision": true,
+        "predictions_pv.csv_source_interval_end_no_future": true,
+        "predictions_pv.csv_load_source_interval_end_no_future": true,
+        "predictions_pv.csv_buffer_source_end_no_future": true,
+        "predictions_pv.csv_cutoff_equals_decision": true
+      },
+      "daily_assertion_records": 730,
+      "export_checks": 20,
+      "warnings": [
+        "WARNING-Q2-INPUT-ROUNDING-001"
+      ],
+      "human_feedback_pending": true,
+      "prediction_overall": [
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "MAE",
+          "value": 176.7913137371091,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "RMSE",
+          "value": 244.2815857177465,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "nMAE",
+          "value": 0.03829348121751331,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "bias",
+          "value": 1.9610611048735886,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "max_absolute_error",
+          "value": 1364.9799999999996,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "error_p50",
+          "value": 131.33679999999958,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "error_p90",
+          "value": 375.4390000000001,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "error_p95",
+          "value": 515.0230749999998,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "error_p99",
+          "value": 834.7592150000008,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "sample_count",
+          "value": 48096,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "valid_coverage",
+          "value": 1,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "peak_threshold_p90",
+          "value": 6590.1915,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "peak_MAE",
+          "value": 222.49188912681913,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "peak_max_absolute_error",
+          "value": 1251.1599999999999,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "load",
+          "metric": "peak_sample_count",
+          "value": 4810,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "all_day_MAE",
+          "value": 185.34649152736193,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "all_day_RMSE",
+          "value": 375.17487813659034,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "bias",
+          "value": 0.7610173132900873,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "max_absolute_error",
+          "value": 3228.8724999999995,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "sample_count",
+          "value": 48096,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "valid_coverage",
+          "value": 1,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "daylight_MAE",
+          "value": 331.6338315997024,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "daylight_RMSE",
+          "value": 501.8495969876943,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "daylight_sample_count",
+          "value": 26880,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "ramp_MAE",
+          "value": 67.91579832921569,
+          "sample_count": 48096
+        },
+        {
+          "group": "formal_output",
+          "series": "pv",
+          "metric": "ramp_sample_count",
+          "value": 47762,
+          "sample_count": 48096
+        }
+      ],
+      "totals_recomputed": {
+        "B0": 18787537.763189655,
+        "B1": 15212046.690710833
+      },
+      "maximum_cost_residual": 9.094947017729282e-13,
+      "maximum_soc_residual": 5.4569682106375694e-12
+    }
+  },
+  "selected_workbook_independent_check": {
+    "numeric_cells_checked": 57301,
+    "errors": [],
+    "plan_days": 334,
+    "storage_rows": 2004,
+    "emergency_event_rows": 3861
+  },
+  "paper_tables": {
+    "table1": [
+      [
+        "2025-03-20",
+        0,
+        626.9058,
+        0,
+        385.8351,
+        755.7073,
+        0,
+        69597.7588,
+        42450.634
+      ],
+      [
+        "2025-06-21",
+        0,
+        0,
+        0,
+        143.0751,
+        464.2424,
+        0,
+        39248.585,
+        23312.049
+      ],
+      [
+        "2025-09-23",
+        0,
+        601.3395,
+        0,
+        513.3301,
+        824.3017,
+        0,
+        71675.0147,
+        44501.3161
+      ],
+      [
+        "2025-12-21",
+        0,
+        1035.7757,
+        0,
+        810.1166,
+        736.818,
+        0,
+        101198.0731,
+        65492.3686
+      ]
+    ],
+    "table2": [
+      [
+        "2025-03-20",
+        "0:00-4:00",
+        9000,
+        0,
+        "00:00",
+        1200
+      ],
+      [
+        "2025-03-20",
+        "4:00-8:00",
+        1666.6667,
+        4396.4254,
+        "24:00",
+        1200
+      ],
+      [
+        "2025-03-20",
+        "8:00-12:00",
+        5245.7001,
+        4243.5746,
+        "",
+        ""
+      ],
+      [
+        "2025-03-20",
+        "12:00-16:00",
+        6012.6623,
+        479.2735,
+        "",
+        ""
+      ],
+      [
+        "2025-03-20",
+        "16:00-20:00",
+        0,
+        4915.8905,
+        "",
+        ""
+      ],
+      [
+        "2025-03-20",
+        "20:00-24:00",
+        0,
+        3724.1095,
+        "",
+        ""
+      ],
+      [
+        "2025-06-21",
+        "0:00-4:00",
+        1532.3167,
+        0,
+        "00:00",
+        1200
+      ],
+      [
+        "2025-06-21",
+        "4:00-8:00",
+        833.3333,
+        1916.1765,
+        "24:00",
+        1200
+      ],
+      [
+        "2025-06-21",
+        "8:00-12:00",
+        5126.4486,
+        0,
+        "",
+        ""
+      ],
+      [
+        "2025-06-21",
+        "12:00-16:00",
+        5540.218,
+        0,
+        "",
+        ""
+      ],
+      [
+        "2025-06-21",
+        "16:00-20:00",
+        0,
+        5152.1737,
+        "",
+        ""
+      ],
+      [
+        "2025-06-21",
+        "20:00-24:00",
+        0,
+        3487.8263,
+        "",
+        ""
+      ],
+      [
+        "2025-09-23",
+        "0:00-4:00",
+        9000,
+        0,
+        "00:00",
+        1200
+      ],
+      [
+        "2025-09-23",
+        "4:00-8:00",
+        1666.6667,
+        5689.1326,
+        "24:00",
+        1200
+      ],
+      [
+        "2025-09-23",
+        "8:00-12:00",
+        4990.455,
+        2950.8674,
+        "",
+        ""
+      ],
+      [
+        "2025-09-23",
+        "12:00-16:00",
+        5928.6544,
+        204.4786,
+        "",
+        ""
+      ],
+      [
+        "2025-09-23",
+        "16:00-20:00",
+        0,
+        4912.2392,
+        "",
+        ""
+      ],
+      [
+        "2025-09-23",
+        "20:00-24:00",
+        0,
+        3727.7608,
+        "",
+        ""
+      ],
+      [
+        "2025-12-21",
+        "0:00-4:00",
+        9000,
+        0,
+        "00:00",
+        1200
+      ],
+      [
+        "2025-12-21",
+        "4:00-8:00",
+        2500,
+        675,
+        "24:00",
+        1200
+      ],
+      [
+        "2025-12-21",
+        "8:00-12:00",
+        5000,
+        8640,
+        "",
+        ""
+      ],
+      [
+        "2025-12-21",
+        "12:00-16:00",
+        9166.6667,
+        2835,
+        "",
+        ""
+      ],
+      [
+        "2025-12-21",
+        "16:00-20:00",
+        0,
+        4841.6934,
+        "",
+        ""
+      ],
+      [
+        "2025-12-21",
+        "20:00-24:00",
+        0,
+        3798.3066,
+        "",
+        ""
+      ]
+    ],
+    "table3": [
+      [
+        "2025-03-20",
+        "0:30-0:40",
+        1.7
+      ],
+      [
+        "2025-03-20",
+        "1:10-1:50",
+        132.8971
+      ],
+      [
+        "2025-03-20",
+        "3:20-4:10",
+        83.5192
+      ],
+      [
+        "2025-03-20",
+        "5:20-5:30",
+        0.907
+      ],
+      [
+        "2025-03-20",
+        "6:50-7:00",
+        11.8724
+      ],
+      [
+        "2025-03-20",
+        "8:20-8:30",
+        9.5471
+      ],
+      [
+        "2025-03-20",
+        "10:00-10:10",
+        17.2685
+      ],
+      [
+        "2025-03-20",
+        "11:10-11:40",
+        149.0303
+      ],
+      [
+        "2025-03-20",
+        "12:30-13:00",
+        242.5267
+      ],
+      [
+        "2025-03-20",
+        "13:10-13:30",
+        79.4803
+      ],
+      [
+        "2025-03-20",
+        "13:40-13:50",
+        4.7537
+      ],
+      [
+        "2025-03-20",
+        "15:30-17:10",
+        406.656
+      ],
+      [
+        "2025-03-20",
+        "17:30-17:40",
+        7.3099
+      ],
+      [
+        "2025-03-20",
+        "18:50-19:10",
+        35.7645
+      ],
+      [
+        "2025-03-20",
+        "20:10-20:30",
+        11.7953
+      ],
+      [
+        "2025-03-20",
+        "21:20-21:50",
+        25.7376
+      ],
+      [
+        "2025-03-20",
+        "23:40-24:00",
+        8.2292
+      ],
+      [
+        "2025-06-21",
+        "3:10-3:20",
+        6.1073
+      ],
+      [
+        "2025-06-21",
+        "4:10-4:20",
+        6.5496
+      ],
+      [
+        "2025-06-21",
+        "5:50-6:30",
+        61.8204
+      ],
+      [
+        "2025-09-23",
+        "0:50-1:00",
+        15.9897
+      ],
+      [
+        "2025-09-23",
+        "2:20-2:30",
+        15.4814
+      ],
+      [
+        "2025-09-23",
+        "5:00-5:20",
+        51.4771
+      ],
+      [
+        "2025-09-23",
+        "6:20-6:40",
+        10.4619
+      ],
+      [
+        "2025-09-23",
+        "8:40-8:50",
+        1.1804
+      ],
+      [
+        "2025-09-23",
+        "9:40-10:00",
+        113.8039
+      ],
+      [
+        "2025-09-23",
+        "10:10-10:30",
+        67.7007
+      ],
+      [
+        "2025-09-23",
+        "11:00-11:10",
+        8.6426
+      ],
+      [
+        "2025-09-23",
+        "14:10-15:20",
+        397.9051
+      ],
+      [
+        "2025-09-23",
+        "16:10-16:20",
+        3.629
+      ],
+      [
+        "2025-09-23",
+        "18:20-18:30",
+        25.2502
+      ],
+      [
+        "2025-09-23",
+        "19:00-19:10",
+        1.2614
+      ],
+      [
+        "2025-09-23",
+        "20:10-20:40",
+        79.0268
+      ],
+      [
+        "2025-09-23",
+        "21:00-21:20",
+        74.7532
+      ],
+      [
+        "2025-09-23",
+        "21:30-21:40",
+        29.5307
+      ],
+      [
+        "2025-09-23",
+        "22:30-22:40",
+        20.215
+      ],
+      [
+        "2025-12-21",
+        "3:10-3:20",
+        0.0996
+      ],
+      [
+        "2025-12-21",
+        "3:40-4:00",
+        66.9551
+      ],
+      [
+        "2025-12-21",
+        "10:30-11:50",
+        493.9892
+      ],
+      [
+        "2025-12-21",
+        "15:30-15:40",
+        2.0039
+      ],
+      [
+        "2025-12-21",
+        "18:30-19:10",
+        43.3279
+      ],
+      [
+        "2025-12-21",
+        "20:00-20:10",
+        5.95
+      ]
+    ]
+  },
+  "paired_robustness": {
+    "baseline": {
+      "daily": {
+        "improved": 289,
+        "worse": 45,
+        "ties": 0,
+        "worst_saving_yuan": -13994.709991824166,
+        "worst_period": "2025-07-05",
+        "best_saving_yuan": 152293.35307480654
+      },
+      "monthly": {
+        "improved": 11,
+        "worse": 0,
+        "ties": 0,
+        "worst_saving_yuan": 551076.4924158745,
+        "worst_period": "2025-07",
+        "best_saving_yuan": 891080.9372194656
+      }
+    },
+    "weekday": {
+      "daily": {
+        "improved": 287,
+        "worse": 47,
+        "ties": 0,
+        "worst_saving_yuan": -6115.789832677787,
+        "worst_period": "2025-07-13",
+        "best_saving_yuan": 31324.93135321456
+      },
+      "monthly": {
+        "improved": 11,
+        "worse": 0,
+        "ties": 0,
+        "worst_saving_yuan": 43735.86652615853,
+        "worst_period": "2025-02",
+        "best_saving_yuan": 193773.8018621055
+      }
+    }
+  },
+  "summary": [
+    {
+      "experiment": "baseline",
+      "track": "B0",
+      "planned_grid_kwh": 20955676.289916664,
+      "charge_kwh": 0,
+      "discharge_kwh": 0,
+      "emergency_kwh": 1943634.6555000008,
+      "surplus_kwh": 4960121.406316666,
+      "planned_purchase_cost_yuan": 16371318.581934769,
+      "emergency_purchase_cost_yuan": 8196002.412395185,
+      "total_cost_yuan": 24567320.99432995,
+      "saving_vs_original_b0_yuan": 0,
+      "saving_vs_original_b1_yuan": -1732047.4879044904,
+      "saving_vs_matched_b0_yuan": 0,
+      "saving_vs_original_b1_pct": -7.584964933383094,
+      "improved_months_vs_original_b1": 0,
+      "worst_month_saving_vs_original_b1_yuan": -274908.4965642587,
+      "improved_days_vs_original_b1": 59,
+      "daily_cost_p95_yuan": 163947.34251940242,
+      "start_soc_0010_kwh": 6000,
+      "end_soc_0010_next_day_kwh": 6000,
+      "formal_days": 334
+    },
+    {
+      "experiment": "baseline",
+      "track": "B1",
+      "planned_grid_kwh": 20139038.43840445,
+      "charge_kwh": 6629838.796538477,
+      "discharge_kwh": 5370169.425196166,
+      "emergency_kwh": 2594662.078728395,
+      "surplus_kwh": 3534841.6066905344,
+      "planned_purchase_cost_yuan": 12217103.997935109,
+      "emergency_purchase_cost_yuan": 10618169.508490354,
+      "total_cost_yuan": 22835273.50642546,
+      "saving_vs_original_b0_yuan": 1732047.4879044904,
+      "saving_vs_original_b1_yuan": 0,
+      "saving_vs_matched_b0_yuan": 1732047.4879044904,
+      "saving_vs_original_b1_pct": 0,
+      "improved_months_vs_original_b1": 0,
+      "worst_month_saving_vs_original_b1_yuan": 0,
+      "improved_days_vs_original_b1": 0,
+      "daily_cost_p95_yuan": 182148.2793429934,
+      "start_soc_0010_kwh": 1200,
+      "end_soc_0010_next_day_kwh": 1200,
+      "formal_days": 334
+    },
+    {
+      "experiment": "weekday",
+      "track": "B0",
+      "planned_grid_kwh": 21013913.076316666,
+      "charge_kwh": 0,
+      "discharge_kwh": 0,
+      "emergency_kwh": 736344.503683334,
+      "surplus_kwh": 3811068.0408999994,
+      "planned_purchase_cost_yuan": 16419368.358407615,
+      "emergency_purchase_cost_yuan": 2955248.874482803,
+      "total_cost_yuan": 19374617.232890416,
+      "saving_vs_original_b0_yuan": 5192703.761439538,
+      "saving_vs_original_b1_yuan": 3460656.2735350477,
+      "saving_vs_matched_b0_yuan": 0,
+      "saving_vs_original_b1_pct": 15.154871136364006,
+      "improved_months_vs_original_b1": 11,
+      "worst_month_saving_vs_original_b1_yuan": 145636.00442248824,
+      "improved_days_vs_original_b1": 103,
+      "daily_cost_p95_yuan": 81076.56584208706,
+      "start_soc_0010_kwh": 6000,
+      "end_soc_0010_next_day_kwh": 6000,
+      "formal_days": 334
+    },
+    {
+      "experiment": "weekday",
+      "track": "B1",
+      "planned_grid_kwh": 20208551.64969034,
+      "charge_kwh": 6630250.612916459,
+      "discharge_kwh": 5370502.996462334,
+      "emergency_kwh": 1108167.9477679017,
+      "surplus_kwh": 2117782.441904115,
+      "planned_purchase_cost_yuan": 12268156.410999296,
+      "emergency_purchase_cost_yuan": 4282273.402063282,
+      "total_cost_yuan": 16550429.81306258,
+      "saving_vs_original_b0_yuan": 8016891.181267374,
+      "saving_vs_original_b1_yuan": 6284843.693362883,
+      "saving_vs_matched_b0_yuan": 2824187.4198278356,
+      "saving_vs_original_b1_pct": 27.52252427190958,
+      "improved_months_vs_original_b1": 11,
+      "worst_month_saving_vs_original_b1_yuan": 357302.690553769,
+      "improved_days_vs_original_b1": 233,
+      "daily_cost_p95_yuan": 74312.4825952187,
+      "start_soc_0010_kwh": 1200,
+      "end_soc_0010_next_day_kwh": 1200,
+      "formal_days": 334
+    },
+    {
+      "experiment": "recent_buffer",
+      "track": "B0",
+      "planned_grid_kwh": 23380864.54656,
+      "charge_kwh": 0,
+      "discharge_kwh": 0,
+      "emergency_kwh": 1286402.3026233332,
+      "surplus_kwh": 6728077.310083333,
+      "planned_purchase_cost_yuan": 18309368.095097855,
+      "emergency_purchase_cost_yuan": 5601796.5235457765,
+      "total_cost_yuan": 23911164.61864363,
+      "saving_vs_original_b0_yuan": 656156.3756863213,
+      "saving_vs_original_b1_yuan": -1075891.112218169,
+      "saving_vs_matched_b0_yuan": 0,
+      "saving_vs_original_b1_pct": -4.711531534384433,
+      "improved_months_vs_original_b1": 0,
+      "worst_month_saving_vs_original_b1_yuan": -188393.1896490681,
+      "improved_days_vs_original_b1": 73,
+      "daily_cost_p95_yuan": 146679.4123729026,
+      "start_soc_0010_kwh": 6000,
+      "end_soc_0010_next_day_kwh": 6000,
+      "formal_days": 334
+    },
+    {
+      "experiment": "recent_buffer",
+      "track": "B1",
+      "planned_grid_kwh": 23420690.27327279,
+      "charge_kwh": 7045194.998217243,
+      "discharge_kwh": 5706607.948555967,
+      "emergency_kwh": 1617595.6091155207,
+      "surplus_kwh": 5760509.293627037,
+      "planned_purchase_cost_yuan": 14366133.306928437,
+      "emergency_purchase_cost_yuan": 6805719.305362295,
+      "total_cost_yuan": 21171852.612290736,
+      "saving_vs_original_b0_yuan": 3395468.3820392163,
+      "saving_vs_original_b1_yuan": 1663420.8941347266,
+      "saving_vs_matched_b0_yuan": 2739312.0063528954,
+      "saving_vs_original_b1_pct": 7.284436044379625,
+      "improved_months_vs_original_b1": 11,
+      "worst_month_saving_vs_original_b1_yuan": 90945.29200085008,
+      "improved_days_vs_original_b1": 236,
+      "daily_cost_p95_yuan": 160864.14580923674,
+      "start_soc_0010_kwh": 1200,
+      "end_soc_0010_next_day_kwh": 1200,
+      "formal_days": 334
+    },
+    {
+      "experiment": "weekday_buffer",
+      "track": "B0",
+      "planned_grid_kwh": 22607282.99479,
+      "charge_kwh": 0,
+      "discharge_kwh": 0,
+      "emergency_kwh": 274647.2406733335,
+      "surplus_kwh": 4942740.696363334,
+      "planned_purchase_cost_yuan": 17690123.51827206,
+      "emergency_purchase_cost_yuan": 1097414.2449175925,
+      "total_cost_yuan": 18787537.763189655,
+      "saving_vs_original_b0_yuan": 5779783.2311403,
+      "saving_vs_original_b1_yuan": 4047735.7432358093,
+      "saving_vs_matched_b0_yuan": 0,
+      "saving_vs_original_b1_pct": 17.72580364363425,
+      "improved_months_vs_original_b1": 11,
+      "worst_month_saving_vs_original_b1_yuan": 232045.0400601064,
+      "improved_days_vs_original_b1": 112,
+      "daily_cost_p95_yuan": 78013.55219103585,
+      "start_soc_0010_kwh": 6000,
+      "end_soc_0010_next_day_kwh": 6000,
+      "formal_days": 334
+    },
+    {
+      "experiment": "weekday_buffer",
+      "track": "B1",
+      "planned_grid_kwh": 22348654.590524,
+      "charge_kwh": 6882533.519892138,
+      "discharge_kwh": 5574852.151112633,
+      "emergency_kwh": 398679.2110733335,
+      "surplus_kwh": 3500462.8937178273,
+      "planned_purchase_cost_yuan": 13674923.27164581,
+      "emergency_purchase_cost_yuan": 1537123.4190650238,
+      "total_cost_yuan": 15212046.690710835,
+      "saving_vs_original_b0_yuan": 9355274.303619118,
+      "saving_vs_original_b1_yuan": 7623226.8157146275,
+      "saving_vs_matched_b0_yuan": 3575491.072478819,
+      "saving_vs_original_b1_pct": 33.38355817621183,
+      "improved_months_vs_original_b1": 11,
+      "worst_month_saving_vs_original_b1_yuan": 551076.492415874,
+      "improved_days_vs_original_b1": 289,
+      "daily_cost_p95_yuan": 66512.4506075376,
+      "start_soc_0010_kwh": 1200,
+      "end_soc_0010_next_day_kwh": 1200,
+      "formal_days": 334
+    }
+  ],
+  "solver_summary": [
+    {
+      "experiment": "baseline",
+      "day_count": 365,
+      "optimal_days": 364,
+      "cold_start_days": 1,
+      "nonoptimal_days": 0,
+      "max_mip_gap": 3.2327147265009174e-16,
+      "solver_seconds": 9.93538810000382,
+      "warnings_count": 1
+    },
+    {
+      "experiment": "weekday",
+      "day_count": 365,
+      "optimal_days": 364,
+      "cold_start_days": 1,
+      "nonoptimal_days": 0,
+      "max_mip_gap": 3.262190576482524e-16,
+      "solver_seconds": 9.501412399999936,
+      "warnings_count": 1
+    },
+    {
+      "experiment": "recent_buffer",
+      "day_count": 365,
+      "optimal_days": 364,
+      "cold_start_days": 1,
+      "nonoptimal_days": 0,
+      "max_mip_gap": 2.7603699457259096e-16,
+      "solver_seconds": 8.392049300000508,
+      "warnings_count": 1
+    },
+    {
+      "experiment": "weekday_buffer",
+      "day_count": 365,
+      "optimal_days": 364,
+      "cold_start_days": 1,
+      "nonoptimal_days": 0,
+      "max_mip_gap": 3.8475846457427055e-16,
+      "solver_seconds": 8.530561100001705,
+      "warnings_count": 1
+    }
+  ],
+  "all_passed": true,
+  "reviewed_on": "2026-09-12",
+  "additional_hash_checks": {
+    "audit_manifest": true,
+    "audit_summary": true,
+    "config_source_file_hash": true,
+    "config_hash_definition": "run_manifest.config_sha256 hashes config/q2_baseline.json, not config_snapshot.json; resolved snapshot file is separately fingerprinted in source_files."
+  },
+  "verification_method": "Independent dispatch positive-part settlement, SOC recurrence/continuity/limits, source timestamp cutoffs, source/production-code/candidate hash checks; workbook all numeric values compared to dispatch using round-trip CSV floats, ordered sums and decimal HALF_UP 4dp. No solver rerun; no independent re-training or generalization proof."
+}

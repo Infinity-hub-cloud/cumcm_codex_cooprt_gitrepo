@@ -1,0 +1,1 @@
+WARNING-Q2-INPUT-ROUNDING-001: normalized CSV kWh values use four decimals; maximum observed kW/6 difference is about 5.0e-5 kWh. The 5.1e-5 kWh input-contract tolerance is used only for raw power/energy consistency, not for MILP feasibility, SOC residual, or balance residual tolerances.

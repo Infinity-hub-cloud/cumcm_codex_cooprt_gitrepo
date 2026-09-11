@@ -1,0 +1,2 @@
+WARNING-Q2-INPUT-ROUNDING-001: normalized CSV kWh values use four decimals; maximum observed kW/6 difference is about 5.0e-5 kWh. The 5.1e-5 kWh input-contract tolerance is used only for raw power/energy consistency, not for MILP feasibility, SOC residual, or balance residual tolerances.
+2026-09-12T00:17:26+08:00 FAILURE SolverUnavailableError: highspy is not installed. Install it manually in the approved environment before running Q1; Codex did not install dependencies.

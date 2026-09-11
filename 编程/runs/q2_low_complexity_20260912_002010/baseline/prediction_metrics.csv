@@ -1,0 +1,417 @@
+﻿scope,group,series,metric,value,unit,sample_count,valid_coverage,definition,posthoc_evaluation_only
+overall,formal_output,load,MAE,651.6096450266134,kW,48096,1.0,mean(abs(predicted-actual)),True
+overall,formal_output,load,RMSE,1129.2169618663152,kW,48096,1.0,sqrt(mean((predicted-actual)^2)),True
+overall,formal_output,load,nMAE,0.14114042808733052,ratio,48096,1.0,MAE / mean(actual_load),True
+overall,formal_output,load,bias,-5.44794890635395,kW,48096,1.0,mean(predicted-actual),True
+overall,formal_output,load,max_absolute_error,4589.6173,kW,48096,1.0,error=predicted-actual; percentiles use absolute error,True
+overall,formal_output,load,error_p50,187.89999999999964,kW,48096,1.0,error=predicted-actual; percentiles use absolute error,True
+overall,formal_output,load,error_p90,2484.81675,kW,48096,1.0,error=predicted-actual; percentiles use absolute error,True
+overall,formal_output,load,error_p95,2783.101025,kW,48096,1.0,error=predicted-actual; percentiles use absolute error,True
+overall,formal_output,load,error_p99,3447.3627100000017,kW,48096,1.0,error=predicted-actual; percentiles use absolute error,True
+overall,formal_output,load,sample_count,48096.0,count,48096,1.0,finite actual/predicted pairs,True
+overall,formal_output,load,valid_coverage,1.0,ratio,48096,1.0,finite pairs / requested pairs,True
+overall,formal_output,load,peak_threshold_p90,6590.1915,kW,48096,1.0,global formal-output actual-load 90th percentile; posthoc only,True
+overall,formal_output,load,peak_MAE,733.6079961122663,kW,48096,1.0,MAE where actual_load >= global formal p90,True
+overall,formal_output,load,peak_max_absolute_error,4589.6173,kW,48096,1.0,max absolute error where actual_load >= global formal p90,True
+overall,formal_output,load,peak_sample_count,4810.0,count,48096,1.0,samples where actual_load >= global formal p90,True
+overall,formal_output,pv,all_day_MAE,185.34649152736193,kW,48096,1.0,mean(abs(predicted-actual)) over all intervals,True
+overall,formal_output,pv,all_day_RMSE,375.17487813659034,kW,48096,1.0,RMSE over all intervals,True
+overall,formal_output,pv,bias,0.7610173132900873,kW,48096,1.0,mean(predicted-actual),True
+overall,formal_output,pv,max_absolute_error,3228.8724999999995,kW,48096,1.0,max(abs(predicted-actual)),True
+overall,formal_output,pv,sample_count,48096.0,count,48096,1.0,finite actual/predicted pairs,True
+overall,formal_output,pv,valid_coverage,1.0,ratio,48096,1.0,finite pairs / requested pairs,True
+overall,formal_output,pv,daylight_MAE,331.6338315997024,kW,48096,1.0,MAE where actual_pv_kw > 0,True
+overall,formal_output,pv,daylight_RMSE,501.8495969876943,kW,48096,1.0,RMSE where actual_pv_kw > 0,True
+overall,formal_output,pv,daylight_sample_count,26880.0,count,48096,1.0,samples where actual_pv_kw > 0,True
+overall,formal_output,pv,ramp_MAE,67.91579832921569,kW/10min,48096,1.0,mean(abs(predicted_ramp-actual_ramp)); adjacent physical intervals within the same natural day only,True
+overall,formal_output,pv,ramp_sample_count,47762.0,count,48096,1.0,within-natural-day adjacent physical interval pairs,True
+month,2025-02,load,MAE,639.8671016865079,kW,4032,1.0,mean(abs(predicted-actual)),True
+month,2025-02,load,RMSE,1124.7406129383608,kW,4032,1.0,sqrt(mean((predicted-actual)^2)),True
+month,2025-02,load,nMAE,0.1416608970349203,ratio,4032,1.0,MAE / mean(actual_load),True
+month,2025-02,load,bias,7.046059573412708,kW,4032,1.0,mean(predicted-actual),True
+month,2025-02,load,max_absolute_error,3858.5527,kW,4032,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-02,load,error_p50,169.5879,kW,4032,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-02,load,error_p90,2503.52565,kW,4032,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-02,load,error_p95,2776.059999999999,kW,4032,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-02,load,error_p99,3459.9317780000006,kW,4032,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-02,load,sample_count,4032.0,count,4032,1.0,finite actual/predicted pairs,True
+month,2025-02,load,valid_coverage,1.0,ratio,4032,1.0,finite pairs / requested pairs,True
+month,2025-02,load,peak_threshold_p90,6590.1915,kW,4032,1.0,global formal-output actual-load 90th percentile; posthoc only,True
+month,2025-02,load,peak_MAE,684.365679661017,kW,4032,1.0,MAE where actual_load >= global formal p90,True
+month,2025-02,load,peak_max_absolute_error,3814.0400000000004,kW,4032,1.0,max absolute error where actual_load >= global formal p90,True
+month,2025-02,load,peak_sample_count,472.0,count,4032,1.0,samples where actual_load >= global formal p90,True
+month,2025-02,pv,all_day_MAE,132.08102217261904,kW,4032,1.0,mean(abs(predicted-actual)) over all intervals,True
+month,2025-02,pv,all_day_RMSE,274.8497756430713,kW,4032,1.0,RMSE over all intervals,True
+month,2025-02,pv,bias,-16.141246230158732,kW,4032,1.0,mean(predicted-actual),True
+month,2025-02,pv,max_absolute_error,1610.7750000000005,kW,4032,1.0,max(abs(predicted-actual)),True
+month,2025-02,pv,sample_count,4032.0,count,4032,1.0,finite actual/predicted pairs,True
+month,2025-02,pv,valid_coverage,1.0,ratio,4032,1.0,finite pairs / requested pairs,True
+month,2025-02,pv,daylight_MAE,261.5658873280943,kW,4032,1.0,MAE where actual_pv_kw > 0,True
+month,2025-02,pv,daylight_RMSE,386.78245043402774,kW,4032,1.0,RMSE where actual_pv_kw > 0,True
+month,2025-02,pv,daylight_sample_count,2036.0,count,4032,1.0,samples where actual_pv_kw > 0,True
+month,2025-02,pv,ramp_MAE,49.68233886113887,kW/10min,4032,1.0,mean(abs(predicted_ramp-actual_ramp)); adjacent physical intervals within the same natural day only,True
+month,2025-02,pv,ramp_sample_count,4004.0,count,4032,1.0,within-natural-day adjacent physical interval pairs,True
+month,2025-03,load,MAE,646.9658530913979,kW,4464,1.0,mean(abs(predicted-actual)),True
+month,2025-03,load,RMSE,1135.595981506023,kW,4464,1.0,sqrt(mean((predicted-actual)^2)),True
+month,2025-03,load,nMAE,0.14853927339176604,ratio,4464,1.0,MAE / mean(actual_load),True
+month,2025-03,load,bias,-56.13450627240143,kW,4464,1.0,mean(predicted-actual),True
+month,2025-03,load,max_absolute_error,3886.2477000000003,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-03,load,error_p50,167.7198000000003,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-03,load,error_p90,2527.12303,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-03,load,error_p95,2783.865135,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-03,load,error_p99,3441.786129999999,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-03,load,sample_count,4464.0,count,4464,1.0,finite actual/predicted pairs,True
+month,2025-03,load,valid_coverage,1.0,ratio,4464,1.0,finite pairs / requested pairs,True
+month,2025-03,load,peak_threshold_p90,6590.1915,kW,4464,1.0,global formal-output actual-load 90th percentile; posthoc only,True
+month,2025-03,load,peak_MAE,828.0335733333334,kW,4464,1.0,MAE where actual_load >= global formal p90,True
+month,2025-03,load,peak_max_absolute_error,3745.24,kW,4464,1.0,max absolute error where actual_load >= global formal p90,True
+month,2025-03,load,peak_sample_count,150.0,count,4464,1.0,samples where actual_load >= global formal p90,True
+month,2025-03,pv,all_day_MAE,186.4059520609319,kW,4464,1.0,mean(abs(predicted-actual)) over all intervals,True
+month,2025-03,pv,all_day_RMSE,385.01307965625085,kW,4464,1.0,RMSE over all intervals,True
+month,2025-03,pv,bias,-10.795378673835124,kW,4464,1.0,mean(predicted-actual),True
+month,2025-03,pv,max_absolute_error,2425.100299999999,kW,4464,1.0,max(abs(predicted-actual)),True
+month,2025-03,pv,sample_count,4464.0,count,4464,1.0,finite actual/predicted pairs,True
+month,2025-03,pv,valid_coverage,1.0,ratio,4464,1.0,finite pairs / requested pairs,True
+month,2025-03,pv,daylight_MAE,342.9974849134378,kW,4464,1.0,MAE where actual_pv_kw > 0,True
+month,2025-03,pv,daylight_RMSE,522.2665087574113,kW,4464,1.0,RMSE where actual_pv_kw > 0,True
+month,2025-03,pv,daylight_sample_count,2426.0,count,4464,1.0,samples where actual_pv_kw > 0,True
+month,2025-03,pv,ramp_MAE,64.41462752086623,kW/10min,4464,1.0,mean(abs(predicted_ramp-actual_ramp)); adjacent physical intervals within the same natural day only,True
+month,2025-03,pv,ramp_sample_count,4433.0,count,4464,1.0,within-natural-day adjacent physical interval pairs,True
+month,2025-04,load,MAE,597.5299233333333,kW,4320,1.0,mean(abs(predicted-actual)),True
+month,2025-04,load,RMSE,1084.7690476361229,kW,4320,1.0,sqrt(mean((predicted-actual)^2)),True
+month,2025-04,load,nMAE,0.13602249300898167,ratio,4320,1.0,MAE / mean(actual_load),True
+month,2025-04,load,bias,-0.6883728240741052,kW,4320,1.0,mean(predicted-actual),True
+month,2025-04,load,max_absolute_error,3786.1977000000006,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-04,load,error_p50,153.93865000000005,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-04,load,error_p90,2444.192529999999,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-04,load,error_p95,2751.912665,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-04,load,error_p99,3452.874483000001,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-04,load,sample_count,4320.0,count,4320,1.0,finite actual/predicted pairs,True
+month,2025-04,load,valid_coverage,1.0,ratio,4320,1.0,finite pairs / requested pairs,True
+month,2025-04,load,peak_threshold_p90,6590.1915,kW,4320,1.0,global formal-output actual-load 90th percentile; posthoc only,True
+month,2025-04,load,peak_MAE,840.0894872549021,kW,4320,1.0,MAE where actual_load >= global formal p90,True
+month,2025-04,load,peak_max_absolute_error,3775.1371000000004,kW,4320,1.0,max absolute error where actual_load >= global formal p90,True
+month,2025-04,load,peak_sample_count,102.0,count,4320,1.0,samples where actual_load >= global formal p90,True
+month,2025-04,pv,all_day_MAE,223.74509905092594,kW,4320,1.0,mean(abs(predicted-actual)) over all intervals,True
+month,2025-04,pv,all_day_RMSE,433.96212643515366,kW,4320,1.0,RMSE over all intervals,True
+month,2025-04,pv,bias,-12.919097430555562,kW,4320,1.0,mean(predicted-actual),True
+month,2025-04,pv,max_absolute_error,2304.2625000000007,kW,4320,1.0,max(abs(predicted-actual)),True
+month,2025-04,pv,sample_count,4320.0,count,4320,1.0,finite actual/predicted pairs,True
+month,2025-04,pv,valid_coverage,1.0,ratio,4320,1.0,finite pairs / requested pairs,True
+month,2025-04,pv,daylight_MAE,382.6511384402217,kW,4320,1.0,MAE where actual_pv_kw > 0,True
+month,2025-04,pv,daylight_RMSE,567.5145867242188,kW,4320,1.0,RMSE where actual_pv_kw > 0,True
+month,2025-04,pv,daylight_sample_count,2526.0,count,4320,1.0,samples where actual_pv_kw > 0,True
+month,2025-04,pv,ramp_MAE,76.6897234965035,kW/10min,4320,1.0,mean(abs(predicted_ramp-actual_ramp)); adjacent physical intervals within the same natural day only,True
+month,2025-04,pv,ramp_sample_count,4290.0,count,4320,1.0,within-natural-day adjacent physical interval pairs,True
+month,2025-05,load,MAE,657.8862533154121,kW,4464,1.0,mean(abs(predicted-actual)),True
+month,2025-05,load,RMSE,1137.0212381126898,kW,4464,1.0,sqrt(mean((predicted-actual)^2)),True
+month,2025-05,load,nMAE,0.1494656539122538,ratio,4464,1.0,MAE / mean(actual_load),True
+month,2025-05,load,bias,58.15375197132616,kW,4464,1.0,mean(predicted-actual),True
+month,2025-05,load,max_absolute_error,3973.1199999999994,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-05,load,error_p50,188.21400000000017,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-05,load,error_p90,2510.9367099999995,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-05,load,error_p95,2774.757784999999,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-05,load,error_p99,3418.760599999999,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-05,load,sample_count,4464.0,count,4464,1.0,finite actual/predicted pairs,True
+month,2025-05,load,valid_coverage,1.0,ratio,4464,1.0,finite pairs / requested pairs,True
+month,2025-05,load,peak_threshold_p90,6590.1915,kW,4464,1.0,global formal-output actual-load 90th percentile; posthoc only,True
+month,2025-05,load,peak_MAE,786.1768611570249,kW,4464,1.0,MAE where actual_load >= global formal p90,True
+month,2025-05,load,peak_max_absolute_error,3973.1199999999994,kW,4464,1.0,max absolute error where actual_load >= global formal p90,True
+month,2025-05,load,peak_sample_count,121.0,count,4464,1.0,samples where actual_load >= global formal p90,True
+month,2025-05,pv,all_day_MAE,234.15803918010752,kW,4464,1.0,mean(abs(predicted-actual)) over all intervals,True
+month,2025-05,pv,all_day_RMSE,440.00943775337873,kW,4464,1.0,RMSE over all intervals,True
+month,2025-05,pv,bias,4.081821572580642,kW,4464,1.0,mean(predicted-actual),True
+month,2025-05,pv,max_absolute_error,2751.406500000001,kW,4464,1.0,max(abs(predicted-actual)),True
+month,2025-05,pv,sample_count,4464.0,count,4464,1.0,finite actual/predicted pairs,True
+month,2025-05,pv,valid_coverage,1.0,ratio,4464,1.0,finite pairs / requested pairs,True
+month,2025-05,pv,daylight_MAE,380.51714066254095,kW,4464,1.0,MAE where actual_pv_kw > 0,True
+month,2025-05,pv,daylight_RMSE,560.9120305074885,kW,4464,1.0,RMSE where actual_pv_kw > 0,True
+month,2025-05,pv,daylight_sample_count,2747.0,count,4464,1.0,samples where actual_pv_kw > 0,True
+month,2025-05,pv,ramp_MAE,85.22502368599143,kW/10min,4464,1.0,mean(abs(predicted_ramp-actual_ramp)); adjacent physical intervals within the same natural day only,True
+month,2025-05,pv,ramp_sample_count,4433.0,count,4464,1.0,within-natural-day adjacent physical interval pairs,True
+month,2025-06,load,MAE,700.3757323611112,kW,4320,1.0,mean(abs(predicted-actual)),True
+month,2025-06,load,RMSE,1181.8681904779105,kW,4320,1.0,sqrt(mean((predicted-actual)^2)),True
+month,2025-06,load,nMAE,0.145904953719228,ratio,4320,1.0,MAE / mean(actual_load),True
+month,2025-06,load,bias,-71.65063379629632,kW,4320,1.0,mean(predicted-actual),True
+month,2025-06,load,max_absolute_error,4589.6173,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-06,load,error_p50,217.0389499999999,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-06,load,error_p90,2513.0350000000003,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-06,load,error_p95,2829.5406550000002,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-06,load,error_p99,3504.9526730000007,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-06,load,sample_count,4320.0,count,4320,1.0,finite actual/predicted pairs,True
+month,2025-06,load,valid_coverage,1.0,ratio,4320,1.0,finite pairs / requested pairs,True
+month,2025-06,load,peak_threshold_p90,6590.1915,kW,4320,1.0,global formal-output actual-load 90th percentile; posthoc only,True
+month,2025-06,load,peak_MAE,811.8891121527779,kW,4320,1.0,MAE where actual_load >= global formal p90,True
+month,2025-06,load,peak_max_absolute_error,4589.6173,kW,4320,1.0,max absolute error where actual_load >= global formal p90,True
+month,2025-06,load,peak_sample_count,576.0,count,4320,1.0,samples where actual_load >= global formal p90,True
+month,2025-06,pv,all_day_MAE,244.1393226851852,kW,4320,1.0,mean(abs(predicted-actual)) over all intervals,True
+month,2025-06,pv,all_day_RMSE,471.9367704900264,kW,4320,1.0,RMSE over all intervals,True
+month,2025-06,pv,bias,14.332658935185188,kW,4320,1.0,mean(predicted-actual),True
+month,2025-06,pv,max_absolute_error,3228.8724999999995,kW,4320,1.0,max(abs(predicted-actual)),True
+month,2025-06,pv,sample_count,4320.0,count,4320,1.0,finite actual/predicted pairs,True
+month,2025-06,pv,valid_coverage,1.0,ratio,4320,1.0,finite pairs / requested pairs,True
+month,2025-06,pv,daylight_MAE,381.44009822784807,kW,4320,1.0,MAE where actual_pv_kw > 0,True
+month,2025-06,pv,daylight_RMSE,589.8996274296696,kW,4320,1.0,RMSE where actual_pv_kw > 0,True
+month,2025-06,pv,daylight_sample_count,2765.0,count,4320,1.0,samples where actual_pv_kw > 0,True
+month,2025-06,pv,ramp_MAE,93.23764564102564,kW/10min,4320,1.0,mean(abs(predicted_ramp-actual_ramp)); adjacent physical intervals within the same natural day only,True
+month,2025-06,pv,ramp_sample_count,4290.0,count,4320,1.0,within-natural-day adjacent physical interval pairs,True
+month,2025-07,load,MAE,646.4358569444445,kW,4464,1.0,mean(abs(predicted-actual)),True
+month,2025-07,load,RMSE,1085.429793622711,kW,4464,1.0,sqrt(mean((predicted-actual)^2)),True
+month,2025-07,load,nMAE,0.12111117618184934,ratio,4464,1.0,MAE / mean(actual_load),True
+month,2025-07,load,bias,-15.92727123655912,kW,4464,1.0,mean(predicted-actual),True
+month,2025-07,load,max_absolute_error,3902.7976999999996,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-07,load,error_p50,245.7545500000001,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-07,load,error_p90,2312.6056700000004,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-07,load,error_p95,2761.35659,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-07,load,error_p99,3359.389799999999,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-07,load,sample_count,4464.0,count,4464,1.0,finite actual/predicted pairs,True
+month,2025-07,load,valid_coverage,1.0,ratio,4464,1.0,finite pairs / requested pairs,True
+month,2025-07,load,peak_threshold_p90,6590.1915,kW,4464,1.0,global formal-output actual-load 90th percentile; posthoc only,True
+month,2025-07,load,peak_MAE,663.2658132364194,kW,4464,1.0,MAE where actual_load >= global formal p90,True
+month,2025-07,load,peak_max_absolute_error,3899.8132000000005,kW,4464,1.0,max absolute error where actual_load >= global formal p90,True
+month,2025-07,load,peak_sample_count,1307.0,count,4464,1.0,samples where actual_load >= global formal p90,True
+month,2025-07,pv,all_day_MAE,228.79033702956988,kW,4464,1.0,mean(abs(predicted-actual)) over all intervals,True
+month,2025-07,pv,all_day_RMSE,418.9487681847887,kW,4464,1.0,RMSE over all intervals,True
+month,2025-07,pv,bias,-8.949839852150541,kW,4464,1.0,mean(predicted-actual),True
+month,2025-07,pv,max_absolute_error,2306.8288999999995,kW,4464,1.0,max(abs(predicted-actual)),True
+month,2025-07,pv,sample_count,4464.0,count,4464,1.0,finite actual/predicted pairs,True
+month,2025-07,pv,valid_coverage,1.0,ratio,4464,1.0,finite pairs / requested pairs,True
+month,2025-07,pv,daylight_MAE,366.85109001436786,kW,4464,1.0,MAE where actual_pv_kw > 0,True
+month,2025-07,pv,daylight_RMSE,530.5036655058273,kW,4464,1.0,RMSE where actual_pv_kw > 0,True
+month,2025-07,pv,daylight_sample_count,2784.0,count,4464,1.0,samples where actual_pv_kw > 0,True
+month,2025-07,pv,ramp_MAE,87.50211355741034,kW/10min,4464,1.0,mean(abs(predicted_ramp-actual_ramp)); adjacent physical intervals within the same natural day only,True
+month,2025-07,pv,ramp_sample_count,4433.0,count,4464,1.0,within-natural-day adjacent physical interval pairs,True
+month,2025-08,load,MAE,740.3496875672043,kW,4464,1.0,mean(abs(predicted-actual)),True
+month,2025-08,load,RMSE,1203.0044111161505,kW,4464,1.0,sqrt(mean((predicted-actual)^2)),True
+month,2025-08,load,nMAE,0.14674475575727633,ratio,4464,1.0,MAE / mean(actual_load),True
+month,2025-08,load,bias,5.780247155017921,kW,4464,1.0,mean(predicted-actual),True
+month,2025-08,load,max_absolute_error,3855.0176999999994,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-08,load,error_p50,261.2021000000002,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-08,load,error_p90,2537.8798300000003,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-08,load,error_p95,2847.929919999999,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-08,load,error_p99,3451.2900729999997,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-08,load,sample_count,4464.0,count,4464,1.0,finite actual/predicted pairs,True
+month,2025-08,load,valid_coverage,1.0,ratio,4464,1.0,finite pairs / requested pairs,True
+month,2025-08,load,peak_threshold_p90,6590.1915,kW,4464,1.0,global formal-output actual-load 90th percentile; posthoc only,True
+month,2025-08,load,peak_MAE,804.9036415413534,kW,4464,1.0,MAE where actual_load >= global formal p90,True
+month,2025-08,load,peak_max_absolute_error,3855.0176999999994,kW,4464,1.0,max absolute error where actual_load >= global formal p90,True
+month,2025-08,load,peak_sample_count,1064.0,count,4464,1.0,samples where actual_load >= global formal p90,True
+month,2025-08,pv,all_day_MAE,217.2143529121864,kW,4464,1.0,mean(abs(predicted-actual)) over all intervals,True
+month,2025-08,pv,all_day_RMSE,413.1648238692029,kW,4464,1.0,RMSE over all intervals,True
+month,2025-08,pv,bias,-5.363466801075264,kW,4464,1.0,mean(predicted-actual),True
+month,2025-08,pv,max_absolute_error,2183.6624999999995,kW,4464,1.0,max(abs(predicted-actual)),True
+month,2025-08,pv,sample_count,4464.0,count,4464,1.0,finite actual/predicted pairs,True
+month,2025-08,pv,valid_coverage,1.0,ratio,4464,1.0,finite pairs / requested pairs,True
+month,2025-08,pv,daylight_MAE,363.4261673913043,kW,4464,1.0,MAE where actual_pv_kw > 0,True
+month,2025-08,pv,daylight_RMSE,534.4320076315497,kW,4464,1.0,RMSE where actual_pv_kw > 0,True
+month,2025-08,pv,daylight_sample_count,2668.0,count,4464,1.0,samples where actual_pv_kw > 0,True
+month,2025-08,pv,ramp_MAE,82.23186420031583,kW/10min,4464,1.0,mean(abs(predicted_ramp-actual_ramp)); adjacent physical intervals within the same natural day only,True
+month,2025-08,pv,ramp_sample_count,4433.0,count,4464,1.0,within-natural-day adjacent physical interval pairs,True
+month,2025-09,load,MAE,631.2092395833333,kW,4320,1.0,mean(abs(predicted-actual)),True
+month,2025-09,load,RMSE,1095.7173826144933,kW,4320,1.0,sqrt(mean((predicted-actual)^2)),True
+month,2025-09,load,nMAE,0.13915606949491507,ratio,4320,1.0,MAE / mean(actual_load),True
+month,2025-09,load,bias,17.22570569444445,kW,4320,1.0,mean(predicted-actual),True
+month,2025-09,load,max_absolute_error,3871.45,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-09,load,error_p50,195.54544999999962,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-09,load,error_p90,2417.3388399999994,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-09,load,error_p95,2754.8394150000004,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-09,load,error_p99,3421.1418100000037,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-09,load,sample_count,4320.0,count,4320,1.0,finite actual/predicted pairs,True
+month,2025-09,load,valid_coverage,1.0,ratio,4320,1.0,finite pairs / requested pairs,True
+month,2025-09,load,peak_threshold_p90,6590.1915,kW,4320,1.0,global formal-output actual-load 90th percentile; posthoc only,True
+month,2025-09,load,peak_MAE,703.8976962025315,kW,4320,1.0,MAE where actual_load >= global formal p90,True
+month,2025-09,load,peak_max_absolute_error,3871.45,kW,4320,1.0,max absolute error where actual_load >= global formal p90,True
+month,2025-09,load,peak_sample_count,158.0,count,4320,1.0,samples where actual_load >= global formal p90,True
+month,2025-09,pv,all_day_MAE,201.44523108796295,kW,4320,1.0,mean(abs(predicted-actual)) over all intervals,True
+month,2025-09,pv,all_day_RMSE,405.86751579094664,kW,4320,1.0,RMSE over all intervals,True
+month,2025-09,pv,bias,15.58952284722222,kW,4320,1.0,mean(predicted-actual),True
+month,2025-09,pv,max_absolute_error,2542.174500000001,kW,4320,1.0,max(abs(predicted-actual)),True
+month,2025-09,pv,sample_count,4320.0,count,4320,1.0,finite actual/predicted pairs,True
+month,2025-09,pv,valid_coverage,1.0,ratio,4320,1.0,finite pairs / requested pairs,True
+month,2025-09,pv,daylight_MAE,360.3365910559006,kW,4320,1.0,MAE where actual_pv_kw > 0,True
+month,2025-09,pv,daylight_RMSE,542.83463078727,kW,4320,1.0,RMSE where actual_pv_kw > 0,True
+month,2025-09,pv,daylight_sample_count,2415.0,count,4320,1.0,samples where actual_pv_kw > 0,True
+month,2025-09,pv,ramp_MAE,70.26870205128206,kW/10min,4320,1.0,mean(abs(predicted_ramp-actual_ramp)); adjacent physical intervals within the same natural day only,True
+month,2025-09,pv,ramp_sample_count,4290.0,count,4320,1.0,within-natural-day adjacent physical interval pairs,True
+month,2025-10,load,MAE,641.4994814964157,kW,4464,1.0,mean(abs(predicted-actual)),True
+month,2025-10,load,RMSE,1132.6950291181568,kW,4464,1.0,sqrt(mean((predicted-actual)^2)),True
+month,2025-10,load,nMAE,0.14756519329008308,ratio,4464,1.0,MAE / mean(actual_load),True
+month,2025-10,load,bias,66.24242074372759,kW,4464,1.0,mean(predicted-actual),True
+month,2025-10,load,max_absolute_error,3827.0694999999996,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-10,load,error_p50,159.8928500000004,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-10,load,error_p90,2533.09497,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-10,load,error_p95,2781.6735949999998,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-10,load,error_p99,3431.4618509999996,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-10,load,sample_count,4464.0,count,4464,1.0,finite actual/predicted pairs,True
+month,2025-10,load,valid_coverage,1.0,ratio,4464,1.0,finite pairs / requested pairs,True
+month,2025-10,load,peak_threshold_p90,6590.1915,kW,4464,1.0,global formal-output actual-load 90th percentile; posthoc only,True
+month,2025-10,load,peak_MAE,682.7474687499999,kW,4464,1.0,MAE where actual_load >= global formal p90,True
+month,2025-10,load,peak_max_absolute_error,3677.87,kW,4464,1.0,max absolute error where actual_load >= global formal p90,True
+month,2025-10,load,peak_sample_count,112.0,count,4464,1.0,samples where actual_load >= global formal p90,True
+month,2025-10,pv,all_day_MAE,155.71680909498207,kW,4464,1.0,mean(abs(predicted-actual)) over all intervals,True
+month,2025-10,pv,all_day_RMSE,321.47308978121384,kW,4464,1.0,RMSE over all intervals,True
+month,2025-10,pv,bias,10.281698028673835,kW,4464,1.0,mean(predicted-actual),True
+month,2025-10,pv,max_absolute_error,2238.2599999999993,kW,4464,1.0,max(abs(predicted-actual)),True
+month,2025-10,pv,sample_count,4464.0,count,4464,1.0,finite actual/predicted pairs,True
+month,2025-10,pv,valid_coverage,1.0,ratio,4464,1.0,finite pairs / requested pairs,True
+month,2025-10,pv,daylight_MAE,299.48331051271003,kW,4464,1.0,MAE where actual_pv_kw > 0,True
+month,2025-10,pv,daylight_RMSE,445.8298128046404,kW,4464,1.0,RMSE where actual_pv_kw > 0,True
+month,2025-10,pv,daylight_sample_count,2321.0,count,4464,1.0,samples where actual_pv_kw > 0,True
+month,2025-10,pv,ramp_MAE,55.10236932100157,kW/10min,4464,1.0,mean(abs(predicted_ramp-actual_ramp)); adjacent physical intervals within the same natural day only,True
+month,2025-10,pv,ramp_sample_count,4433.0,count,4464,1.0,within-natural-day adjacent physical interval pairs,True
+month,2025-11,load,MAE,661.0797812500001,kW,4320,1.0,mean(abs(predicted-actual)),True
+month,2025-11,load,RMSE,1155.4930446477529,kW,4320,1.0,sqrt(mean((predicted-actual)^2)),True
+month,2025-11,load,nMAE,0.15241301654707157,ratio,4320,1.0,MAE / mean(actual_load),True
+month,2025-11,load,bias,-63.986917222222175,kW,4320,1.0,mean(predicted-actual),True
+month,2025-11,load,max_absolute_error,3908.4499999999994,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-11,load,error_p50,163.8492000000001,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-11,load,error_p90,2527.3061199999997,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-11,load,error_p95,2805.7426200000004,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-11,load,error_p99,3497.466843,kW,4320,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-11,load,sample_count,4320.0,count,4320,1.0,finite actual/predicted pairs,True
+month,2025-11,load,valid_coverage,1.0,ratio,4320,1.0,finite pairs / requested pairs,True
+month,2025-11,load,peak_threshold_p90,6590.1915,kW,4320,1.0,global formal-output actual-load 90th percentile; posthoc only,True
+month,2025-11,load,peak_MAE,925.7858931818182,kW,4320,1.0,MAE where actual_load >= global formal p90,True
+month,2025-11,load,peak_max_absolute_error,3792.5841,kW,4320,1.0,max absolute error where actual_load >= global formal p90,True
+month,2025-11,load,peak_sample_count,132.0,count,4320,1.0,samples where actual_load >= global formal p90,True
+month,2025-11,pv,all_day_MAE,111.5344955787037,kW,4320,1.0,mean(abs(predicted-actual)) over all intervals,True
+month,2025-11,pv,all_day_RMSE,234.5233030500344,kW,4320,1.0,RMSE over all intervals,True
+month,2025-11,pv,bias,14.000959236111113,kW,4320,1.0,mean(predicted-actual),True
+month,2025-11,pv,max_absolute_error,1573.5043999999998,kW,4320,1.0,max(abs(predicted-actual)),True
+month,2025-11,pv,sample_count,4320.0,count,4320,1.0,finite actual/predicted pairs,True
+month,2025-11,pv,valid_coverage,1.0,ratio,4320,1.0,finite pairs / requested pairs,True
+month,2025-11,pv,daylight_MAE,229.98342362768494,kW,4320,1.0,MAE where actual_pv_kw > 0,True
+month,2025-11,pv,daylight_RMSE,336.77187882459856,kW,4320,1.0,RMSE where actual_pv_kw > 0,True
+month,2025-11,pv,daylight_sample_count,2095.0,count,4320,1.0,samples where actual_pv_kw > 0,True
+month,2025-11,pv,ramp_MAE,42.042017808857814,kW/10min,4320,1.0,mean(abs(predicted_ramp-actual_ramp)); adjacent physical intervals within the same natural day only,True
+month,2025-11,pv,ramp_sample_count,4290.0,count,4320,1.0,within-natural-day adjacent physical interval pairs,True
+month,2025-12,load,MAE,602.8468126120072,kW,4464,1.0,mean(abs(predicted-actual)),True
+month,2025-12,load,RMSE,1077.3288739135712,kW,4464,1.0,sqrt(mean((predicted-actual)^2)),True
+month,2025-12,load,nMAE,0.12850553338189397,ratio,4464,1.0,MAE / mean(actual_load),True
+month,2025-12,load,bias,-7.9178055331541035,kW,4464,1.0,mean(predicted-actual),True
+month,2025-12,load,max_absolute_error,3993.3336,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-12,load,error_p50,177.68999999999983,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-12,load,error_p90,2353.19684,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-12,load,error_p95,2744.7134599999986,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-12,load,error_p99,3416.662638,kW,4464,1.0,error=predicted-actual; percentiles use absolute error,True
+month,2025-12,load,sample_count,4464.0,count,4464,1.0,finite actual/predicted pairs,True
+month,2025-12,load,valid_coverage,1.0,ratio,4464,1.0,finite pairs / requested pairs,True
+month,2025-12,load,peak_threshold_p90,6590.1915,kW,4464,1.0,global formal-output actual-load 90th percentile; posthoc only,True
+month,2025-12,load,peak_MAE,648.9788719155845,kW,4464,1.0,MAE where actual_load >= global formal p90,True
+month,2025-12,load,peak_max_absolute_error,3732.61,kW,4464,1.0,max absolute error where actual_load >= global formal p90,True
+month,2025-12,load,peak_sample_count,616.0,count,4464,1.0,samples where actual_load >= global formal p90,True
+month,2025-12,pv,all_day_MAE,99.69951285842295,kW,4464,1.0,mean(abs(predicted-actual)) over all intervals,True
+month,2025-12,pv,all_day_RMSE,215.54952862562484,kW,4464,1.0,RMSE over all intervals,True
+month,2025-12,pv,bias,3.5197905465949817,kW,4464,1.0,mean(predicted-actual),True
+month,2025-12,pv,max_absolute_error,1293.7125000000005,kW,4464,1.0,max(abs(predicted-actual)),True
+month,2025-12,pv,sample_count,4464.0,count,4464,1.0,finite actual/predicted pairs,True
+month,2025-12,pv,valid_coverage,1.0,ratio,4464,1.0,finite pairs / requested pairs,True
+month,2025-12,pv,daylight_MAE,212.23403094897472,kW,4464,1.0,MAE where actual_pv_kw > 0,True
+month,2025-12,pv,daylight_RMSE,314.492249796496,kW,4464,1.0,RMSE where actual_pv_kw > 0,True
+month,2025-12,pv,daylight_sample_count,2097.0,count,4464,1.0,samples where actual_pv_kw > 0,True
+month,2025-12,pv,ramp_MAE,39.25395280848184,kW/10min,4464,1.0,mean(abs(predicted_ramp-actual_ramp)); adjacent physical intervals within the same natural day only,True
+month,2025-12,pv,ramp_sample_count,4433.0,count,4464,1.0,within-natural-day adjacent physical interval pairs,True
+season,winter_DJF,load,MAE,620.4157633592279,kW,8496,1.0,mean(abs(predicted-actual)),True
+season,winter_DJF,load,RMSE,1100.0841499292437,kW,8496,1.0,sqrt(mean((predicted-actual)^2)),True
+season,winter_DJF,load,nMAE,0.1346246751695274,ratio,8496,1.0,MAE / mean(actual_load),True
+season,winter_DJF,load,bias,-0.8163102283427379,kW,8496,1.0,mean(predicted-actual),True
+season,winter_DJF,load,max_absolute_error,3993.3336,kW,8496,1.0,error=predicted-actual; percentiles use absolute error,True
+season,winter_DJF,load,error_p50,173.57500000000005,kW,8496,1.0,error=predicted-actual; percentiles use absolute error,True
+season,winter_DJF,load,error_p90,2431.23945,kW,8496,1.0,error=predicted-actual; percentiles use absolute error,True
+season,winter_DJF,load,error_p95,2765.0264,kW,8496,1.0,error=predicted-actual; percentiles use absolute error,True
+season,winter_DJF,load,error_p99,3428.8564999999967,kW,8496,1.0,error=predicted-actual; percentiles use absolute error,True
+season,winter_DJF,load,sample_count,8496.0,count,8496,1.0,finite actual/predicted pairs,True
+season,winter_DJF,load,valid_coverage,1.0,ratio,8496,1.0,finite pairs / requested pairs,True
+season,winter_DJF,load,peak_threshold_p90,6590.1915,kW,8496,1.0,global formal-output actual-load 90th percentile; posthoc only,True
+season,winter_DJF,load,peak_MAE,664.3305017463235,kW,8496,1.0,MAE where actual_load >= global formal p90,True
+season,winter_DJF,load,peak_max_absolute_error,3814.0400000000004,kW,8496,1.0,max absolute error where actual_load >= global formal p90,True
+season,winter_DJF,load,peak_sample_count,1088.0,count,8496,1.0,samples where actual_load >= global formal p90,True
+season,winter_DJF,pv,all_day_MAE,115.06700880414313,kW,8496,1.0,mean(abs(predicted-actual)) over all intervals,True
+season,winter_DJF,pv,all_day_RMSE,245.48453487144414,kW,8496,1.0,RMSE over all intervals,True
+season,winter_DJF,pv,bias,-5.8108709745762726,kW,8496,1.0,mean(predicted-actual),True
+season,winter_DJF,pv,max_absolute_error,1610.7750000000005,kW,8496,1.0,max(abs(predicted-actual)),True
+season,winter_DJF,pv,sample_count,8496.0,count,8496,1.0,finite actual/predicted pairs,True
+season,winter_DJF,pv,valid_coverage,1.0,ratio,8496,1.0,finite pairs / requested pairs,True
+season,winter_DJF,pv,daylight_MAE,236.53590842003388,kW,8496,1.0,MAE where actual_pv_kw > 0,True
+season,winter_DJF,pv,daylight_RMSE,351.96435505787275,kW,8496,1.0,RMSE where actual_pv_kw > 0,True
+season,winter_DJF,pv,daylight_sample_count,4133.0,count,8496,1.0,samples where actual_pv_kw > 0,True
+season,winter_DJF,pv,ramp_MAE,44.203017375844496,kW/10min,8496,1.0,mean(abs(predicted_ramp-actual_ramp)); adjacent physical intervals within the same natural day only,True
+season,winter_DJF,pv,ramp_sample_count,8437.0,count,8496,1.0,within-natural-day adjacent physical interval pairs,True
+season,spring_MAM,load,MAE,634.5251412892511,kW,13248,1.0,mean(abs(predicted-actual)),True
+season,spring_MAM,load,RMSE,1119.7630669630403,kW,13248,1.0,sqrt(mean((predicted-actual)^2)),True
+season,spring_MAM,load,nMAE,0.14476218509346295,ratio,13248,1.0,MAE / mean(actual_load),True
+season,spring_MAM,load,bias,0.45592860809179636,kW,13248,1.0,mean(predicted-actual),True
+season,spring_MAM,load,max_absolute_error,3973.1199999999994,kW,13248,1.0,error=predicted-actual; percentiles use absolute error,True
+season,spring_MAM,load,error_p50,168.92924999999968,kW,13248,1.0,error=predicted-actual; percentiles use absolute error,True
+season,spring_MAM,load,error_p90,2497.75444,kW,13248,1.0,error=predicted-actual; percentiles use absolute error,True
+season,spring_MAM,load,error_p95,2770.7682849999997,kW,13248,1.0,error=predicted-actual; percentiles use absolute error,True
+season,spring_MAM,load,error_p99,3439.5169400000004,kW,13248,1.0,error=predicted-actual; percentiles use absolute error,True
+season,spring_MAM,load,sample_count,13248.0,count,13248,1.0,finite actual/predicted pairs,True
+season,spring_MAM,load,valid_coverage,1.0,ratio,13248,1.0,finite pairs / requested pairs,True
+season,spring_MAM,load,peak_threshold_p90,6590.1915,kW,13248,1.0,global formal-output actual-load 90th percentile; posthoc only,True
+season,spring_MAM,load,peak_MAE,817.7521820375335,kW,13248,1.0,MAE where actual_load >= global formal p90,True
+season,spring_MAM,load,peak_max_absolute_error,3973.1199999999994,kW,13248,1.0,max absolute error where actual_load >= global formal p90,True
+season,spring_MAM,load,peak_sample_count,373.0,count,13248,1.0,samples where actual_load >= global formal p90,True
+season,spring_MAM,pv,all_day_MAE,214.67213804347824,kW,13248,1.0,mean(abs(predicted-actual)) over all intervals,True
+season,spring_MAM,pv,all_day_RMSE,420.2333525758285,kW,13248,1.0,RMSE over all intervals,True
+season,spring_MAM,pv,bias,-6.47492601147343,kW,13248,1.0,mean(predicted-actual),True
+season,spring_MAM,pv,max_absolute_error,2751.406500000001,kW,13248,1.0,max(abs(predicted-actual)),True
+season,spring_MAM,pv,sample_count,13248.0,count,13248,1.0,finite actual/predicted pairs,True
+season,spring_MAM,pv,valid_coverage,1.0,ratio,13248,1.0,finite pairs / requested pairs,True
+season,spring_MAM,pv,daylight_MAE,369.39463040654624,kW,13248,1.0,MAE where actual_pv_kw > 0,True
+season,spring_MAM,pv,daylight_RMSE,551.2498919547343,kW,13248,1.0,RMSE where actual_pv_kw > 0,True
+season,spring_MAM,pv,daylight_sample_count,7699.0,count,13248,1.0,samples where actual_pv_kw > 0,True
+season,spring_MAM,pv,ramp_MAE,75.42957491638795,kW/10min,13248,1.0,mean(abs(predicted_ramp-actual_ramp)); adjacent physical intervals within the same natural day only,True
+season,spring_MAM,pv,ramp_sample_count,13156.0,count,13248,1.0,within-natural-day adjacent physical interval pairs,True
+season,summer_JJA,load,MAE,695.6698244640701,kW,13248,1.0,mean(abs(predicted-actual)),True
+season,summer_JJA,load,RMSE,1157.6356786919725,kW,13248,1.0,sqrt(mean((predicted-actual)^2)),True
+season,summer_JJA,load,nMAE,0.13738084516388369,ratio,13248,1.0,MAE / mean(actual_load),True
+season,summer_JJA,load,bias,-26.783443048007232,kW,13248,1.0,mean(predicted-actual),True
+season,summer_JJA,load,max_absolute_error,4589.6173,kW,13248,1.0,error=predicted-actual; percentiles use absolute error,True
+season,summer_JJA,load,error_p50,241.03040000000055,kW,13248,1.0,error=predicted-actual; percentiles use absolute error,True
+season,summer_JJA,load,error_p90,2476.05494,kW,13248,1.0,error=predicted-actual; percentiles use absolute error,True
+season,summer_JJA,load,error_p95,2816.9458400000003,kW,13248,1.0,error=predicted-actual; percentiles use absolute error,True
+season,summer_JJA,load,error_p99,3450.9720510000006,kW,13248,1.0,error=predicted-actual; percentiles use absolute error,True
+season,summer_JJA,load,sample_count,13248.0,count,13248,1.0,finite actual/predicted pairs,True
+season,summer_JJA,load,valid_coverage,1.0,ratio,13248,1.0,finite pairs / requested pairs,True
+season,summer_JJA,load,peak_threshold_p90,6590.1915,kW,13248,1.0,global formal-output actual-load 90th percentile; posthoc only,True
+season,summer_JJA,load,peak_MAE,743.4523315575161,kW,13248,1.0,MAE where actual_load >= global formal p90,True
+season,summer_JJA,load,peak_max_absolute_error,4589.6173,kW,13248,1.0,max absolute error where actual_load >= global formal p90,True
+season,summer_JJA,load,peak_sample_count,2947.0,count,13248,1.0,samples where actual_load >= global formal p90,True
+season,summer_JJA,pv,all_day_MAE,229.89483770380434,kW,13248,1.0,mean(abs(predicted-actual)) over all intervals,True
+season,summer_JJA,pv,all_day_RMSE,435.0743310263168,kW,13248,1.0,RMSE over all intervals,True
+season,summer_JJA,pv,bias,-0.14926889341787625,kW,13248,1.0,mean(predicted-actual),True
+season,summer_JJA,pv,max_absolute_error,3228.8724999999995,kW,13248,1.0,max(abs(predicted-actual)),True
+season,summer_JJA,pv,sample_count,13248.0,count,13248,1.0,finite actual/predicted pairs,True
+season,summer_JJA,pv,valid_coverage,1.0,ratio,13248,1.0,finite pairs / requested pairs,True
+season,summer_JJA,pv,daylight_MAE,370.64820747231346,kW,13248,1.0,MAE where actual_pv_kw > 0,True
+season,summer_JJA,pv,daylight_RMSE,552.4359813569585,kW,13248,1.0,RMSE where actual_pv_kw > 0,True
+season,summer_JJA,pv,daylight_sample_count,8217.0,count,13248,1.0,samples where actual_pv_kw > 0,True
+season,summer_JJA,pv,ramp_MAE,87.59655086652477,kW/10min,13248,1.0,mean(abs(predicted_ramp-actual_ramp)); adjacent physical intervals within the same natural day only,True
+season,summer_JJA,pv,ramp_sample_count,13156.0,count,13248,1.0,within-natural-day adjacent physical interval pairs,True
+season,autumn_SON,load,MAE,644.5621379273505,kW,13104,1.0,mean(abs(predicted-actual)),True
+season,autumn_SON,load,RMSE,1128.2864653708107,kW,13104,1.0,sqrt(mean((predicted-actual)^2)),True
+season,autumn_SON,load,nMAE,0.14628454455170636,ratio,13104,1.0,MAE / mean(actual_load),True
+season,autumn_SON,load,bias,7.150315354090361,kW,13104,1.0,mean(predicted-actual),True
+season,autumn_SON,load,max_absolute_error,3908.4499999999994,kW,13104,1.0,error=predicted-actual; percentiles use absolute error,True
+season,autumn_SON,load,error_p50,172.85399999999981,kW,13104,1.0,error=predicted-actual; percentiles use absolute error,True
+season,autumn_SON,load,error_p90,2499.0659800000003,kW,13104,1.0,error=predicted-actual; percentiles use absolute error,True
+season,autumn_SON,load,error_p95,2780.52475,kW,13104,1.0,error=predicted-actual; percentiles use absolute error,True
+season,autumn_SON,load,error_p99,3449.5005,kW,13104,1.0,error=predicted-actual; percentiles use absolute error,True
+season,autumn_SON,load,sample_count,13104.0,count,13104,1.0,finite actual/predicted pairs,True
+season,autumn_SON,load,valid_coverage,1.0,ratio,13104,1.0,finite pairs / requested pairs,True
+season,autumn_SON,load,peak_threshold_p90,6590.1915,kW,13104,1.0,global formal-output actual-load 90th percentile; posthoc only,True
+season,autumn_SON,load,peak_MAE,770.8639064676619,kW,13104,1.0,MAE where actual_load >= global formal p90,True
+season,autumn_SON,load,peak_max_absolute_error,3871.45,kW,13104,1.0,max absolute error where actual_load >= global formal p90,True
+season,autumn_SON,load,peak_sample_count,402.0,count,13104,1.0,samples where actual_load >= global formal p90,True
+season,autumn_SON,pv,all_day_MAE,156.22651518620268,kW,13104,1.0,mean(abs(predicted-actual)) over all intervals,True
+season,autumn_SON,pv,all_day_RMSE,328.0910817737591,kW,13104,1.0,RMSE over all intervals,True
+season,autumn_SON,pv,bias,13.257660454822954,kW,13104,1.0,mean(predicted-actual),True
+season,autumn_SON,pv,max_absolute_error,2542.174500000001,kW,13104,1.0,max(abs(predicted-actual)),True
+season,autumn_SON,pv,sample_count,13104.0,count,13104,1.0,finite actual/predicted pairs,True
+season,autumn_SON,pv,valid_coverage,1.0,ratio,13104,1.0,finite pairs / requested pairs,True
+season,autumn_SON,pv,daylight_MAE,299.68217004830916,kW,13104,1.0,MAE where actual_pv_kw > 0,True
+season,autumn_SON,pv,daylight_RMSE,454.4165895485209,kW,13104,1.0,RMSE where actual_pv_kw > 0,True
+season,autumn_SON,pv,daylight_sample_count,6831.0,count,13104,1.0,samples where actual_pv_kw > 0,True
+season,autumn_SON,pv,ramp_MAE,55.796648843464226,kW/10min,13104,1.0,mean(abs(predicted_ramp-actual_ramp)); adjacent physical intervals within the same natural day only,True
+season,autumn_SON,pv,ramp_sample_count,13013.0,count,13104,1.0,within-natural-day adjacent physical interval pairs,True

@@ -1,0 +1,19 @@
+{
+  "started_at": "2026-09-12T00:20:14+08:00",
+  "status": "HUMAN_RUN_UNREVIEWED_CANDIDATES",
+  "experiments": [
+    "baseline",
+    "weekday",
+    "recent_buffer",
+    "weekday_buffer"
+  ],
+  "completed": [
+    "baseline",
+    "weekday",
+    "recent_buffer",
+    "weekday_buffer"
+  ],
+  "selection_policy": "FIXED_ABLATION_EXPLORATORY_NOT_HELD_OUT",
+  "final_competition_result": false,
+  "finished_at": "2026-09-12T00:22:48+08:00"
+}

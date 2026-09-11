@@ -1,0 +1,3 @@
+﻿track,model,status,notes
+B0,no_storage_reference,IMPLEMENTED,causal forecast + R0
+B1,baseline + MILP + R0,IMPLEMENTED,fixed experiment; not selected on formal outcomes

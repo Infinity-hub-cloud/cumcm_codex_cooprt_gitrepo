@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 from .runner import run_q2, validate_input_only
+from .candidate_forecast import EXPERIMENTS
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -15,6 +16,7 @@ def build_parser() -> argparse.ArgumentParser:
     run = subparsers.add_parser("run", help="HUMAN ONLY: full Jan warmup and Feb-Dec candidate run")
     run.add_argument("--config", required=True, type=Path)
     run.add_argument("--output-dir", required=True, type=Path)
+    run.add_argument("--experiment", choices=EXPERIMENTS, default="baseline")
     return parser
 
 
@@ -23,7 +25,7 @@ def main() -> int:
     if args.command == "validate-input":
         print(json.dumps(validate_input_only(args.config), ensure_ascii=False, indent=2))
         return 0
-    destination = run_q2(args.config, args.output_dir)
+    destination = run_q2(args.config, args.output_dir, experiment=args.experiment)
     print(f"Q2 human-run candidate created at: {destination}")
     print("Status: HUMAN_RUN_UNREVIEWED_CANDIDATE; not a final competition result.")
     return 0

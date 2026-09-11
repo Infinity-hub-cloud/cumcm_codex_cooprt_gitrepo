@@ -29,6 +29,16 @@ class ForecastRow:
     source_interval_end: datetime | None
     load_pred_kw: float
     pv_pred_kw: float
+    load_source_interval_start: datetime | None = None
+    load_source_interval_end: datetime | None = None
+    risk_buffer_kw: float = 0.0
+    buffer_sample_count: int = 0
+    buffer_source_start: datetime | None = None
+    buffer_source_end: datetime | None = None
+
+    @property
+    def planning_load_kw(self) -> float:
+        return self.load_pred_kw + self.risk_buffer_kw
 
     @property
     def is_cold_start(self) -> bool:
@@ -52,10 +62,22 @@ class ForecastDay:
     def cold_mask(self) -> np.ndarray:
         return np.asarray([row.is_cold_start for row in self.rows], dtype=bool)
 
+    @property
+    def planning_load_kw(self) -> np.ndarray:
+        return np.asarray([row.planning_load_kw for row in self.rows], dtype=np.float64)
+
     def assert_causal(self) -> None:
         if len(self.rows) != 144:
             raise AssertionError("forecast day must contain 144 rows")
         for row in self.rows:
+            values = (row.load_pred_kw, row.pv_pred_kw, row.risk_buffer_kw)
+            if not all(np.isfinite(value) and value >= 0 for value in values):
+                raise AssertionError("forecast or risk buffer is negative/nonfinite")
+            for source_end in (row.load_source_interval_end, row.buffer_source_end):
+                if source_end is not None and source_end > row.decision_time:
+                    raise AssertionError("FORECAST_LEAKAGE: candidate source not completed")
+            if row.is_cold_start and row.risk_buffer_kw != 0:
+                raise AssertionError("cold-start slots cannot have a risk buffer")
             if row.information_cutoff != row.decision_time:
                 raise AssertionError("baseline information cutoff must equal decision time")
             if row.source_interval_end is not None and row.source_interval_end > row.decision_time:

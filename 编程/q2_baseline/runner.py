@@ -3,6 +3,7 @@ from __future__ import annotations
 import csv
 import json
 from collections import defaultdict
+from dataclasses import replace
 from datetime import date
 from pathlib import Path
 from typing import Any, Iterable
@@ -11,6 +12,10 @@ from q1_baseline.run_manifest import environment_snapshot, git_snapshot, sha256_
 from q1_baseline.solver_backend import HighsPyBackend, backend_by_name
 
 from .config import Q2Config, load_config
+from .candidate_forecast import (
+    BUFFER_HISTORY_DAYS, BUFFER_MIN_SAMPLES, BUFFER_QUANTILE,
+    EXPERIMENTS, CandidatePredictor,
+)
 from .data import Q2InputData, read_q2_inputs
 from .evidence import flush_failure_evidence
 from .export_validation import validate_result2_candidate
@@ -107,7 +112,7 @@ def _feedback_template(config: Q2Config, output_dir: Path) -> str:
     return f"""# Q2 人工运行反馈（待填写）
 
 - 当前阶段：5
-- 当前状态：Q2待人工正式运行
+- 当前状态：已生成人工运行包，待核验完成状态和反馈
 - 模型版本：{config.model_version}
 - 预测版本：{config.forecast_version}
 - 数据版本：{config.data_version}
@@ -147,6 +152,13 @@ def _prediction_rows(forecasts: list[ForecastDay], kind: str) -> Iterable[dict[s
                 "source_interval_start": "" if row.source_interval_start is None else row.source_interval_start.isoformat(sep=" "),
                 "source_interval_end": "" if row.source_interval_end is None else row.source_interval_end.isoformat(sep=" "),
                 "predicted_kw": row.load_pred_kw if kind == "load" else row.pv_pred_kw,
+                "load_source_interval_start": str(row.load_source_interval_start or row.source_interval_start or ""),
+                "load_source_interval_end": str(row.load_source_interval_end or row.source_interval_end or ""),
+                "planning_load_kw": row.planning_load_kw,
+                "risk_buffer_kw": row.risk_buffer_kw,
+                "buffer_sample_count": row.buffer_sample_count,
+                "buffer_source_start": str(row.buffer_source_start or ""),
+                "buffer_source_end": str(row.buffer_source_end or ""),
             }
 
 
@@ -154,6 +166,8 @@ PREDICTION_FIELDS = [
     "template_date", "template_slot", "decision_time", "information_cutoff",
     "interval_start", "interval_end", "forecast_source", "forecast_version",
     "source_interval_start", "source_interval_end", "predicted_kw",
+    "load_source_interval_start", "load_source_interval_end", "planning_load_kw",
+    "risk_buffer_kw", "buffer_sample_count", "buffer_source_start", "buffer_source_end",
 ]
 
 
@@ -214,6 +228,8 @@ def _dispatch_rows(
                 "balance_residual": realized_balance,
                 "soc_residual": soc_residual,
                 "solver_status": replay.plan.status,
+                "risk_buffer_kwh": forecast_row.risk_buffer_kw * config.parameters.delta_t,
+                "planning_load_kwh": forecast_row.planning_load_kw * config.parameters.delta_t,
             }
 
 
@@ -227,13 +243,24 @@ DISPATCH_FIELDS = [
     "adjust_up_kwh", "planned_purchase_cost", "downward_adjustment_penalty",
     "upward_adjustment_cost", "emergency_purchase_cost", "total_cost",
     "balance_residual", "soc_residual", "solver_status",
+    "risk_buffer_kwh", "planning_load_kwh",
 ]
 
 
-def run_q2(config_path: str | Path, output_dir: str | Path) -> Path:
+def run_q2(config_path: str | Path, output_dir: str | Path, *, experiment: str = "baseline") -> Path:
     """Explicit human-run entry point for the full Jan warmup + Feb-Dec Q2 run."""
     config_path_resolved = Path(config_path).resolve()
     config = load_config(config_path_resolved)
+    if experiment not in EXPERIMENTS:
+        raise ValueError(f"unknown experiment: {experiment}")
+    baseline_id = "B1_RECENT_SAME_CLOCK_MILP_R0"
+    if experiment != "baseline":
+        baseline_id = f"B1_{experiment.upper()}_MILP_R0"
+        config = replace(
+            config,
+            model_version=f"M2-Q2-EXPERIMENT-{experiment}-v1.0",
+            forecast_version=f"q2-{experiment}-v1.0",
+        )
     # Q2-PRE-RUN-PATCH-001 hard gate: no CSV read, prediction, model build,
     # backend initialization, or solver call may occur before this succeeds.
     integrity = verify_input_integrity(config)
@@ -254,8 +281,7 @@ def run_q2(config_path: str | Path, output_dir: str | Path) -> Path:
     (destination / "human_feedback.md").write_text(_feedback_template(config, destination), encoding="utf-8")
     _write_csv(destination / "model_selection.csv", ["track", "model", "status", "notes"], [
         {"track": "B0", "model": "no_storage_reference", "status": "IMPLEMENTED", "notes": "causal forecast + R0"},
-        {"track": "B1", "model": "recent_completed_same_clock + MILP + R0", "status": "IMPLEMENTED", "notes": "locked baseline"},
-        {"track": "Candidate", "model": "ForecastProvider interface", "status": "INTERFACE_ONLY", "notes": "no advanced model added"},
+        {"track": "B1", "model": experiment + " + MILP + R0", "status": "IMPLEMENTED", "notes": "fixed experiment; not selected on formal outcomes"},
     ])
     started_at = timestamp()
     git = git_snapshot(config_path_resolved.parents[2])
@@ -275,6 +301,18 @@ def run_q2(config_path: str | Path, output_dir: str | Path) -> Path:
         "finished_at": None,
         "model_version": config.model_version,
         "forecast_version": config.forecast_version,
+        "experiment": experiment,
+        "baseline_id": baseline_id,
+        "experiment_settings": {
+            "load_strategy": "weekday" if experiment.startswith("weekday") else "recent",
+            "pv_strategy": "recent",
+            "use_buffer": experiment.endswith("buffer"),
+            "buffer_history_days": BUFFER_HISTORY_DAYS,
+            "buffer_min_samples": BUFFER_MIN_SAMPLES,
+            "buffer_quantile": BUFFER_QUANTILE,
+            "selection_status": "FIXED_ABLATION_EXPLORATORY_NOT_HELD_OUT",
+            "prediction_metrics_use": "raw point forecasts, excluding risk buffer",
+        },
         "data_version": config.data_version,
         "input_paths": {
             "price": str(config.normalized_price_input),
@@ -289,6 +327,10 @@ def run_q2(config_path: str | Path, output_dir: str | Path) -> Path:
         "input_manifest_sha256": integrity["input_manifest_sha256"],
         "audit_summary_sha256": integrity["audit_summary_sha256"],
         "code_version_or_hashes": code_hashes,
+        "common_code_hashes": {
+            path.name: sha256_file(path)
+            for path in sorted((Path(__file__).resolve().parents[1] / "q1_baseline").glob("*.py"))
+        },
         "config_sha256": sha256_file(config_path_resolved),
         "environment": environment_snapshot(),
         "solver_name": config.solver_name,
@@ -330,7 +372,14 @@ def run_q2(config_path: str | Path, output_dir: str | Path) -> Path:
         backend = backend_by_name(config.solver_name)
         if isinstance(backend, HighsPyBackend):
             backend.require_available()
-        predictor = RecentCompletedSameClockPredictor(data, config.forecast_version)
+        if experiment == "baseline":
+            predictor = RecentCompletedSameClockPredictor(data, config.forecast_version)
+        else:
+            predictor = CandidatePredictor(
+                data, "weekday" if experiment.startswith("weekday") else "recent",
+                experiment.endswith("buffer"),
+            )
+            predictor.version = config.forecast_version
         previous_b1: DailyPlan | None = None
 
         for day in date_range(config.warmup_start, config.output_end):
@@ -371,6 +420,7 @@ def run_q2(config_path: str | Path, output_dir: str | Path) -> Path:
                         master.write("\n")
                 if native_log.is_file():
                     native_log.unlink()
+            b1_plan = replace(b1_plan, baseline=baseline_id)
             manifest["solver_name"] = b1_plan.solver_name
             manifest["solver_version"] = b1_plan.solver_version
             b1_replay = replay_r0(b1_plan, actual, data.price, config.parameters)
@@ -494,7 +544,7 @@ def run_q2(config_path: str | Path, output_dir: str | Path) -> Path:
                     "run_id": destination.name,
                     "question_id": "Q2",
                     "model_id": config.forecast_version,
-                    "baseline_id": "B1_RECENT_SAME_CLOCK_MILP_R0",
+                    "baseline_id": baseline_id,
                     "split": "formal_output",
                     "period": f"{row['scope']}:{row['group']}",
                     "metric": f"{row['series']}.{row['metric']}",

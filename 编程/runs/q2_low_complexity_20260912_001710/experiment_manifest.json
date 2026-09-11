@@ -1,0 +1,15 @@
+{
+  "started_at": "2026-09-12T00:17:26+08:00",
+  "status": "FAILED_OR_INCOMPLETE",
+  "experiments": [
+    "baseline",
+    "weekday",
+    "recent_buffer",
+    "weekday_buffer"
+  ],
+  "completed": [],
+  "selection_policy": "FIXED_ABLATION_EXPLORATORY_NOT_HELD_OUT",
+  "final_competition_result": false,
+  "error": "highspy is not installed. Install it manually in the approved environment before running Q1; Codex did not install dependencies.",
+  "finished_at": "2026-09-12T00:17:26+08:00"
+}

@@ -31,7 +31,7 @@ def validate_day(
 ) -> tuple[bool, tuple[AssertionRecord, ...], dict[str, float]]:
     forecast.assert_causal()
     tol = params.feasibility_tolerance
-    pred_load = forecast.load_pred_kw * params.delta_t
+    pred_load = forecast.planning_load_kw * params.delta_t
     pred_pv = forecast.pv_pred_kw * params.delta_t
     pred_balance = plan.G + pred_pv + plan.D - pred_load - plan.C - plan.W_pred
     soc_residual = plan.S[1:] - plan.S[:-1] - params.charge_efficiency * plan.C + plan.D / params.discharge_efficiency

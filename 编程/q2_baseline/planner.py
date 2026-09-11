@@ -122,7 +122,7 @@ def build_daily_milp(
         upper[layout.D.start + i] = 0.0
         upper[layout.z.start + i] = 0.0
 
-    load = forecast.load_pred_kw * params.delta_t
+    load = forecast.planning_load_kw * params.delta_t
     pv = forecast.pv_pred_kw * params.delta_t
     rows = _Rows()
     for i in range(T):
@@ -260,7 +260,7 @@ def cold_start_plan(forecast: ForecastDay, initial_soc_0010: float) -> DailyPlan
 def compute_b0_plan(
     forecast: ForecastDay, price: np.ndarray, params: Q2Parameters, soc_reference: float
 ) -> DailyPlan:
-    load = forecast.load_pred_kw * params.delta_t
+    load = forecast.planning_load_kw * params.delta_t
     pv = forecast.pv_pred_kw * params.delta_t
     G = np.maximum(load - pv, 0.0)
     W = np.maximum(pv - load, 0.0)

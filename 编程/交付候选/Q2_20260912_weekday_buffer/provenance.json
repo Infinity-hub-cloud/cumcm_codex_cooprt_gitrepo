@@ -1,0 +1,556 @@
+{
+  "status": "TECHNICALLY_REVIEWED_PENDING_HUMAN_ACCEPTANCE",
+  "final_competition_result": false,
+  "reviewed_on": "2026-09-12",
+  "source_suite": "runs/q2_low_complexity_20260912_002010",
+  "selected_arm": "weekday_buffer",
+  "selected_track": "B1",
+  "selection_policy": "FIXED_ABLATION_EXPLORATORY_NOT_HELD_OUT",
+  "delivery_workbook": "result2.xlsx",
+  "source_workbook": "runs/q2_low_complexity_20260912_002010/weekday_buffer/result2_candidate.xlsx",
+  "delivery_sha256": "CEF7AE5579459E274BBE1387FB22F4A031081CB09AB62D34FF75237E6E8853FC",
+  "copy_policy": "byte-identical copy; official source template unchanged",
+  "human_acceptance_record": "人工验收.md",
+  "input_sha256": {
+    "price": "695E14DD02D011E24AE8CE1C5CD7BFF4CA963F5C92FA884BACC0386059AD07E3",
+    "actual": "00DA155528AFC173776F59E620C8AEFCD661A5C5D8520472CE3AA9F0A91631ED",
+    "official_result2_template": "1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47"
+  },
+  "config_source_sha256": "89E12E75B4E912E4B211891225AF8E465A1EC4ED68B7418F81FDC8C7BC0DC720",
+  "experiment_settings": {
+    "load_strategy": "weekday",
+    "pv_strategy": "recent",
+    "use_buffer": true,
+    "buffer_history_days": 28,
+    "buffer_min_samples": 7,
+    "buffer_quantile": 0.8,
+    "selection_status": "FIXED_ABLATION_EXPLORATORY_NOT_HELD_OUT",
+    "prediction_metrics_use": "raw point forecasts, excluding risk buffer"
+  },
+  "source_model_manifest": {
+    "run_id": "weekday_buffer",
+    "question_id": "Q2",
+    "stage": 5,
+    "status": "HUMAN_RUN_UNREVIEWED_CANDIDATE",
+    "run_status": "HUMAN_RUN_UNREVIEWED_CANDIDATE",
+    "final_competition_result": false,
+    "created_at": "2026-09-12T00:22:07+08:00",
+    "started_at": "2026-09-12T00:22:07+08:00",
+    "finished_at": "2026-09-12T00:22:48+08:00",
+    "model_version": "M2-Q2-EXPERIMENT-weekday_buffer-v1.0",
+    "forecast_version": "q2-weekday_buffer-v1.0",
+    "experiment": "weekday_buffer",
+    "baseline_id": "B1_WEEKDAY_BUFFER_MILP_R0",
+    "experiment_settings": {
+      "load_strategy": "weekday",
+      "pv_strategy": "recent",
+      "use_buffer": true,
+      "buffer_history_days": 28,
+      "buffer_min_samples": 7,
+      "buffer_quantile": 0.8,
+      "selection_status": "FIXED_ABLATION_EXPLORATORY_NOT_HELD_OUT",
+      "prediction_metrics_use": "raw point forecasts, excluding risk buffer"
+    },
+    "data_version": "PREP-TIME-REV-20260911T170805+0800",
+    "input_paths": {
+      "price": "D:\\Users\\LENOVO\\Desktop\\数学建模\\国赛团队共享工作区\\编程\\预处理审计输出_时间口径修订版\\normalized\\attachment1_single_day.csv",
+      "actual": "D:\\Users\\LENOVO\\Desktop\\数学建模\\国赛团队共享工作区\\编程\\预处理审计输出_时间口径修订版\\normalized\\attachment2_actual_long.csv",
+      "official_result2_template": "D:\\Users\\LENOVO\\Desktop\\数学建模\\国赛团队共享工作区\\C题\\附件\\附件5\\result2.xlsx"
+    },
+    "input_sha256": {
+      "price": "695E14DD02D011E24AE8CE1C5CD7BFF4CA963F5C92FA884BACC0386059AD07E3",
+      "actual": "00DA155528AFC173776F59E620C8AEFCD661A5C5D8520472CE3AA9F0A91631ED",
+      "official_result2_template": "1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47"
+    },
+    "input_manifest_sha256": "E489553660EB610271F2B192272BF1EB94BDE3D88CECE3D40048792349EE1B06",
+    "audit_summary_sha256": "95F8E17FC0428EFAA4B2BD256D2E6B51C7F5066B2835C9F6B17EB88D3A916AED",
+    "code_version_or_hashes": {
+      "__init__.py": "60B96EB2542F4E216500D429D26BEA4B8BF8EACA7933C16385FDCC516C6A8A3B",
+      "candidate_forecast.py": "88A6FC82BC579AC5F243B919DE5254C45A944EA5331BC97402E1FB2B77CFC5DC",
+      "cli.py": "D71A0D4525D819D4EC361E73A3EE51B5A61E28B6F06060BF3592076FEB7FD1B1",
+      "config.py": "3D992760083B0401B1C5AA514D54E54B35DED5EDA08176F9BE46E87062EADDFE",
+      "data.py": "52518E8836011A04A8FF4F0DFEA797F4FE00F93AC158CFACCEBB3136082FED08",
+      "evidence.py": "0FCCEA4A01646F7C3FF7CB01BE6F00A2BABF2C52279F767C1651F6461ACFCB49",
+      "experiments.py": "AE9A27F2C3FAA05D1BD270D0AA2F16F66D87452E9AAF3A0FBA785E5EB14348C2",
+      "export_validation.py": "D81578CA6A34A5EC34A124350D40393CC79188C5FD57D61BC3E015FD740D1B06",
+      "exporter.py": "A4F98D131B8025A3586EFA082280A35D601685732183FA2FA8960584E2203E35",
+      "forecast.py": "95E3AA171C3DDC6694BB9D8DE48061E1FE73526201E4F4F97F67A4AFA776AAF7",
+      "integrity.py": "117E5C1F2AD23F732223AB9368D7DD2916E761E516DA636B33DEC7423FA785BF",
+      "planner.py": "18694B3C0F3640F426732D88884E2FCC36334749D3EB528B9B2B74411681A11C",
+      "prediction_metrics.py": "FEA9A4C44C7B2961EA9178757F7BEF55B4E250A556CF9037DD294060F36957BA",
+      "replay.py": "4917CA78028F27376A47B7DCAA26EBEDCA26C667F01845A1FF203B0DE06C6AB3",
+      "runner.py": "B5A3080587591C41AD865A569F746D4D307EAB99F45376B3860BAEB77158E8E1",
+      "time_axis.py": "2BBE71AB89455880A25E0F51C715D4FD02A1C083685A2E68E01FBD8563063570",
+      "validation.py": "442FFF365B1919446824AD77468AC7B58F116B9A32B5F7B8E51784EF1937CCA7"
+    },
+    "common_code_hashes": {
+      "__init__.py": "90D9C93851A455FD21807A41B52BA1623AF9AC2CEACE0C7EA975512DB068D28F",
+      "baseline.py": "911A91297092E8B0D75DCED330B0C8E4D0CBA6D0628480ACCE1AC2465A4A431E",
+      "cli.py": "E4691C2A016CE9D05686073E514AFE76FA87ED4822B7B7B95CFB6F44EDD38070",
+      "config.py": "1C90C04291967F0E64956CDE76B89CF9A4F7FD064608CBC5DA7AE3D9491C317A",
+      "data_contract.py": "5C978C0737BD465A6CE8BA4677A29E45EE2E735ACD24C80C19B0D952554BF86D",
+      "export_templates.py": "A03C631331DAF8E3E546739F8B7552001B5E0C269EC8030BB90D85C4ED030DDA",
+      "export_validation.py": "5E22BFEFD6E4EA4EA4DFAA3B0372000DD84F306E916310627BAAD8D11288385F",
+      "metrics.py": "09A1E89AB29AADA399010359863649376B40E099ECB7F042860BEA868D88F38E",
+      "milp.py": "C8406BC574E3457E2370ACE1E8781D4E0CD7C1E39A156E5F367F572A86E6AE60",
+      "normalized_reader.py": "39E30724A2AA8CBA8E005CF2688EC664F5980F77AAC7764FB61CC4F55E782FC6",
+      "optimize.py": "5CDD6A9E4ABF950A4A6B4FEEA663729FBF1587C86E0E782D114E38B32C1E19C5",
+      "parameters.py": "E0F773341B6A1EA184248081FFE932AA4BA74323AD257C900DB921EC2376BBFA",
+      "raw_reader.py": "28401FB3656E3CF4A1926C707ED704CF3BF9D3C312B9C2ADD3743B256E9BF82D",
+      "run_manifest.py": "B338D00A54CD2363EA1074046FEE08F2B12C18751F872A4EEA1A55E2EA2C64E4",
+      "runner.py": "683B36D6FC2EB22D96491E8AFBD4D9C4342816F945CC8405198F2C6133728349",
+      "solver_backend.py": "D67F8B0D63B58100BD73106FF87FC4519B3614D6A78345204D63D73FDAD99B70",
+      "time_index.py": "0AB3CAEDCEB6D89D24DD278C467879A378D0DCCE4EC43B68EA7C4020DCE1730E"
+    },
+    "config_sha256": "89E12E75B4E912E4B211891225AF8E465A1EC4ED68B7418F81FDC8C7BC0DC720",
+    "environment": {
+      "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "executable": "D:\\python3.11\\python.exe"
+    },
+    "solver_name": "HiGHS",
+    "solver_version": "1.15.1",
+    "predictor_versions": {
+      "load": "q2-weekday_buffer-v1.0",
+      "pv": "q2-weekday_buffer-v1.0"
+    },
+    "random_seeds": {
+      "predictor": "NOT_APPLICABLE_DETERMINISTIC",
+      "optimization": "NOT_APPLICABLE_DETERMINISTIC_MILP"
+    },
+    "information_cutoff_policy": "source_interval_end <= decision_time",
+    "output_period": {
+      "start": "2025-02-01",
+      "end": "2025-12-31",
+      "template_days": 334
+    },
+    "git": {
+      "git_head": "b68744779ae5eafde8d069329ed3b1584554cff7",
+      "git_dirty": true
+    },
+    "git_head": "b68744779ae5eafde8d069329ed3b1584554cff7",
+    "git_dirty": true,
+    "warnings_count": 1,
+    "failures_count": 0,
+    "warnings": [
+      "WARNING-Q2-INPUT-ROUNDING-001"
+    ],
+    "last_completed_template_date": "2025-12-31",
+    "failed_template_date": null,
+    "required_outputs": [
+      "run_manifest.json",
+      "config_snapshot.json",
+      "model_selection.csv",
+      "predictions_load.csv",
+      "predictions_pv.csv",
+      "dispatch_timeseries.csv",
+      "daily_metrics.csv",
+      "monthly_metrics.csv",
+      "metrics_summary.csv",
+      "prediction_metrics.csv",
+      "assertions.json",
+      "solver_days.csv",
+      "solver.log",
+      "warnings_and_failures.log",
+      "result2_candidate.xlsx",
+      "export_validation.json",
+      "human_feedback.md"
+    ],
+    "run_completed_at": "2026-09-12T00:22:48+08:00",
+    "assertions_passed": true,
+    "export_validation_passed": true,
+    "warmup_cost_yuan_separate_not_in_formal": 2227067.592789365,
+    "formal_q2_total_cost_yuan": 15212046.690710831,
+    "formal_output_days": 334,
+    "solver_days": 365,
+    "export": {
+      "candidate_path": "D:\\Users\\LENOVO\\Desktop\\数学建模\\国赛团队共享工作区\\编程\\runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\result2_candidate.xlsx",
+      "candidate_sha256": "CEF7AE5579459E274BBE1387FB22F4A031081CB09AB62D34FF75237E6E8853FC",
+      "official_template_path": "D:\\Users\\LENOVO\\Desktop\\数学建模\\国赛团队共享工作区\\C题\\附件\\附件5\\result2.xlsx",
+      "official_sha256_before": "1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47",
+      "official_sha256_after": "1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47",
+      "official_template_unchanged": true,
+      "plan_days": 334,
+      "storage_rows": 2004,
+      "emergency_event_rows": 3861
+    },
+    "official_result2_sha256_after": "1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47"
+  },
+  "source_files": [
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\baseline\\assertions.json",
+      "bytes": 3371165,
+      "sha256": "1305A2473A07F7504D972B0DA5570D5A4B6C882F56197BA71E07C0DAA5644C6A"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\baseline\\config_snapshot.json",
+      "bytes": 1727,
+      "sha256": "C1C15DAB47CC56D43C71AC91DA958066DB1B5D4F70BBE8C92BE7E64D67E3E74B"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\baseline\\daily_metrics.csv",
+      "bytes": 163806,
+      "sha256": "CC855EB64DBAD60F436F63C6A7BFDB5C34048E7E477128CC7EBDAF8FF71FABF2"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\baseline\\dispatch_timeseries.csv",
+      "bytes": 36887112,
+      "sha256": "0A5E9D237451E729A4B819576A4A41E35BED732F315DAA4D1C88634D5EA17092"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\baseline\\export_validation.json",
+      "bytes": 6392,
+      "sha256": "AFFD2C432CBD9C6F653977785473DC9DD3CF41C40949FDE54FE5F7C0FEA9F607"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\baseline\\human_feedback.md",
+      "bytes": 1200,
+      "sha256": "B119C5FD44D023A135994A05E6996A3EC9F3B0F946F7F07E7AEBD063AB666115"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\baseline\\metrics_summary.csv",
+      "bytes": 96086,
+      "sha256": "CFCB4DBE97A0993D24A274E25BA70ACBED2D45A1D81481D88EA13CCF40995982"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\baseline\\model_selection.csv",
+      "bytes": 174,
+      "sha256": "310C173F615625D5B3C0AFB053A8EDB1F44063EEF0394D08E812B185F21DF732"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\baseline\\monthly_metrics.csv",
+      "bytes": 4517,
+      "sha256": "F12C28611D8F064EE68B7139778B69A604864395370F8E0759DF89D783BF2982"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\baseline\\prediction_metrics.csv",
+      "bytes": 44749,
+      "sha256": "65E928FF338028DB8CF135284022D13468856C6C0E6C5E4F4790D445C935623F"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\baseline\\predictions_load.csv",
+      "bytes": 13794601,
+      "sha256": "9DF064331C9871964CD77AC7177EF0F3B74CF76AD65636F89955A3FB5D0F6DCC"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\baseline\\predictions_pv.csv",
+      "bytes": 13672815,
+      "sha256": "D679ABBABC288F73008F5D90ED8FB6D97BBD6D49D02878ABFE26A462AD8B6B43"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\baseline\\result2_candidate.xlsx",
+      "bytes": 483738,
+      "sha256": "EDE5A585BDB55226BF5E3C37B5624E2ACC2600760D3FE79AC885A75BABBC03F2"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\baseline\\run_manifest.json",
+      "bytes": 7903,
+      "sha256": "2520CBE224A485365380C92E6535A1A328829298DBF2AFF33BAC5FC457D5FAAF"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\baseline\\solver.log",
+      "bytes": 114449,
+      "sha256": "90446F07996B6FAC576B654AC4770CBF097F60A4D74E108F60ACBD4CDFFE574A"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\baseline\\solver_days.csv",
+      "bytes": 29160,
+      "sha256": "DE8BD19E7153B25DBEC43406C5608DC9552839FC6D57BDBBC9BBE1451B4464C9"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\baseline\\warnings_and_failures.log",
+      "bytes": 290,
+      "sha256": "00960253459D628269D06F5B13A5924E082D44C7E0B7561E1D48AA90A9D8B50D"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\comparison_daily.csv",
+      "bytes": 532058,
+      "sha256": "84AE2312150049B83FEBDC21E65887ECFD05A50F4EA49426EB6D88FAEDECFF7C"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\comparison_monthly.csv",
+      "bytes": 17845,
+      "sha256": "B9DD62EFF1429F3EF6474A04D1D8D566919ACA8FB6F14E11C764E6FAD48F7F76"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\comparison_prediction_metrics.csv",
+      "bytes": 198249,
+      "sha256": "7D7C25D94A0D6748CC9CAAE03C5DDC939C81C0FD3F93217313DD753994524F91"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\comparison_report.md",
+      "bytes": 1450,
+      "sha256": "6FC602F978D8E677149643540C651AD456DE046EBCFDAD69B2DB2F0FDE39321B"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\comparison_solver.csv",
+      "bytes": 380,
+      "sha256": "1457E253BFFB247B0F7F035905B098D60143839FC5915E22D5E4176AE0F79DD5"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\comparison_summary.csv",
+      "bytes": 2580,
+      "sha256": "6C585793EA902871AC3BB75E18B08D82A3E2688E10201CF7956E1D7D01F9C03C"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\experiment_manifest.json",
+      "bytes": 452,
+      "sha256": "96BB17BB6CEF00C9FF938D4301C8283ECFD55A43DDC9C1C6C617A9CA3CE45645"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\recent_buffer\\assertions.json",
+      "bytes": 3370699,
+      "sha256": "BD4A55270A68E4E5FEF7B39FE035FEAD4D06524B3C3835635C0320509F926B92"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\recent_buffer\\config_snapshot.json",
+      "bytes": 1726,
+      "sha256": "8A6A393E08E6C302C03BBE860229184BFE3BFBE101D9F27BA07D04BBFDFEEEA4"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\recent_buffer\\daily_metrics.csv",
+      "bytes": 161677,
+      "sha256": "C775A7DCCA624C118D1B181BAEADD665F12FAE619E1034162C8BCCC64B21AC0A"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\recent_buffer\\dispatch_timeseries.csv",
+      "bytes": 38030182,
+      "sha256": "ADE050A5E0FAFCF4E4BF410534B5181B6DC1C1B3043DA34857937568ED119A68"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\recent_buffer\\export_validation.json",
+      "bytes": 6403,
+      "sha256": "B987C05411E7D9C7A9053FFE584EBD3F74769B3EF1BD7D95944C20560ABAED6B"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\recent_buffer\\human_feedback.md",
+      "bytes": 1204,
+      "sha256": "0D31BDBFAAD411678B7B6442448B55A192418FBC8A02A53F7D17C97A1D029299"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\recent_buffer\\metrics_summary.csv",
+      "bytes": 92177,
+      "sha256": "4B414EB51DEC77A48AA12BF446526DEC09AF08C1FA90DE14B347AFB238E367B4"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\recent_buffer\\model_selection.csv",
+      "bytes": 179,
+      "sha256": "A5E3B35B7DE8B1D2095A0024D8A68A8888DE07FBE18C13C87FB41D9760375C13"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\recent_buffer\\monthly_metrics.csv",
+      "bytes": 4441,
+      "sha256": "9CC050C25EBB75EAE218BAB3A77E53D3D915E6A28AB674AE82D4B515B79C70C2"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\recent_buffer\\prediction_metrics.csv",
+      "bytes": 44749,
+      "sha256": "65E928FF338028DB8CF135284022D13468856C6C0E6C5E4F4790D445C935623F"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\recent_buffer\\predictions_load.csv",
+      "bytes": 15876226,
+      "sha256": "E0E2252A5E7B7FE8566358A6C1A0B72864E91D8E7611FB252D53DFC81FAC253C"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\recent_buffer\\predictions_pv.csv",
+      "bytes": 15754440,
+      "sha256": "7792154EF3038179127861A24F7B9DB743CF8E06EB22E0AF9DCB9E9EEDA69EFC"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\recent_buffer\\result2_candidate.xlsx",
+      "bytes": 444988,
+      "sha256": "15A814C23372BCB7771F4CF52A6D8098EA1BF65342777ABF5FCF97C1F97C6376"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\recent_buffer\\run_manifest.json",
+      "bytes": 7892,
+      "sha256": "AE7A00346BB6038CA1BE67C877AD1D13CEEA5703062385CF20A5B9792DA64577"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\recent_buffer\\solver.log",
+      "bytes": 114797,
+      "sha256": "422454CD14302DDEFEDE347B8561F178FC10E3121B1218350942352B69A88EE5"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\recent_buffer\\solver_days.csv",
+      "bytes": 29508,
+      "sha256": "330999E109C734C0600678A21609640F97DAD5E229035F5AC56CD5F285A42D22"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\recent_buffer\\warnings_and_failures.log",
+      "bytes": 290,
+      "sha256": "00960253459D628269D06F5B13A5924E082D44C7E0B7561E1D48AA90A9D8B50D"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday\\assertions.json",
+      "bytes": 3366902,
+      "sha256": "1D6018480D4225EACD64BCE96E0DC4FCFB0D8D4EE6DF657CC7B5361F1055AA5E"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday\\config_snapshot.json",
+      "bytes": 1714,
+      "sha256": "021F2C8ACC74A595E0F182C0BB29F8F22AF718D9F500ED2BADBE30F4ABEE7CE6"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday\\daily_metrics.csv",
+      "bytes": 164245,
+      "sha256": "912485C6EC951D213362DB328D69E9E559C9BF33A5DF178D99A65F8DE4918B5F"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday\\dispatch_timeseries.csv",
+      "bytes": 36319217,
+      "sha256": "8ED64707BAAB89C7AC2EB7E6F0C20DEFE52A4D54DA809898BC4116D90C810CE6"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday\\export_validation.json",
+      "bytes": 6391,
+      "sha256": "A4067BDE1F3166B749D20D12EF3265F3E62BA752B348E6E3009B0758B8058089"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday\\human_feedback.md",
+      "bytes": 1186,
+      "sha256": "6EA26C388BFCE804AA4BA7FDEAFC260DF2B06611A8907344CE5C80DF7340EAC3"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday\\metrics_summary.csv",
+      "bytes": 84518,
+      "sha256": "4316DC3696FDB12D6BA4E607E69A85DC051EB7F4EF2A1AEA6BEEC68A017FCB2A"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday\\model_selection.csv",
+      "bytes": 173,
+      "sha256": "7DE01256E6A4F8B5BAD428CBF42CD6CF342A2A0CE75F7789D615DA25359D55E8"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday\\monthly_metrics.csv",
+      "bytes": 4398,
+      "sha256": "74D37753E3D657324B0691AE3FE49C37859CD234739B74F3BB32E488F773518A"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday\\prediction_metrics.csv",
+      "bytes": 44958,
+      "sha256": "6CDC76C393D728950A70F1B9E63625534F9BF3AE2598A51045CA681A65FFC5E5"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday\\predictions_load.csv",
+      "bytes": 12272023,
+      "sha256": "C58A5FCD8A36D0BF6CA77F4BC4D8AA0BBB47322518836C5CA524165D1F946C96"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday\\predictions_pv.csv",
+      "bytes": 12150276,
+      "sha256": "3D230AEB49DE7A724F0D0CBD41E0E892FBA7DD757ADC1090264F9EB174947410"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday\\result2_candidate.xlsx",
+      "bytes": 507638,
+      "sha256": "4462ADC8B5B483B0F238902C4EF65BCC82CB1640239FC94210823883AF8337E7"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday\\run_manifest.json",
+      "bytes": 7843,
+      "sha256": "D8EE9201A22E9CADB28EE79C9D0C8BA5D9C3506A3AF9DF78038432A4C0A66B9B"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday\\solver.log",
+      "bytes": 114625,
+      "sha256": "652914EB100E305DD36FE349C46CF411DA7BF62EF648A3CDC9A636D6D27E8A08"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday\\solver_days.csv",
+      "bytes": 29336,
+      "sha256": "2D985AA7FB6A45B7FA50ED3726164E4E8939A0F54B050263E1AA7B8ADB375BAD"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday\\warnings_and_failures.log",
+      "bytes": 290,
+      "sha256": "00960253459D628269D06F5B13A5924E082D44C7E0B7561E1D48AA90A9D8B50D"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\assertions.json",
+      "bytes": 3370995,
+      "sha256": "768B20AFEB08F01154E285A87392BA33965C1D86DCBF9FB8695E8D6A5FF53703"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\config_snapshot.json",
+      "bytes": 1728,
+      "sha256": "28CDEA5CD9230457597453139D1B0E5F55C8267EF574D99939A6321B69928F9E"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\daily_metrics.csv",
+      "bytes": 166877,
+      "sha256": "074EC56031667D72DC870DBBF7280BF391B74DEC5CDF37BD1BC716A61C8DCDE3"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\dispatch_timeseries.csv",
+      "bytes": 38000639,
+      "sha256": "04130044EAB5864A5ADBD6D3CD3EDFA534B7AF843198300FC7A99B22693E09A3"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\export_validation.json",
+      "bytes": 6404,
+      "sha256": "E35D8CCFD03567A34A34779BC715A64141450F40AA9C61F385379BAAC2591F82"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\human_feedback.md",
+      "bytes": 1207,
+      "sha256": "00BD47C890E42ACFF1964BE7E9388EA97676808C91E20430A369CF352FCF5684"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\metrics_summary.csv",
+      "bytes": 93700,
+      "sha256": "776A8F0335F6AB43113E4BFEA4FC78C9805CFB8E46F19CDDD752EFBD6F915200"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\model_selection.csv",
+      "bytes": 180,
+      "sha256": "1034AC8AEAA63278802D6A846D02AFD7996A824DA35092CEA0054631F2BFDC31"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\monthly_metrics.csv",
+      "bytes": 4477,
+      "sha256": "E282D8D291EB2BA1BF634136FB64C02B4068E2C9B2C6569E811C8C7BBACA6A13"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\prediction_metrics.csv",
+      "bytes": 44958,
+      "sha256": "6CDC76C393D728950A70F1B9E63625534F9BF3AE2598A51045CA681A65FFC5E5"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\predictions_load.csv",
+      "bytes": 15976851,
+      "sha256": "D1412C3CFA6D02842AE45EB92C81BDAA14509D14A7D14C35585DCBE4F30FB065"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\predictions_pv.csv",
+      "bytes": 15855104,
+      "sha256": "F26248B32FB95314FEF626499117785A09A345EA6920AE66E0B9197A501CC622"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\result2_candidate.xlsx",
+      "bytes": 478765,
+      "sha256": "CEF7AE5579459E274BBE1387FB22F4A031081CB09AB62D34FF75237E6E8853FC"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\run_manifest.json",
+      "bytes": 7900,
+      "sha256": "7661EB804A73A1546A455D2A3E7883D276AB1672379AC8F2A22B58952C624716"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\solver.log",
+      "bytes": 114776,
+      "sha256": "C31CA188B8D6F29EC6F36BF5FD08588E4BA5AA839E6B07BC0C284EF6501CF17E"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\solver_days.csv",
+      "bytes": 29487,
+      "sha256": "AAD0FBAF993507B533BA0C5D2ACA6ACAF574EA4D454582BDAE0C64A0E971D65C"
+    },
+    {
+      "path": "runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\warnings_and_failures.log",
+      "bytes": 290,
+      "sha256": "00960253459D628269D06F5B13A5924E082D44C7E0B7561E1D48AA90A9D8B50D"
+    }
+  ]
+}

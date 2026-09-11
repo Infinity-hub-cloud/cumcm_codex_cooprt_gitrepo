@@ -1,0 +1,102 @@
+{
+  "archive_date": "2026-09-12",
+  "operation": "move directories unchanged; no deletion",
+  "source_root": "编程",
+  "destination_root": "编程/归档/20260912_旧冒烟审计",
+  "directories": [
+    {
+      "directory": "_smoke_audit_time_revision_20260911_a",
+      "files": []
+    },
+    {
+      "directory": "_smoke_audit_time_revision_20260911_b",
+      "files": [
+        {
+          "path": "audit\\audit_report.md",
+          "bytes": 56290,
+          "sha256": "E1CC8BDD032C1CA34D780D3ED636E13FBB66F4E61AE66D1B3070F7CA452478DF"
+        },
+        {
+          "path": "audit\\audit_summary.json",
+          "bytes": 96643,
+          "sha256": "011AE9358B201E119BCF1A7BF73741C00D96F513D859B279192E8F5D9B79DBE6"
+        },
+        {
+          "path": "audit\\manifest.json",
+          "bytes": 2345,
+          "sha256": "E489553660EB610271F2B192272BF1EB94BDE3D88CECE3D40048792349EE1B06"
+        },
+        {
+          "path": "normalized\\attachment1_single_day.csv",
+          "bytes": 10428,
+          "sha256": "695E14DD02D011E24AE8CE1C5CD7BFF4CA963F5C92FA884BACC0386059AD07E3"
+        },
+        {
+          "path": "normalized\\attachment2_actual_long.csv",
+          "bytes": 4510334,
+          "sha256": "00DA155528AFC173776F59E620C8AEFCD661A5C5D8520472CE3AA9F0A91631ED"
+        },
+        {
+          "path": "normalized\\attachment3_forecast_long.csv",
+          "bytes": 2435558,
+          "sha256": "B9F67A02CC979DDE70E9045E7B18A32DC9B1FBCC002C23AEB04DAAA697452328"
+        },
+        {
+          "path": "normalized\\attachment3_mapped_10min.csv",
+          "bytes": 10780233,
+          "sha256": "5830C5F598039F765CDDA4C70E8B14FE152AC7C7D3BDDA031737A98CAB5D8DFD"
+        },
+        {
+          "path": "normalized\\attachment4_actual_price_long.csv",
+          "bytes": 2993874,
+          "sha256": "71EE47345986E960F41B8841C9C339D3931573A02CBD61C44C19848DFBB3DE1A"
+        }
+      ]
+    },
+    {
+      "directory": "_smoke_audit_time_revision_20260911_c",
+      "files": [
+        {
+          "path": "audit\\audit_report.md",
+          "bytes": 52454,
+          "sha256": "455E763B349ADBC2D907DF280F0A80F1023661C83D4DB9B6C594EF31538882B1"
+        },
+        {
+          "path": "audit\\audit_summary.json",
+          "bytes": 90612,
+          "sha256": "0536BF6BD7069CF6795F35159A006055845C3168F71D429B0A9F658841933081"
+        },
+        {
+          "path": "audit\\manifest.json",
+          "bytes": 2345,
+          "sha256": "E489553660EB610271F2B192272BF1EB94BDE3D88CECE3D40048792349EE1B06"
+        },
+        {
+          "path": "normalized\\attachment1_single_day.csv",
+          "bytes": 10428,
+          "sha256": "695E14DD02D011E24AE8CE1C5CD7BFF4CA963F5C92FA884BACC0386059AD07E3"
+        },
+        {
+          "path": "normalized\\attachment2_actual_long.csv",
+          "bytes": 4510334,
+          "sha256": "00DA155528AFC173776F59E620C8AEFCD661A5C5D8520472CE3AA9F0A91631ED"
+        },
+        {
+          "path": "normalized\\attachment3_forecast_long.csv",
+          "bytes": 2435558,
+          "sha256": "B9F67A02CC979DDE70E9045E7B18A32DC9B1FBCC002C23AEB04DAAA697452328"
+        },
+        {
+          "path": "normalized\\attachment3_mapped_10min.csv",
+          "bytes": 10780233,
+          "sha256": "5830C5F598039F765CDDA4C70E8B14FE152AC7C7D3BDDA031737A98CAB5D8DFD"
+        },
+        {
+          "path": "normalized\\attachment4_actual_price_long.csv",
+          "bytes": 2993874,
+          "sha256": "71EE47345986E960F41B8841C9C339D3931573A02CBD61C44C19848DFBB3DE1A"
+        }
+      ]
+    }
+  ]
+}
