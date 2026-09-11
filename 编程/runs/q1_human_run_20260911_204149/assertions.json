@@ -1,0 +1,311 @@
+{
+  "B0_NO_STORAGE": {
+    "passed": true,
+    "assertions": [
+      {
+        "name": "all_solution_values_finite",
+        "passed": true,
+        "value": true,
+        "limit": true,
+        "unit": ""
+      },
+      {
+        "name": "grid_nonnegative",
+        "passed": true,
+        "value": 0.0,
+        "limit": ">=-1e-06",
+        "unit": "kWh"
+      },
+      {
+        "name": "charge_nonnegative",
+        "passed": true,
+        "value": 0.0,
+        "limit": ">=-1e-06",
+        "unit": "kWh"
+      },
+      {
+        "name": "discharge_nonnegative",
+        "passed": true,
+        "value": 0.0,
+        "limit": ">=-1e-06",
+        "unit": "kWh"
+      },
+      {
+        "name": "waste_nonnegative",
+        "passed": true,
+        "value": 0.0,
+        "limit": ">=-1e-06",
+        "unit": "kWh"
+      },
+      {
+        "name": "soc_lower_bound",
+        "passed": true,
+        "value": 6000.0,
+        "limit": 1200.0,
+        "unit": "kWh"
+      },
+      {
+        "name": "soc_upper_bound",
+        "passed": true,
+        "value": 6000.0,
+        "limit": 10800.0,
+        "unit": "kWh"
+      },
+      {
+        "name": "charge_exact_physical_limit",
+        "passed": true,
+        "value": 0.0,
+        "limit": 833.3333333333333,
+        "unit": "kWh"
+      },
+      {
+        "name": "discharge_exact_physical_limit",
+        "passed": true,
+        "value": 0.0,
+        "limit": 833.3333333333333,
+        "unit": "kWh"
+      },
+      {
+        "name": "binary_integrality",
+        "passed": true,
+        "value": 0.0,
+        "limit": 1e-06,
+        "unit": ""
+      },
+      {
+        "name": "no_simultaneous_charge_discharge",
+        "passed": true,
+        "value": 0,
+        "limit": 0,
+        "unit": "intervals"
+      },
+      {
+        "name": "energy_balance",
+        "passed": true,
+        "value": 1.1368683772161603e-13,
+        "limit": 1e-06,
+        "unit": "kWh"
+      },
+      {
+        "name": "soc_recurrence",
+        "passed": true,
+        "value": 0.0,
+        "limit": 1e-06,
+        "unit": "kWh"
+      },
+      {
+        "name": "soc_midnight_initial",
+        "passed": true,
+        "value": 6000.0,
+        "limit": 6000.0,
+        "unit": "kWh"
+      },
+      {
+        "name": "soc_midnight_terminal",
+        "passed": true,
+        "value": 6000.0,
+        "limit": 6000.0,
+        "unit": "kWh"
+      },
+      {
+        "name": "soc_cycle_0010",
+        "passed": true,
+        "value": 0.0,
+        "limit": 0.0,
+        "unit": "kWh"
+      },
+      {
+        "name": "objective_recomputed",
+        "passed": true,
+        "value": 0.0,
+        "limit": 1e-05,
+        "unit": "yuan"
+      },
+      {
+        "name": "daily_energy_reconciliation",
+        "passed": true,
+        "value": 7.275957614183426e-12,
+        "limit": 1e-05,
+        "unit": "kWh"
+      }
+    ],
+    "metrics": {
+      "objective_cost_yuan": 48052.046590846665,
+      "total_grid_energy_kwh": 61789.9354,
+      "total_charge_kwh": 0.0,
+      "total_discharge_kwh": 0.0,
+      "total_waste_kwh": 6247.962966666666,
+      "soc_min_kwh": 6000.0,
+      "soc_max_kwh": 6000.0,
+      "max_balance_residual_kwh": 1.1368683772161603e-13,
+      "max_soc_residual_kwh": 0.0,
+      "aggregate_residual_kwh": 7.275957614183426e-12,
+      "simultaneous_violation_count": 0.0
+    }
+  },
+  "B1_Q1_MILP": {
+    "passed": true,
+    "assertions": [
+      {
+        "name": "all_solution_values_finite",
+        "passed": true,
+        "value": true,
+        "limit": true,
+        "unit": ""
+      },
+      {
+        "name": "grid_nonnegative",
+        "passed": true,
+        "value": 0.0,
+        "limit": ">=-1e-06",
+        "unit": "kWh"
+      },
+      {
+        "name": "charge_nonnegative",
+        "passed": true,
+        "value": 0.0,
+        "limit": ">=-1e-06",
+        "unit": "kWh"
+      },
+      {
+        "name": "discharge_nonnegative",
+        "passed": true,
+        "value": 0.0,
+        "limit": ">=-1e-06",
+        "unit": "kWh"
+      },
+      {
+        "name": "waste_nonnegative",
+        "passed": true,
+        "value": 0.0,
+        "limit": ">=-1e-06",
+        "unit": "kWh"
+      },
+      {
+        "name": "soc_lower_bound",
+        "passed": true,
+        "value": 1200.0,
+        "limit": 1200.0,
+        "unit": "kWh"
+      },
+      {
+        "name": "soc_upper_bound",
+        "passed": true,
+        "value": 10800.0,
+        "limit": 10800.0,
+        "unit": "kWh"
+      },
+      {
+        "name": "charge_exact_physical_limit",
+        "passed": true,
+        "value": 833.3333333333333,
+        "limit": 833.3333333333333,
+        "unit": "kWh"
+      },
+      {
+        "name": "discharge_exact_physical_limit",
+        "passed": true,
+        "value": 715.6530333333333,
+        "limit": 833.3333333333333,
+        "unit": "kWh"
+      },
+      {
+        "name": "binary_integrality",
+        "passed": true,
+        "value": 5.995204332975845e-15,
+        "limit": 1e-06,
+        "unit": ""
+      },
+      {
+        "name": "no_simultaneous_charge_discharge",
+        "passed": true,
+        "value": 0,
+        "limit": 0,
+        "unit": "intervals"
+      },
+      {
+        "name": "energy_balance",
+        "passed": true,
+        "value": 2.2737367544323206e-13,
+        "limit": 1e-06,
+        "unit": "kWh"
+      },
+      {
+        "name": "soc_recurrence",
+        "passed": true,
+        "value": 8.313350008393172e-13,
+        "limit": 1e-06,
+        "unit": "kWh"
+      },
+      {
+        "name": "soc_midnight_initial",
+        "passed": true,
+        "value": 6000.0,
+        "limit": 6000.0,
+        "unit": "kWh"
+      },
+      {
+        "name": "soc_midnight_terminal",
+        "passed": true,
+        "value": 6000.0,
+        "limit": 6000.0,
+        "unit": "kWh"
+      },
+      {
+        "name": "soc_cycle_0010",
+        "passed": true,
+        "value": 0.0,
+        "limit": 0.0,
+        "unit": "kWh"
+      },
+      {
+        "name": "objective_recomputed",
+        "passed": true,
+        "value": 0.0,
+        "limit": 1e-05,
+        "unit": "yuan"
+      },
+      {
+        "name": "daily_energy_reconciliation",
+        "passed": true,
+        "value": 4.547473508864641e-12,
+        "limit": 1e-05,
+        "unit": "kWh"
+      },
+      {
+        "name": "b1_cost_not_above_b0",
+        "passed": true,
+        "value": -12925.198001557037,
+        "limit": 1e-05,
+        "unit": "yuan"
+      },
+      {
+        "name": "solver_status_optimal",
+        "passed": true,
+        "value": "OPTIMAL",
+        "limit": "OPTIMAL",
+        "unit": ""
+      },
+      {
+        "name": "mip_gap",
+        "passed": true,
+        "value": 0.0,
+        "limit": 1e-08,
+        "unit": ""
+      }
+    ],
+    "metrics": {
+      "objective_cost_yuan": 35126.84858928963,
+      "total_grid_energy_kwh": 59482.69899835391,
+      "total_charge_kwh": 20740.66613168725,
+      "total_discharge_kwh": 16799.939566666668,
+      "total_waste_kwh": 0.0,
+      "soc_min_kwh": 1200.0,
+      "soc_max_kwh": 10800.0,
+      "max_balance_residual_kwh": 2.2737367544323206e-13,
+      "max_soc_residual_kwh": 8.313350008393172e-13,
+      "aggregate_residual_kwh": 4.547473508864641e-12,
+      "simultaneous_violation_count": 0.0
+    }
+  }
+}

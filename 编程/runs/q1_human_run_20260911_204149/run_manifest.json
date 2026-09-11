@@ -1,0 +1,57 @@
+{
+  "stage": 5,
+  "status": "HUMAN_RUN_UNREVIEWED_CANDIDATE",
+  "final_competition_result": false,
+  "created_at": "2026-09-11T20:41:49+08:00",
+  "model_version": "M1-Q1-MILP-v1.3-instant-left-hold",
+  "data_version": "PREP-TIME-REV-20260911T170805+0800",
+  "input_path": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\预处理审计输出_时间口径修订版\\normalized\\attachment1_single_day.csv",
+  "input_sha256": "695E14DD02D011E24AE8CE1C5CD7BFF4CA963F5C92FA884BACC0386059AD07E3",
+  "config_path": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\config\\q1_baseline.json",
+  "config_sha256": "764AA52DCEF3EF7390A78CAB72B47F93653EFC33DF39A5200E1D1295396C6F9F",
+  "official_template_path": "F:\\2026数模国赛\\国赛团队共享工作区\\C题\\附件\\附件5\\result1.xlsx",
+  "official_template_sha256_before": "28360E0974E7D6065394A8ABA4E14A86773AE0036CC7D3EA1B211B515B03D688",
+  "environment": {
+    "python": "3.13.11 | packaged by Anaconda, Inc. | (main, Dec 10 2025, 21:21:58) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "executable": "D:\\conda\\python.exe"
+  },
+  "git": {
+    "git_head": "e4a8387b2fba67fb729670ba556f7d7ae244742c",
+    "git_dirty": true
+  },
+  "required_outputs": [
+    "run_manifest.json",
+    "config_snapshot.json",
+    "dispatch_timeseries.csv",
+    "metrics_summary.csv",
+    "assertions.json",
+    "solver.log",
+    "warnings_and_failures.log",
+    "result1_candidate.xlsx",
+    "export_validation.json",
+    "human_feedback.md"
+  ],
+  "run_completed_at": "2026-09-11T20:41:51+08:00",
+  "solver": {
+    "name": "HiGHS",
+    "version": "1.15.1",
+    "status": "OPTIMAL",
+    "termination_condition": "Optimal",
+    "mip_gap": 0.0,
+    "runtime_seconds": 0.05963299999712035
+  },
+  "b0_objective_cost_yuan": 48052.046590846665,
+  "b1_objective_cost_yuan": 35126.84858928963,
+  "assertions_passed": true,
+  "export_validation_passed": true,
+  "export": {
+    "candidate_path": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\runs\\q1_human_run_20260911_204149\\result1_candidate.xlsx",
+    "candidate_sha256": "8B540F9237B6BAABB3754340961A203FFEB678712C81FE20D502FD98CDC08B44",
+    "official_template_path": "F:\\2026数模国赛\\国赛团队共享工作区\\C题\\附件\\附件5\\result1.xlsx",
+    "official_sha256_before": "28360E0974E7D6065394A8ABA4E14A86773AE0036CC7D3EA1B211B515B03D688",
+    "official_sha256_after": "28360E0974E7D6065394A8ABA4E14A86773AE0036CC7D3EA1B211B515B03D688",
+    "official_template_unchanged": true
+  },
+  "official_template_sha256_after": "28360E0974E7D6065394A8ABA4E14A86773AE0036CC7D3EA1B211B515B03D688"
+}

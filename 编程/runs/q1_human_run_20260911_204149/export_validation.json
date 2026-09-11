@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "candidate_is_separate_file",
+      "passed": true,
+      "detail": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\runs\\q1_human_run_20260911_204149\\result1_candidate.xlsx"
+    },
+    {
+      "name": "candidate_exists",
+      "passed": true,
+      "detail": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\runs\\q1_human_run_20260911_204149\\result1_candidate.xlsx"
+    },
+    {
+      "name": "sheet_names",
+      "passed": true,
+      "detail": [
+        "计划购电量",
+        "充放电量"
+      ]
+    },
+    {
+      "name": "plan_dimensions",
+      "passed": true,
+      "detail": [
+        145,
+        2
+      ]
+    },
+    {
+      "name": "storage_dimensions",
+      "passed": true,
+      "detail": [
+        7,
+        5
+      ]
+    },
+    {
+      "name": "all_144_labels",
+      "passed": true,
+      "detail": {
+        "first": [
+          "0:10-0:20",
+          "0:20-0:30"
+        ],
+        "last": [
+          "23:50-0:00+1",
+          "0:00+1-0:10+1"
+        ]
+      }
+    },
+    {
+      "name": "plan_no_blanks",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "name": "slot_value_mapping",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "name": "plan_four_decimal_format",
+      "passed": true,
+      "detail": [
+        "0.0000"
+      ]
+    },
+    {
+      "name": "natural_day_storage_summaries",
+      "passed": true,
+      "detail": 0.0
+    },
+    {
+      "name": "soc_0000_2400",
+      "passed": true,
+      "detail": [
+        6000,
+        6000
+      ]
+    },
+    {
+      "name": "no_formulas",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "official_template_present",
+      "passed": true,
+      "detail": "F:\\2026数模国赛\\国赛团队共享工作区\\C题\\附件\\附件5\\result1.xlsx"
+    }
+  ],
+  "candidate_sha256": "8B540F9237B6BAABB3754340961A203FFEB678712C81FE20D502FD98CDC08B44",
+  "official_sha256": "28360E0974E7D6065394A8ABA4E14A86773AE0036CC7D3EA1B211B515B03D688"
+}
