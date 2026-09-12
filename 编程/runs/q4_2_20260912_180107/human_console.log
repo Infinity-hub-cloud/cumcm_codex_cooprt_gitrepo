@@ -1,0 +1,365 @@
+﻿**********************
+Windows PowerShell 脚本开始
+开始时间: 20260912180107
+用户名: LAPTOP-O3SM7SJD\LENOVO
+RunAs 用户: LAPTOP-O3SM7SJD\LENOVO
+配置名称: 
+计算机: LAPTOP-O3SM7SJD (Microsoft Windows NT 10.0.26200.0)
+主机应用程序: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+进程 ID: 17328
+PSVersion: 5.1.26100.9444
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9444
+BuildVersion: 10.0.26100.9444
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+已启动脚本，输出文件为 runs/q4_2_20260912_180107/human_console.log
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> $q4Root
+runs/q4_2_20260912_180107
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> function Test-Q4NumericTrack {
+    param([Parameter(Mandatory=$true)][string]$Track)
+
+    $trackRoot = Join-Path $q4Root $Track
+    $manifest = Get-Content -LiteralPath (Join-Path $trackRoot 'run_manifest.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    $assertions = Get-Content -LiteralPath (Join-Path $trackRoot 'assertions.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    $export = Get-Content -LiteralPath (Join-Path $trackRoot 'export_validation.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+
+    $result = [pscustomobject]@{
+        track             = $Track
+        status            = $manifest.status
+        formal_days       = $manifest.formal_days
+        initial_soc_feb1  = $manifest.initial_soc_feb1
+        assertions_passed = $assertions.passed
+        export_passed     = $export.passed
+        template_hash     = $manifest.input_sha256.official_result4_2
+        finished_at       = $manifest.finished_at
+    }
+
+    $result | Format-List
+
+    if ($manifest.formal_days -ne 334) { throw "$Track formal_days 异常" }
+    if ([double]$manifest.initial_soc_feb1 -ne 1200.0) { throw "$Track Feb1 SOC 异常" }
+    if (-not $assertions.passed) { throw "$Track assertions 失败" }
+    if (-not $export.passed) { throw "$Track export validation 失败" }
+    if (-not $manifest.finished_at) { throw "$Track manifest 未完成" }
+
+    return $result
+}
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> python -m q4_baseline.cli --config config/q4_baseline.json run --track REF_Q2_FIXED_PRICE_FROZEN --output-dir "$q4Root/REF_Q2_FIXED_PRICE_FROZEN" --allow-formal-human-run
+
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> if ($LASTEXITCODE -ne 0) { throw 'REF_Q2_FIXED_PRICE_FROZEN 失败' }
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> $refManifest = Get-Content -LiteralPath "$q4Root/REF_Q2_FIXED_PRICE_FROZEN/run_manifest.json" -Raw -Encoding UTF8 | ConvertFrom-Json
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> [pscustomobject]@{
+    status          = $refManifest.status
+    reference_cost  = $refManifest.reference_cost_yuan
+    solver_invoked  = $refManifest.solver_invoked
+} | Format-List
+
+
+status         : REFERENCE_ONLY_NO_SOLVE
+reference_cost : 15212046.690710831
+solver_invoked : False
+
+
+
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> python -m q4_baseline.cli --config config/q4_baseline.json run --track Q4_2_PRICE_UNAWARE_RESETTLEMENT --output-dir "$q4Root/Q4_2_PRICE_UNAWARE_RESETTLEMENT" --allow-formal-human-run
+
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> if ($LASTEXITCODE -ne 0) { throw 'Q4_2_PRICE_UNAWARE_RESETTLEMENT 失败' }
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> Test-Q4NumericTrack -Track 'Q4_2_PRICE_UNAWARE_RESETTLEMENT'
+
+
+track             : Q4_2_PRICE_UNAWARE_RESETTLEMENT
+status            : HUMAN_RUN_UNREVIEWED_CANDIDATE
+formal_days       : 334
+initial_soc_feb1  : 1200.0
+assertions_passed : True
+export_passed     : True
+template_hash     : 1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47
+finished_at       : 2026-09-12T18:01:58.662279
+
+
+
+
+
+track             : Q4_2_PRICE_UNAWARE_RESETTLEMENT
+status            : HUMAN_RUN_UNREVIEWED_CANDIDATE
+formal_days       : 334
+initial_soc_feb1  : 1200.0
+assertions_passed : True
+export_passed     : True
+template_hash     : 1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47
+finished_at       : 2026-09-12T18:01:58.662279
+
+
+
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> python -m q4_baseline.cli --config config/q4_baseline.json run --track Q4_2_PRICE_BASELINE_P0 --output-dir "$q4Root/Q4_2_PRICE_BASELINE_P0" --allow-formal-human-run
+
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> if ($LASTEXITCODE -ne 0) { throw 'P0 失败' }
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> Test-Q4NumericTrack -Track 'Q4_2_PRICE_BASELINE_P0'
+
+
+track             : Q4_2_PRICE_BASELINE_P0
+status            : HUMAN_RUN_UNREVIEWED_CANDIDATE
+formal_days       : 334
+initial_soc_feb1  : 1200.0
+assertions_passed : True
+export_passed     : True
+template_hash     : 1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47
+finished_at       : 2026-09-12T18:05:55.417870
+
+
+
+
+
+track             : Q4_2_PRICE_BASELINE_P0
+status            : HUMAN_RUN_UNREVIEWED_CANDIDATE
+formal_days       : 334
+initial_soc_feb1  : 1200.0
+assertions_passed : True
+export_passed     : True
+template_hash     : 1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47
+finished_at       : 2026-09-12T18:05:55.417870
+
+
+
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> python -m q4_baseline.cli --config config/q4_baseline.json run --track Q4_2_PRICE_CANDIDATE_P1 --output-dir "$q4Root/Q4_2_PRICE_CANDIDATE_P1" --allow-formal-human-run
+
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> if ($LASTEXITCODE -ne 0) { throw 'P1 失败' }
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> Test-Q4NumericTrack -Track 'Q4_2_PRICE_CANDIDATE_P1'
+
+
+track             : Q4_2_PRICE_CANDIDATE_P1
+status            : HUMAN_RUN_UNREVIEWED_CANDIDATE
+formal_days       : 334
+initial_soc_feb1  : 1200.0
+assertions_passed : True
+export_passed     : True
+template_hash     : 1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47
+finished_at       : 2026-09-12T18:06:29.125635
+
+
+
+
+
+track             : Q4_2_PRICE_CANDIDATE_P1
+status            : HUMAN_RUN_UNREVIEWED_CANDIDATE
+formal_days       : 334
+initial_soc_feb1  : 1200.0
+assertions_passed : True
+export_passed     : True
+template_hash     : 1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47
+finished_at       : 2026-09-12T18:06:29.125635
+
+
+
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> python -m q4_baseline.cli --config config/q4_baseline.json run --track Q4_2_PRICE_CANDIDATE_P2 --output-dir "$q4Root/Q4_2_PRICE_CANDIDATE_P2" --allow-formal-human-run
+
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> if ($LASTEXITCODE -ne 0) { throw 'P2 失败' }
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> Test-Q4NumericTrack -Track 'Q4_2_PRICE_CANDIDATE_P2'
+
+
+track             : Q4_2_PRICE_CANDIDATE_P2
+status            : HUMAN_RUN_UNREVIEWED_CANDIDATE
+formal_days       : 334
+initial_soc_feb1  : 1200.0
+assertions_passed : True
+export_passed     : True
+template_hash     : 1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47
+finished_at       : 2026-09-12T18:06:57.170873
+
+
+
+
+
+track             : Q4_2_PRICE_CANDIDATE_P2
+status            : HUMAN_RUN_UNREVIEWED_CANDIDATE
+formal_days       : 334
+initial_soc_feb1  : 1200.0
+assertions_passed : True
+export_passed     : True
+template_hash     : 1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47
+finished_at       : 2026-09-12T18:06:57.170873
+
+
+
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> python -m q4_baseline.cli --config config/q4_baseline.json run --track Q4_2_PRICE_CANDIDATE_P3 --output-dir "$q4Root/Q4_2_PRICE_CANDIDATE_P3" --allow-formal-human-run
+
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> if ($LASTEXITCODE -ne 0) { throw 'P3 失败' }
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> Test-Q4NumericTrack -Track 'Q4_2_PRICE_CANDIDATE_P3'
+
+
+track             : Q4_2_PRICE_CANDIDATE_P3
+status            : HUMAN_RUN_UNREVIEWED_CANDIDATE
+formal_days       : 334
+initial_soc_feb1  : 1200.0
+assertions_passed : True
+export_passed     : True
+template_hash     : 1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47
+finished_at       : 2026-09-12T18:07:23.983985
+
+
+
+
+
+track             : Q4_2_PRICE_CANDIDATE_P3
+status            : HUMAN_RUN_UNREVIEWED_CANDIDATE
+formal_days       : 334
+initial_soc_feb1  : 1200.0
+assertions_passed : True
+export_passed     : True
+template_hash     : 1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47
+finished_at       : 2026-09-12T18:07:23.983985
+
+
+
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> $completedTracks = @(
+    'REF_Q2_FIXED_PRICE_FROZEN',
+    'Q4_2_PRICE_UNAWARE_RESETTLEMENT',
+    'Q4_2_PRICE_BASELINE_P0',
+    'Q4_2_PRICE_CANDIDATE_P1',
+    'Q4_2_PRICE_CANDIDATE_P2',
+    'Q4_2_PRICE_CANDIDATE_P3'
+)
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> $identityRows = foreach ($track in $completedTracks) {
+    $manifest = Get-Content -LiteralPath "$q4Root/$track/run_manifest.json" -Raw -Encoding UTF8 | ConvertFrom-Json
+
+    [pscustomobject]@{
+        track       = $track
+        config_sha  = $manifest.identity.config_sha256
+        code_sha    = $manifest.identity.q4_core_python_sha256 | ConvertTo-Json -Compress
+        input_sha   = $manifest.identity.input_sha256 | ConvertTo-Json -Compress
+    }
+}
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> $identityRows | Select-Object track, config_sha | Format-Table -AutoSize
+
+track                           config_sha
+-----                           ----------
+REF_Q2_FIXED_PRICE_FROZEN       8EF1AF545FFC1BF357493305CB8F7AB2BF54AD9D415FA6CA33DAA655D0CD7D07
+Q4_2_PRICE_UNAWARE_RESETTLEMENT 8EF1AF545FFC1BF357493305CB8F7AB2BF54AD9D415FA6CA33DAA655D0CD7D07
+Q4_2_PRICE_BASELINE_P0          8EF1AF545FFC1BF357493305CB8F7AB2BF54AD9D415FA6CA33DAA655D0CD7D07
+Q4_2_PRICE_CANDIDATE_P1         8EF1AF545FFC1BF357493305CB8F7AB2BF54AD9D415FA6CA33DAA655D0CD7D07
+Q4_2_PRICE_CANDIDATE_P2         8EF1AF545FFC1BF357493305CB8F7AB2BF54AD9D415FA6CA33DAA655D0CD7D07
+Q4_2_PRICE_CANDIDATE_P3         8EF1AF545FFC1BF357493305CB8F7AB2BF54AD9D415FA6CA33DAA655D0CD7D07
+
+
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> if (($identityRows.config_sha | Select-Object -Unique).Count -ne 1) {
+    throw '配置身份不一致'
+}
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> if (($identityRows.code_sha | Select-Object -Unique).Count -ne 1) {
+    throw 'Q4核心代码身份不一致'
+}
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> if (($identityRows.input_sha | Select-Object -Unique).Count -ne 1) {
+    throw '输入身份不一致'
+}
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> 'IDENTITY_GATE = PASS'
+IDENTITY_GATE = PASS
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> $priceTracks = @(
+    'Q4_2_PRICE_BASELINE_P0',
+    'Q4_2_PRICE_CANDIDATE_P1',
+    'Q4_2_PRICE_CANDIDATE_P2',
+    'Q4_2_PRICE_CANDIDATE_P3'
+)
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> $priceCosts = foreach ($track in $priceTracks) {
+    $metrics = Import-Csv -LiteralPath "$q4Root/$track/metrics_summary.csv"
+    $costRow = $metrics | Where-Object { $_.metric -eq 'realized_total_cost' }
+    $emergencyRow = $metrics | Where-Object { $_.metric -eq 'emergency_purchase_cost' }
+    $runtimeRow = $metrics | Where-Object { $_.metric -eq 'runtime_seconds' }
+    $levelRow = $metrics | Where-Object { $_.metric -eq 'level_bound_hit_count' }
+
+    [pscustomobject]@{
+        track                       = $track
+        realized_total_cost_yuan    = [double]$costRow.value
+        emergency_purchase_cost     = [double]$emergencyRow.value
+        runtime_seconds             = [double]$runtimeRow.value
+        level_bound_hit_count       = [int]$levelRow.value
+    }
+}
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> $rankedPriceCosts = $priceCosts | Sort-Object realized_total_cost_yuan
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> $rankedPriceCosts | Format-Table -AutoSize
+
+track                   realized_total_cost_yuan emergency_purchase_cost  runtime_seconds level_bound_hit_count
+-----                   ------------------------ -----------------------  --------------- ---------------------
+Q4_2_PRICE_CANDIDATE_P2         16023740.9362118        1615025.01261261 8.70766469999035                     0
+Q4_2_PRICE_CANDIDATE_P3         16023965.9240187        1615250.00041954 8.60593809999409                     0
+Q4_2_PRICE_BASELINE_P0           16068694.680121        1615129.02262677 8.47405169999911                     0
+Q4_2_PRICE_CANDIDATE_P1         16073741.1523477        1615108.51643855 8.62699619999512                     0
+
+
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> $rankedPriceCosts | Export-Csv -LiteralPath "$q4Root/model_selection_summary.csv" -NoTypeInformation -Encoding UTF8
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> $predictorByTrack = @{
+    Q4_2_PRICE_BASELINE_P0   = 'P0_RECENT_SAME_CLOCK'
+    Q4_2_PRICE_CANDIDATE_P1 = 'P1_WEEKDAY_SAME_CLOCK'
+    Q4_2_PRICE_CANDIDATE_P2 = 'P2_EWMA'
+    Q4_2_PRICE_CANDIDATE_P3 = 'P3_SHAPE_LEVEL'
+}
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> $selectedTrack = 'Q4_2_PRICE_CANDIDATE_P1'
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> $selectedPredictor = $predictorByTrack[$selectedTrack]
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> if (-not $selectedPredictor) {
+    throw "未锁定 selected predictor: $selectedTrack"
+}
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> python -m q4_baseline.cli --config config/q4_baseline.json run --track Q4_2_NOSTORAGE --predictor "$selectedPredictor" --output-dir "$q4Root/Q4_2_NOSTORAGE" --allow-formal-human-run
+
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> if ($LASTEXITCODE -ne 0) { throw 'Q4_2_NOSTORAGE 失败' }
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> Test-Q4NumericTrack -Track 'Q4_2_NOSTORAGE'
+
+
+track             : Q4_2_NOSTORAGE
+status            : HUMAN_RUN_UNREVIEWED_CANDIDATE
+formal_days       : 334
+initial_soc_feb1  : 1200.0
+assertions_passed : True
+export_passed     : True
+template_hash     : 1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47
+finished_at       : 2026-09-12T18:08:28.456042
+
+
+
+
+
+track             : Q4_2_NOSTORAGE
+status            : HUMAN_RUN_UNREVIEWED_CANDIDATE
+formal_days       : 334
+initial_soc_feb1  : 1200.0
+assertions_passed : True
+export_passed     : True
+template_hash     : 1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47
+finished_at       : 2026-09-12T18:08:28.456042
+
+
+
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> $costs = [ordered]@{}
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> $refManifest = Get-Content -LiteralPath "$q4Root/REF_Q2_FIXED_PRICE_FROZEN/run_manifest.json" -Raw -Encoding UTF8 | ConvertFrom-Json
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> $costs['REF_Q2_FIXED_PRICE_FROZEN'] = [double]$refManifest.reference_cost_yuan
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> foreach ($track in @('Q4_2_PRICE_UNAWARE_RESETTLEMENT') + $priceTracks + @('Q4_2_NOSTORAGE')) {
+    $metrics = Import-Csv -LiteralPath "$q4Root/$track/metrics_summary.csv"
+    $costRow = $metrics | Where-Object { $_.metric -eq 'realized_total_cost' }
+    if (-not $costRow) { throw "$track 缺少 realized_total_cost" }
+    $costs[$track] = [double]$costRow.value
+}
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> $costsJson = "$q4Root/costs.json"
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> [System.IO.File]::WriteAllText(
+    (Join-Path (Get-Location) $costsJson),
+    ($costs | ConvertTo-Json),
+    [System.Text.UTF8Encoding]::new($false)
+)
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> python -m q4_baseline.cli --config config/q4_baseline.json compare --costs-json "$costsJson" --selected-predictor "$selectedTrack" --output "$q4Root/value_decomposition_q4_2.json"
+
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> if ($LASTEXITCODE -ne 0) { throw '价值分解失败' }
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> Get-Content -LiteralPath "$q4Root/value_decomposition_q4_2.json" -Raw -Encoding UTF8
+{
+  "PriceSystemEffect": 822857.0394391492,
+  "PriceAwarenessValue_selected": -38837.42219775915,
+  "StorageValue_selected": 3431736.5344170704,
+  "selected_predictor": "Q4_2_PRICE_CANDIDATE_P1",
+  "same_formal_dates": true,
+  "same_initial_soc": true,
+  "actual_attachment4_settlement": true
+}
+PS D:\Users\LENOVO\Desktop\数学建模\国赛团队共享工作区\编程> Stop-Transcript
+**********************
+Windows PowerShell 脚本结束
+结束时间: 20260912180905
+**********************

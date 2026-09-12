@@ -1,6 +1,6 @@
 # 编程分区导航
 
-更新时间：2026-09-12。当前阶段：Stage 5；Q2/Q3 已人工验收并冻结。Q4 已完成价格数据只读审计与模型规格草案，但价格边界可见性仍是 Hard Blocker；尚未获准生成 Q4 生产代码或运行调度 Solver。
+更新时间：2026-09-12。当前阶段：Stage 5；Q2/Q3 已人工验收并冻结。Q4-2 价格可见性已人工批准，生产代码、测试和运行说明已生成；正式全年 Solver、真实候选导出和 Q4-3 仍未授权。
 
 ## 状态总表
 
@@ -9,7 +9,7 @@
 | Q1 | `q1_baseline/`，`config/q1_baseline.json` | `PASSED` | `runs/q1_human_run_20260911_204149/` |
 | Q2 | `q2_baseline/`，显式 `--experiment weekday_buffer` | `ACCEPTED / FROZEN` | `runs/q2_low_complexity_20260912_002010/weekday_buffer/`、`交付候选/Q2_20260912_weekday_buffer/` |
 | Q3 | `q3_baseline/`，`config/q3_baseline.json` | `ACCEPTED / FROZEN` | `runs/q3_revised_20260912_112347/`、技术核查和统一人工验收 |
-| Q4 | `审计/Q4_价格审计_20260912/` | `Q4-PRICE-AUDIT-GATE = BLOCKED` | `Q4_价格审计与模型规格报告.md`、`summary.json` |
+| Q4-2 | `q4_baseline/`，`config/q4_baseline.json` | `CODE_READY / HUMAN_REVIEW_REQUIRED` | `Q4-2_人工运行说明.md`、`q4_baseline/README.md` |
 
 人工现仅授权 Q4 的 `PRICE AUDIT + MODEL SPEC`。Q4 正式全年调度 Solver、Q4-3 生产实现/求解及 result4 导出仍未授权；Q2/Q3 冻结代码和证据不得修改。
 
@@ -42,10 +42,10 @@
 
 ### Q4
 
-- 当前草案规格：`M4-Q4-2-PRICE-AWARE-v0.1-spec`。
-- 已完成：Attachment4 原始/规范化逐项核对、全年事后统计、两种价格可见性规则下的纯因果预测诊断、Q4-2 数学规格和 Q4-3 接口设计。
-- 当前阻塞：官方材料不能唯一确定决策边界时刻价格是即时可见还是区间结束后可见；详见[Q4 价格审计与模型规格报告](审计/Q4_价格审计_20260912/Q4_价格审计与模型规格报告.md)。
-- 未执行：Q4 正式调度 Solver、候选 Excel、Q4-3 生产代码和结果导出。
+- 正式规则：`Q4_PRICE_VISIBILITY_RULE=TIMESTAMP_LE_DECISION_VISIBLE`，`BLOCKER-Q4-PRICE-TIME-001=CLOSED`。
+- Q4-2 代码、P0/P1/P2/P3、冻结 Q2 桥接、真实 Attachment4 结算、导出器、身份门禁和测试已生成；详见[Q4-2代码说明](q4_baseline/README.md)、[代码生成报告](Q4-2_代码生成报告_20260912.md)。
+- 当前仅可运行非Solver/unit测试和极小toy Solver；正式全年 Solver及真实 `result4-2_candidate.xlsx` 仍需人工单独授权。
+- Q4-3 生产实现、正式求解和问题4最终提交仍未开始。
 
 ## 目录索引
 
@@ -71,4 +71,4 @@
 
 Q3当前无需重跑。若后续确需复现，仍须使用全新`runs/q3_revised_<timestamp>/`；MODEL-A结果不得与MODEL-B主结果混用。Q4 必须先由人工选择并锁定价格可见性规则、关闭 `BLOCKER-Q4-PRICE-TIME-001`，再另行授权生产代码。
 
-既有正式 Solver 和候选 Excel 均由人工运行产生；Q4 本轮只执行审计脚本和纯预测诊断，没有调度求解、没有修改 Q1/Q2/Q3 既有结果，也没有执行 Git 写操作。
+既有正式 Solver 和候选 Excel 均由人工运行产生；本轮仅生成 Q4-2 代码和测试，未执行 Q4-2 正式全年 Solver、未生成真实候选、未修改 Q1/Q2/Q3 冻结结果，也未执行 Git 写操作。

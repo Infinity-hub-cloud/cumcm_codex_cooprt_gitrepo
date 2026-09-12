@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "price": {
+    "passed": true,
+    "failures": [],
+    "rows": 52560,
+    "unique_interval_starts": 52560
+  },
+  "replay": {
+    "passed": true,
+    "failures": [],
+    "days": 334
+  },
+  "frozen_q2_warmup": {
+    "initial_soc_feb1": 1200.0,
+    "jan_actions_source": "FROZEN_Q2_STATE_CHAIN"
+  }
+}
