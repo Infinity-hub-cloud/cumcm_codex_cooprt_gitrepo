@@ -1,0 +1,21 @@
+{
+  "model_version": "M4-Q4-3-PRICE-AWARE-ROLLING-v0.1",
+  "q3_frozen_model_version": "M3-Q3-POINT-MODEL-B-v2.0",
+  "q3_frozen_track": "Q3_ROLLING_INTERP",
+  "q4_2_frozen_model_version": "M4-Q4-2-PRICE-AWARE-v0.1",
+  "q4_2_frozen_predictor": "P2_EWMA",
+  "visibility_rule": "TIMESTAMP_LE_DECISION_VISIBLE",
+  "warmup_rule": "FROZEN_Q3_STATE_CHAIN",
+  "q3_config": "q3_baseline.json",
+  "q4_config": "q4_baseline.json",
+  "frozen_q3_run": "../runs/q3_revised_20260912_112347/Q3_ROLLING_INTERP",
+  "frozen_q4_2_run": "../runs/q4_2_20260912_193813/Q4_2_PRICE_CANDIDATE_P2",
+  "official_result4_3_template": "../../C题/附件/附件5/result4-3.xlsx",
+  "official_result4_3_sha256": "C59DA470CABD0BE23F602C95C8AA9D11EC224A0CDAC216B3E1F218E65D006BDC",
+  "frozen_q3_manifest_sha256": "7DC46A111AE2E8B438202EFBEA863938628A1BB59DCDDF5259A5B579329CEAE6",
+  "frozen_q3_dispatch_sha256": "D1F8049C43D553BC23E4E5E6183C9BB5471206AE5157AF7E5057297146F1B996",
+  "frozen_q4_2_manifest_sha256": "154A0A54AA7C27FF75ABB50CB3DE1EDA44AE9F845652B5DEB6F5FD1E2C98293C",
+  "output_start": "2025-02-01",
+  "output_end": "2025-12-31",
+  "solver_name": "highs"
+}

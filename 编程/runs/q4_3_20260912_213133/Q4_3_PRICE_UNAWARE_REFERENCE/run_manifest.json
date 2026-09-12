@@ -1,0 +1,129 @@
+{
+  "question_id": "Q4-3",
+  "stage": 5,
+  "track": "Q4_3_PRICE_UNAWARE_REFERENCE",
+  "model_version": "M4-Q4-3-PRICE-AWARE-ROLLING-v0.1",
+  "run_status": "HUMAN_RUN_UNREVIEWED_CANDIDATE",
+  "final_competition_result": false,
+  "visibility_rule": "TIMESTAMP_LE_DECISION_VISIBLE",
+  "warmup_rule": "FROZEN_Q3_STATE_CHAIN",
+  "formal_dates": [
+    "2025-02-01",
+    "2025-12-31"
+  ],
+  "formal_days": 334,
+  "pv_issue_set": [
+    0,
+    360,
+    720,
+    1080
+  ],
+  "pv_mapping_method": "INTERP",
+  "cost_semantics": "MODEL_B",
+  "predictor_id": null,
+  "identity": {
+    "q4_3_core_python_sha256": {
+      "__init__.py": "B6A19EDF15543E59B31E1BD60ED1B06A468DAA9E6E9356A861A918564D821E9F",
+      "cli.py": "70945B910CAA59476B471131648C9F7FFD1CFA5841736FBD29ACC4DAEBE98EFF",
+      "config.py": "0501B3034507DFC5DD814C10C56FB4A2F9F10E957A71AB0B8C65F9677D1C4F1F",
+      "export_validation.py": "4E59983F3A0C1D114D9DB953AC47A0EBAC8379E155146FF056FAF59D2A601A35",
+      "exporter.py": "B1BE485E5EE77B9AD40FA79049306E615C17077346C05FDB99C7EBE592C4B7A0",
+      "forecast_adapter.py": "0726CC824FD9E2A1E90A7E3AAE059CFC0217314659EA74776E326B70DAC01E6C",
+      "integrity.py": "9A4DF1B5FDB45A15160D72AC08DD1394388ADEED1EAAC012C5866C4ACCB2DA43",
+      "metrics.py": "8D9D596E151767CD532836195C926E846439D03386499AC676AF47FB59F4A9C4",
+      "planner.py": "41D8CF9334292B2178691185F9CBA2B88BE1673AA2B2394ABBC415545B582695",
+      "price.py": "A54B82AEF7F1EB88AE0EBAD9498E27AD0669BEED70A1E3A27BC96818F5927B46",
+      "reference.py": "449D11B51E5D51FDA5CE149296CF599C4AD5B628F45832A11B4D68A79900BAD3",
+      "rolling.py": "EBC58BE9896029A012A92B48B6DB2E74077F79C15FFC09FEBD20F8023500FF12",
+      "runner.py": "D8BC94FD483AA6F0326A503D5D51464F6B830F0CEA01C562BBFF8AF2BBCB690B",
+      "settlement.py": "DD6D558E4E79A49E0EB81AED272EC1CC11E2E0AA544D1C5629F01EA6B78ADE30",
+      "validation.py": "4D6C142957DDE1759C85EF022111683A6119B0407B630129DF92C2506AEDAE1E"
+    },
+    "config_sha256": "202CA301F8651258F8EE79496515AACB45FD7E0F714B0C0514EAAA21C68F1218",
+    "input_sha256": {
+      "official_result4_3": "C59DA470CABD0BE23F602C95C8AA9D11EC224A0CDAC216B3E1F218E65D006BDC",
+      "attachment2": "00DA155528AFC173776F59E620C8AEFCD661A5C5D8520472CE3AA9F0A91631ED",
+      "attachment3_interp": "C9D86D174104484EB6DC64C17DFB86C6604956525FD9149B18698649C80E7301",
+      "attachment3_mapping_manifest": "26C9299CC168D73139730EF6544DDD034A38BAC8F87611B58C8B525E242A9142",
+      "attachment4": "71EE47345986E960F41B8841C9C339D3931573A02CBD61C44C19848DFBB3DE1A",
+      "frozen_q3_manifest": "7DC46A111AE2E8B438202EFBEA863938628A1BB59DCDDF5259A5B579329CEAE6",
+      "frozen_q3_dispatch": "D1F8049C43D553BC23E4E5E6183C9BB5471206AE5157AF7E5057297146F1B996",
+      "frozen_q4_2_manifest": "154A0A54AA7C27FF75ABB50CB3DE1EDA44AE9F845652B5DEB6F5FD1E2C98293C"
+    },
+    "frozen_q2_identity": "7661EB804A73A1546A455D2A3E7883D276AB1672379AC8F2A22B58952C624716",
+    "frozen_q3_identity": {
+      "manifest_sha256": "7DC46A111AE2E8B438202EFBEA863938628A1BB59DCDDF5259A5B579329CEAE6",
+      "dispatch_sha256": "D1F8049C43D553BC23E4E5E6183C9BB5471206AE5157AF7E5057297146F1B996"
+    },
+    "q4_2_predictor_spec_identity": {
+      "manifest_sha256": "154A0A54AA7C27FF75ABB50CB3DE1EDA44AE9F845652B5DEB6F5FD1E2C98293C",
+      "predictor": "P2_EWMA"
+    },
+    "visibility_rule": "TIMESTAMP_LE_DECISION_VISIBLE",
+    "pv_issue_set": [
+      0,
+      360,
+      720,
+      1080
+    ],
+    "pv_mapping_method": "INTERP",
+    "cost_semantics": "MODEL_B",
+    "formal_dates": [
+      "2025-02-01",
+      "2025-12-31"
+    ],
+    "jan_warmup_rule": "FROZEN_Q3_STATE_CHAIN",
+    "feb1_initial_soc": 1200.000000000001,
+    "feb1_initial_soc_identity": {
+      "source": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\runs\\q3_revised_20260912_112347\\Q3_ROLLING_INTERP\\dispatch_timeseries.csv",
+      "sha256": "D1F8049C43D553BC23E4E5E6183C9BB5471206AE5157AF7E5057297146F1B996",
+      "template_date": "2025-02-01",
+      "template_slot": 1,
+      "physical_time": "2025-02-01T00:10:00"
+    },
+    "python_version": "3.13.11 | packaged by Anaconda, Inc. | (main, Dec 10 2025, 21:21:58) [MSC v.1929 64 bit (AMD64)]",
+    "highs_version": "1.15.1",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "git_head": "24f63cb5645090b10ab6603e54c1377182b56aaa",
+    "git_dirty": true
+  },
+  "metrics": {
+    "total_cost": 15784670.329838812,
+    "planned_purchase_cost": 14540552.874773195,
+    "fulfilled_normal_purchase_cost": 14138916.587087061,
+    "cancelled_purchase_principal": 401636.28768613434,
+    "downward_penalty": 200818.14384306717,
+    "upward_adjustment_cost": 466906.68483630696,
+    "regular_purchase_cost": 14806641.415766435,
+    "emergency_purchase_cost": 978028.9140723764,
+    "emergency_energy": 242354.89065111152,
+    "spill_energy": 3385902.524464935,
+    "planned_grid_energy": 22519082.405572794,
+    "final_grid_energy": 22391622.193044286,
+    "total_charge": 6888868.527002448,
+    "total_discharge": 5579983.506871983,
+    "storage_throughput": 12468852.033874432,
+    "adjust_down_energy": 582841.9717763154,
+    "adjust_up_energy": 455381.75924781035,
+    "adjustment_count": 9443.0,
+    "soc_min": 1200.0,
+    "soc_max": 10800.0,
+    "realized_total_cost": 15784670.329838812,
+    "soc_boundary_hits": 29200.0
+  },
+  "price_prediction_metrics": [],
+  "assertions_passed": true,
+  "export_validation_passed": true,
+  "export": {
+    "candidate_path": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\runs\\q4_3_20260912_213133\\Q4_3_PRICE_UNAWARE_REFERENCE\\result4-3_candidate.xlsx",
+    "candidate_sha256": "E1D3F91C16BFAD53C27FF075463C429810F0D9227EEC769EC814CD0DAF1EBFED",
+    "official_template_path": "F:\\2026数模国赛\\国赛团队共享工作区\\C题\\附件\\附件5\\result4-3.xlsx",
+    "official_sha256_before": "C59DA470CABD0BE23F602C95C8AA9D11EC224A0CDAC216B3E1F218E65D006BDC",
+    "official_sha256_after": "C59DA470CABD0BE23F602C95C8AA9D11EC224A0CDAC216B3E1F218E65D006BDC",
+    "official_template_unchanged": true,
+    "plan_days": 334,
+    "storage_rows": 2004,
+    "emergency_event_rows": 3706,
+    "official_template_role": "result4-3.xlsx"
+  }
+}

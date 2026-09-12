@@ -29,6 +29,7 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--predictor", choices=PREDICTORS)
     compare = sub.add_parser("compare")
     compare.add_argument("--costs-json", required=True, help="JSON mapping of track id to realized cost")
+    compare.add_argument("--run-root", required=True, help="single Q4-2 run root containing every compared track")
     compare.add_argument("--selected-predictor", required=True, choices=("Q4_2_PRICE_BASELINE_P0", "Q4_2_PRICE_CANDIDATE_P1", "Q4_2_PRICE_CANDIDATE_P2", "Q4_2_PRICE_CANDIDATE_P3"))
     compare.add_argument("--output", required=True)
     return parser
@@ -48,7 +49,9 @@ def main(argv: list[str] | None = None) -> int:
         return 0
     if args.command == "compare":
         costs = json.loads(Path(args.costs_json).read_text(encoding="utf-8"))
-        result = __import__("q4_baseline.runner", fromlist=["build_value_decomposition"]).build_value_decomposition(costs, args.selected_predictor)
+        module = __import__("q4_baseline.runner", fromlist=["build_value_decomposition", "verify_compare_run_identity"])
+        module.verify_compare_run_identity(Path(args.run_root), costs, args.selected_predictor)
+        result = module.build_value_decomposition(costs, args.selected_predictor)
         Path(args.output).write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
         print(json.dumps({"passed": True, "output": args.output}, ensure_ascii=False))
         return 0

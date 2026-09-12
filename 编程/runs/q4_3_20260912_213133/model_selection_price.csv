@@ -1,0 +1,5 @@
+﻿track,predictor_id,realized_total_cost,price_awareness_value,selection_basis,selected
+Q4_3_PRICE_CANDIDATE_P3,P3_SHAPE_LEVEL,15782344.761047369,2325.568791443482,formal_realized_settlement_cost,True
+Q4_3_PRICE_CANDIDATE_P2,P2_EWMA,15783984.28521735,686.0446214620024,formal_realized_settlement_cost,False
+Q4_3_PRICE_BASELINE_P0,P0_RECENT_SAME_CLOCK,15823020.024317618,-38349.69447880611,formal_realized_settlement_cost,False
+Q4_3_PRICE_CANDIDATE_P1,P1_WEEKDAY_SAME_CLOCK,15826603.834973238,-41933.50513442606,formal_realized_settlement_cost,False

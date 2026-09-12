@@ -1,0 +1,15 @@
+{
+  "selected_track": "Q4_3_PRICE_CANDIDATE_P3",
+  "selected_predictor": "P3_SHAPE_LEVEL",
+  "selection_basis": "minimum formal realized settlement cost",
+  "PriceAwarenessValue": 2325.568791443482,
+  "PriceSystemEffect": -818165.8151859213,
+  "reference_cost": 15784670.329838812,
+  "candidate_costs": {
+    "Q4_3_PRICE_BASELINE_P0": 15823020.024317618,
+    "Q4_3_PRICE_CANDIDATE_P1": 15826603.834973238,
+    "Q4_3_PRICE_CANDIDATE_P2": 15783984.28521735,
+    "Q4_3_PRICE_CANDIDATE_P3": 15782344.761047369
+  },
+  "no_storage_value": "NOT_REQUESTED_FOR_Q4_3"
+}

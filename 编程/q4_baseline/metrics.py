@@ -56,10 +56,19 @@ def value_decomposition(costs: dict[str, float], selected_predictor: str) -> dic
     missing = sorted(required - costs.keys())
     if missing:
         raise ValueError(f"missing Q4-2 tracks: {missing}")
-    return {
+    result: dict[str, float | str] = {
         "PriceSystemEffect": costs["Q4_2_PRICE_UNAWARE_RESETTLEMENT"] - costs["REF_Q2_FIXED_PRICE_FROZEN"],
         "PriceAwarenessValue_selected": costs["Q4_2_PRICE_UNAWARE_RESETTLEMENT"] - costs[selected_predictor],
         "StorageValue_selected": costs["Q4_2_NOSTORAGE"] - costs[selected_predictor],
         "selected_predictor": selected_predictor,
         "same_formal_dates": True, "same_initial_soc": True, "actual_attachment4_settlement": True,
     }
+    for track, label in {
+        "Q4_2_PRICE_BASELINE_P0": "P0",
+        "Q4_2_PRICE_CANDIDATE_P1": "P1",
+        "Q4_2_PRICE_CANDIDATE_P2": "P2",
+        "Q4_2_PRICE_CANDIDATE_P3": "P3",
+    }.items():
+        if track in costs:
+            result[f"PriceAwarenessValue_{label}"] = costs["Q4_2_PRICE_UNAWARE_RESETTLEMENT"] - costs[track]
+    return result

@@ -1,0 +1,5 @@
+﻿command=python -m compileall -q q4_3_baseline
+exit_code=0
+status=PASS
+output_begin
+output_end

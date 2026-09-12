@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "checks": {
+    "reference_action_identity": true,
+    "reference_no_solve": true,
+    "actual_price_model_b": true
+  }
+}

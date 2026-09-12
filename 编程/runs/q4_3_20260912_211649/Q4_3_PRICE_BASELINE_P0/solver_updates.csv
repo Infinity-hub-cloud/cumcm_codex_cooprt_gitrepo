@@ -1,0 +1,2 @@
+﻿template_date,decision_time,plan_version,start_slot,solver_name,solver_version,solver_status,termination_condition,mip_gap,runtime_seconds,objective
+2025-02-01,2025-02-01 00:00:00,initial_0000,1,HiGHS,1.15.1,OPTIMAL,Optimal,0.0,0.04845609999028966,21747.56773834845

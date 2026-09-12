@@ -1,0 +1,150 @@
+{
+  "run_id": "Q4_2_PRICE_UNAWARE_RESETTLEMENT",
+  "question_id": "Q4-2",
+  "stage": 5,
+  "status": "HUMAN_RUN_UNREVIEWED_CANDIDATE",
+  "track": "Q4_2_PRICE_UNAWARE_RESETTLEMENT",
+  "model_version": "M4-Q4-2-PRICE-AWARE-v0.1",
+  "q2_frozen_model_version": "M2-Q2-EXPERIMENT-weekday_buffer-v1.0",
+  "visibility_rule": "TIMESTAMP_LE_DECISION_VISIBLE",
+  "formal_dates": [
+    "2025-02-01",
+    "2025-12-31"
+  ],
+  "q2_reference_run": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\runs\\q2_low_complexity_20260912_002010\\weekday_buffer",
+  "environment": {
+    "python": "3.13.11 | packaged by Anaconda, Inc. | (main, Dec 10 2025, 21:21:58) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "executable": "D:\\conda\\python.exe"
+  },
+  "git": {
+    "git_head": "24f63cb5645090b10ab6603e54c1377182b56aaa",
+    "git_dirty": true
+  },
+  "input_sha256": {
+    "attachment4": "71EE47345986E960F41B8841C9C339D3931573A02CBD61C44C19848DFBB3DE1A",
+    "actual": "00DA155528AFC173776F59E620C8AEFCD661A5C5D8520472CE3AA9F0A91631ED",
+    "q2_reference_dispatch": "04130044EAB5864A5ADBD6D3CD3EDFA534B7AF843198300FC7A99B22693E09A3",
+    "official_result4_2": "1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47"
+  },
+  "identity": {
+    "config_sha256": "9F2C741597914F33370BAEEFF3CB2CD863BCAF03D00E9FC0F0EFFFA9A833FEC7",
+    "q4_core_python_sha256": {
+      "__init__.py": "6594B208F121129D435E559AFB87C12BEFC0C33E6EA97835EEE5EC24E70E3708",
+      "cli.py": "4B730D4C2A6184F6BFE4B67208C46DF6A3726A4E61F67E38B1BA6D0CB4D75DB0",
+      "config.py": "01578F3CF6745874ED80E9F907A0654E46909C5D32158BDB0AC2AAA3DE82C47E",
+      "export_validation.py": "AEE6220C0F1F0B04173C82F5E7B0487CAC1C5AB5541AC9995620AA6F6E88B1A4",
+      "exporter.py": "8CFC8F73450AAA7DD3583D4D6B3A586E99793F7197A621B3806735B2381C9064",
+      "forecast.py": "407FEEFC9DDBE4A79EB83D3DA198CC8555DDDB89F7F5FE1799E8828586BF64EB",
+      "integrity.py": "658F2F6E8CF88BF276D861600DC86DED9B59F0A22C72E244D438C5F795459AAB",
+      "metrics.py": "54D91A2517D321AE300F651DE15346A9B407115B28BD14FA65AAB348B2AC0156",
+      "planner.py": "2057E34E84100019625DCD70B5A19170031F533A234BEFEE30B268474A55C886",
+      "price.py": "11793E433534A800A6AFE7004CC3C0DEF0990836F17D54BC18414DC41EB88738",
+      "reference.py": "5502CF00FE374046137909AD80AA026CBC07556C574603C99EE40D2AF82FFF4D",
+      "runner.py": "A6CB7849FADC0945451EDD0A6ABE043CE01CAD370E7FB577F9B6A6EB268027E9",
+      "settlement.py": "2D0910A14E658C00B5C8188896154472C8300FC367BB7A3403BD9A37BBFC3607",
+      "validation.py": "75EEFE8DE15E96AADA3050BDEFE4C76B78230436A19B36EEF4FD3E0C12E4914E"
+    },
+    "input_sha256": {
+      "attachment4": "71EE47345986E960F41B8841C9C339D3931573A02CBD61C44C19848DFBB3DE1A",
+      "actual": "00DA155528AFC173776F59E620C8AEFCD661A5C5D8520472CE3AA9F0A91631ED",
+      "q2_reference_dispatch": "04130044EAB5864A5ADBD6D3CD3EDFA534B7AF843198300FC7A99B22693E09A3",
+      "official_result4_2": "1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47"
+    },
+    "visibility_rule": "TIMESTAMP_LE_DECISION_VISIBLE",
+    "formal_dates": [
+      "2025-02-01",
+      "2025-12-31"
+    ],
+    "initial_soc_feb1": 1200.0,
+    "initial_soc_feb1_identity": {
+      "source": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\runs\\q2_low_complexity_20260912_002010\\weekday_buffer\\dispatch_timeseries.csv",
+      "sha256": "04130044EAB5864A5ADBD6D3CD3EDFA534B7AF843198300FC7A99B22693E09A3"
+    },
+    "python_version": "3.13.11 | packaged by Anaconda, Inc. | (main, Dec 10 2025, 21:21:58) [MSC v.1929 64 bit (AMD64)]",
+    "highs_version": "1.15.1"
+  },
+  "warnings": [
+    "Q4-2 formal run is human-controlled",
+    "Q4-2-PLAN-SURPLUS-001"
+  ],
+  "failures": [],
+  "required_outputs": [
+    "run_manifest.json",
+    "config_snapshot.json",
+    "model_selection_price.csv",
+    "predictions_price.csv",
+    "dispatch_timeseries.csv",
+    "daily_metrics.csv",
+    "monthly_metrics.csv",
+    "metrics_summary.csv",
+    "assertions.json",
+    "solver_days.csv",
+    "solver_audit.log",
+    "warnings_and_failures.log",
+    "result4-2_candidate.xlsx",
+    "export_validation.json",
+    "human_feedback.md"
+  ],
+  "finished_at": "2026-09-12T19:38:27.108351",
+  "formal_days": 334,
+  "metrics": {
+    "realized_total_cost": 16034903.73014998,
+    "regular_purchase_cost": 14419862.147115339,
+    "emergency_purchase_cost": 1615041.5830346423,
+    "grid_purchase_energy": 22348654.590524,
+    "emergency_energy": 398679.21107333346,
+    "spill_energy": 3500462.8937178273,
+    "charge": 6882533.519892139,
+    "discharge": 5574852.151112633,
+    "storage_throughput": 12457385.671004772,
+    "soc_min": 1199.9999999999952,
+    "soc_max": 10800.000000000002,
+    "soc_boundary_hits": 16615.0,
+    "days": 334.0,
+    "price_sample_count": 48096.0,
+    "price_MAE": 0.04715118305056554,
+    "price_RMSE": 0.06534801504178886,
+    "price_bias": -0.00015473843978709224,
+    "price_P90_absolute_error": 0.0976,
+    "price_rank_correlation": 0.9719055035323327,
+    "price_peak10_recall": 0.8671517671517671,
+    "price_offpeak10_recall": 0.7557077625570776,
+    "price_negative_prediction_count": 0.0,
+    "price_nonfinite_prediction_count": 0.0,
+    "solver_days": 334,
+    "optimal_count": 0,
+    "infeasible_count": 0,
+    "failure_count": 0,
+    "reference_only_count": 334,
+    "runtime_seconds": 0.0,
+    "level_bound_hit_count": 0
+  },
+  "price_prediction_metrics": {
+    "sample_count": 48096.0,
+    "MAE": 0.04715118305056554,
+    "RMSE": 0.06534801504178886,
+    "bias": -0.00015473843978709224,
+    "P90_absolute_error": 0.0976,
+    "rank_correlation": 0.9719055035323327,
+    "peak10_recall": 0.8671517671517671,
+    "offpeak10_recall": 0.7557077625570776,
+    "negative_prediction_count": 0.0,
+    "nonfinite_prediction_count": 0.0
+  },
+  "initial_soc_feb1": 1200.0,
+  "price_hash": "71EE47345986E960F41B8841C9C339D3931573A02CBD61C44C19848DFBB3DE1A",
+  "predictor_id": "P1_WEEKDAY_SAME_CLOCK",
+  "export": {
+    "candidate_path": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\runs\\q4_2_20260912_193813\\Q4_2_PRICE_UNAWARE_RESETTLEMENT\\result4-2_candidate.xlsx",
+    "candidate_sha256": "2086808249440D29805F34DF06C54D39079AB9F93971A5CA0E0530977EE9FD4B",
+    "official_template_path": "F:\\2026数模国赛\\国赛团队共享工作区\\C题\\附件\\附件5\\result4-2.xlsx",
+    "official_sha256_before": "1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47",
+    "official_sha256_after": "1C26494CFC6D754E0BD9BFF7E13E1126A73D2D2DA6C5336EB251D89B9A1A1A47",
+    "official_template_unchanged": true,
+    "plan_days": 334,
+    "storage_rows": 2004,
+    "emergency_event_rows": 3861
+  },
+  "export_validation_passed": true
+}

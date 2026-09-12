@@ -1,0 +1,30 @@
+{
+  "model_version": "M4-Q4-3-PRICE-AWARE-ROLLING-v0.1",
+  "audit_scope": "static contracts plus toy data only",
+  "formal_annual_solver_executed": false,
+  "formal_candidate_generated": false,
+  "checks": {
+    "input_identity": "PASS",
+    "official_template_read_only": "PASS",
+    "future_load_pv_actual_guard": "PASS",
+    "future_price_actual_guard": "PASS",
+    "price_at_decision_visible": "PASS",
+    "decision_plus_10min_hidden": "PASS",
+    "all_price_predictors_future_perturbation_invariant": "PASS",
+    "planner_payload_excludes_future_price_actual": "PASS",
+    "q3_same_issue_interp_identity": "PASS",
+    "g_frozen": "PASS",
+    "executed_prefix_frozen": "PASS",
+    "future_suffix_update_only": "PASS",
+    "soc_bridge": "PASS",
+    "midnight_slot144": "PASS",
+    "dec31_boundary": "PASS",
+    "model_b_epigraph_toy_solver": "PASS",
+    "single_final_adjustment_settlement": "PASS",
+    "actual_price_emergency_settlement": "PASS",
+    "price_unaware_action_identity": "PASS",
+    "toy_excel_roundtrip": "PASS",
+    "formal_06_12_18_observed_contract": 1002
+  },
+  "status": "PASS"
+}

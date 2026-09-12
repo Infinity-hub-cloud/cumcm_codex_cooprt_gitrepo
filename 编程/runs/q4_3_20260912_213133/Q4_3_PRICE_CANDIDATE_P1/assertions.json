@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "failures": [],
+  "observed_06_12_18_count": 1002,
+  "expected_observed_06_12_18_count": 1002,
+  "max_balance_residual": 4.547473508864641e-13,
+  "max_soc_residual": 2.034994395216927e-11,
+  "qmax_internal": 833.3333333333333,
+  "failed_updates": 0
+}

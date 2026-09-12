@@ -272,3 +272,49 @@ def run_q4_2(config_path: str | Path, output_dir: str | Path, track: str, *, all
 
 def build_value_decomposition(costs: dict[str, float], selected_predictor: str) -> dict[str, Any]:
     return value_decomposition(costs, selected_predictor)
+
+
+def verify_compare_run_identity(run_root: Path, costs: dict[str, float], selected_predictor: str) -> None:
+    """Reject a Q4-2 decomposition assembled from mixed evidence."""
+    required_tracks = {
+        "REF_Q2_FIXED_PRICE_FROZEN",
+        "Q4_2_PRICE_UNAWARE_RESETTLEMENT",
+        "Q4_2_PRICE_BASELINE_P0",
+        "Q4_2_PRICE_CANDIDATE_P1",
+        "Q4_2_PRICE_CANDIDATE_P2",
+        "Q4_2_PRICE_CANDIDATE_P3",
+        "Q4_2_NOSTORAGE",
+    }
+    if selected_predictor not in {
+        "Q4_2_PRICE_BASELINE_P0",
+        "Q4_2_PRICE_CANDIDATE_P1",
+        "Q4_2_PRICE_CANDIDATE_P2",
+        "Q4_2_PRICE_CANDIDATE_P3",
+    }:
+        raise ValueError("Q4_COMPARE_IDENTITY_HARD_FAIL: invalid selected storage track")
+    if not run_root.is_dir():
+        raise ValueError("Q4_COMPARE_IDENTITY_HARD_FAIL: run root does not exist")
+    missing_costs = sorted(required_tracks - costs.keys())
+    if missing_costs:
+        raise ValueError(f"Q4_COMPARE_IDENTITY_HARD_FAIL: missing costs for {missing_costs}")
+    manifests: dict[str, dict[str, Any]] = {}
+    for track in sorted(required_tracks):
+        manifest_path = run_root / track / "run_manifest.json"
+        if not manifest_path.is_file():
+            raise ValueError(f"Q4_COMPARE_IDENTITY_HARD_FAIL: missing manifest for {track}")
+        manifests[track] = json.loads(manifest_path.read_text(encoding="utf-8"))
+        manifest = manifests[track]
+        if manifest.get("track") != track:
+            raise ValueError(f"Q4_COMPARE_IDENTITY_HARD_FAIL: track mismatch for {track}")
+        expected_cost = float(manifest.get("reference_cost_yuan", 0.0)) if track == "REF_Q2_FIXED_PRICE_FROZEN" else float(manifest["metrics"]["realized_total_cost"])
+        if abs(float(costs[track]) - expected_cost) > 1e-6:
+            raise ValueError(f"Q4_COMPARE_IDENTITY_HARD_FAIL: cost does not match manifest for {track}")
+    candidates = [track for track in required_tracks if track != "REF_Q2_FIXED_PRICE_FROZEN"]
+    baseline = manifests["Q4_2_PRICE_UNAWARE_RESETTLEMENT"]
+    for track in candidates:
+        manifest = manifests[track]
+        for field in ("identity", "input_sha256", "visibility_rule", "formal_dates", "initial_soc_feb1"):
+            if manifest.get(field) != baseline.get(field):
+                raise ValueError(f"Q4_COMPARE_IDENTITY_HARD_FAIL: mixed {field} for {track}")
+    if manifests["Q4_2_NOSTORAGE"].get("predictor_id") != manifests[selected_predictor].get("predictor_id"):
+        raise ValueError("Q4_COMPARE_IDENTITY_HARD_FAIL: storage/no-storage predictors differ")

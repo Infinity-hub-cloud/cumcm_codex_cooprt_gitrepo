@@ -1,0 +1,13 @@
+{
+  "PriceSystemEffect": 822857.0394391492,
+  "PriceAwarenessValue_selected": 11162.79393822141,
+  "StorageValue_selected": 3481736.7505530585,
+  "selected_predictor": "Q4_2_PRICE_CANDIDATE_P2",
+  "same_formal_dates": true,
+  "same_initial_soc": true,
+  "actual_attachment4_settlement": true,
+  "PriceAwarenessValue_P0": -33790.94997099601,
+  "PriceAwarenessValue_P1": -38837.42219775915,
+  "PriceAwarenessValue_P2": 11162.79393822141,
+  "PriceAwarenessValue_P3": 10937.806131292135
+}
