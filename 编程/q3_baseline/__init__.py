@@ -7,4 +7,4 @@ command and are intended for human execution.
 
 __all__ = ["__version__"]
 
-__version__ = "M3-Q3-ROLLING-4ISSUE-v1.0"
+__version__ = "M3-Q3-POINT-MODEL-B-v2.0"

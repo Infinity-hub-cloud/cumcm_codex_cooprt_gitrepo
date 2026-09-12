@@ -1,0 +1,65 @@
+{
+  "Q3_ATTACHMENT3_0ONLY": {
+    "rows": 52560,
+    "formal_cost_recomputed_A": 18696686.00254115,
+    "formal_cost_manifest_difference": 2.60770320892334e-08,
+    "max_residuals": {
+      "balance": 4.547473508864641e-13,
+      "soc_transition": 9.094947017729282e-13,
+      "soc_continuity": 0.0,
+      "cost_A": 0.0,
+      "nonnegative_violation": 2.3495279795800645e-11,
+      "physical_violation": 3.3287506084889174e-10
+    },
+    "G_changes_in_versions": 0,
+    "version_decisions_after_interval_start": 0,
+    "version_issue_after_decision": 0,
+    "max_last_version_vs_dispatch_error": 0.0,
+    "solver_update_records": 729,
+    "solver_log_files": 0,
+    "dispatch_sha256": "835f8b0f3c569272c25dc590a31a47b7c27a92fbc858e5a330219ea4d820db71",
+    "scope_note": "CSV arithmetic and emitted timestamps only; not proof of runtime access isolation or all workbook cells."
+  },
+  "Q3_ROLLING_4ISSUE_retry_socfix_indexed": {
+    "rows": 52560,
+    "formal_cost_recomputed_A": 18428704.77660821,
+    "formal_cost_manifest_difference": -3.725290298461914e-09,
+    "max_residuals": {
+      "balance": 4.547473508864641e-13,
+      "soc_transition": 2.2168933355715126e-11,
+      "soc_continuity": 0.0,
+      "cost_A": 0.0,
+      "nonnegative_violation": 7.786686539678721e-10,
+      "physical_violation": 6.778577699151356e-11
+    },
+    "G_changes_in_versions": 0,
+    "version_decisions_after_interval_start": 0,
+    "version_issue_after_decision": 0,
+    "max_last_version_vs_dispatch_error": 0.0,
+    "solver_update_records": 1824,
+    "solver_log_files": 0,
+    "dispatch_sha256": "fbb36e5a71450ff012aea055e83a800ae14945c4821eeadc15b487ff23e52027",
+    "scope_note": "CSV arithmetic and emitted timestamps only; not proof of runtime access isolation or all workbook cells."
+  },
+  "Q3_NOSTORAGE_REFERENCE": {
+    "rows": 52560,
+    "formal_cost_recomputed_A": 21801750.639184285,
+    "formal_cost_manifest_difference": 1.3783574104309082e-07,
+    "max_residuals": {
+      "balance": 2.2737367544323206e-13,
+      "soc_transition": 0.0,
+      "soc_continuity": 0.0,
+      "cost_A": 0.0,
+      "nonnegative_violation": 0.0,
+      "physical_violation": 0.0
+    },
+    "G_changes_in_versions": 0,
+    "version_decisions_after_interval_start": 0,
+    "version_issue_after_decision": 0,
+    "max_last_version_vs_dispatch_error": 0.0,
+    "solver_update_records": 1824,
+    "solver_log_files": 0,
+    "dispatch_sha256": "b998bf462d7beb0f48b0556be01b2de2b9ca5382f930289f6d7f62f003d027d0",
+    "scope_note": "CSV arithmetic and emitted timestamps only; not proof of runtime access isolation or all workbook cells."
+  }
+}

@@ -21,7 +21,7 @@ class Q3CliFailureEvidenceTests(unittest.TestCase):
                 "config/q3_baseline.json",
                 "run",
                 "--track",
-                "Q3_ROLLING_4ISSUE",
+                "Q3_ROLLING_INTERP",
                 "--output-dir",
                 str(output),
             ]

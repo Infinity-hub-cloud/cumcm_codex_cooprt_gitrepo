@@ -89,12 +89,7 @@ def export_result3_candidate(
             if field == "G":
                 daily_cost = sum(row.planned_purchase_cost for row in rows)
             else:
-                daily_cost = sum(
-                    row.planned_purchase_cost
-                    + row.downward_adjustment_penalty
-                    + row.upward_adjustment_cost
-                    for row in rows
-                )
+                daily_cost = sum(row.regular_purchase_cost for row in rows)
             sheet.cell(row_index, 147).value = round4(daily_cost)
             sheet.cell(row_index, 146).number_format = "0.0000"
             sheet.cell(row_index, 147).number_format = "0.0000"

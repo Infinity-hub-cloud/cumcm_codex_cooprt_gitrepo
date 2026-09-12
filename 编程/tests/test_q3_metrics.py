@@ -40,10 +40,14 @@ class Q3MetricsTests(unittest.TestCase):
             load_actual_kwh=1.0,
             pv_actual_kwh=2.0,
             planned_purchase_cost=1.0,
+            fulfilled_normal_purchase_cost=1.0,
+            cancelled_purchase_principal=0.0,
             downward_adjustment_penalty=0.0,
             upward_adjustment_cost=0.2,
+            regular_purchase_cost=1.2,
             emergency_purchase_cost=0.3,
             total_cost=1.5,
+            cost_semantics="MODEL_B",
         )
         metrics = economic_metrics([row])
         self.assertEqual(metrics["planned_grid_energy"], 2.0)
@@ -71,10 +75,14 @@ class Q3MetricsTests(unittest.TestCase):
             load_actual_kwh=0.0,
             pv_actual_kwh=0.0,
             planned_purchase_cost=0.0,
+            fulfilled_normal_purchase_cost=0.0,
+            cancelled_purchase_principal=0.0,
             downward_adjustment_penalty=0.0,
             upward_adjustment_cost=0.0,
+            regular_purchase_cost=0.0,
             emergency_purchase_cost=0.0,
             total_cost=0.0,
+            cost_semantics="MODEL_B",
         )
         self.assertEqual(soc_boundary_hits([row], 1200.0, 10800.0, 1e-6), 2.0)
 

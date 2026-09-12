@@ -1,11 +1,13 @@
 {
-  "model_version": "M3-Q3-ROLLING-4ISSUE-v1.0",
+  "model_version": "M3-Q3-POINT-MODEL-B-v2.0",
   "q2_frozen_model_version": "M2-Q2-EXPERIMENT-weekday_buffer-v1.0",
   "data_version": "PREP-TIME-REV-20260911T170805+0800",
   "normalized_price_input": "../预处理审计输出_时间口径修订版/normalized/attachment1_single_day.csv",
   "normalized_actual_input": "../预处理审计输出_时间口径修订版/normalized/attachment2_actual_long.csv",
-  "attachment3_forecast_input": "../预处理审计输出_时间口径修订版/normalized/attachment3_forecast_long.csv",
-  "attachment3_mapped_input": "../预处理审计输出_时间口径修订版/normalized/attachment3_mapped_10min.csv",
+  "attachment3_point_input": "../预处理审计输出_Q3修订版_点值语义/attachment3_point_forecast_long.csv",
+  "attachment3_zoh_input": "../预处理审计输出_Q3修订版_点值语义/attachment3_mapped_10min_q3rev_zoh.csv",
+  "attachment3_interp_input": "../预处理审计输出_Q3修订版_点值语义/attachment3_mapped_10min_q3rev_interp.csv",
+  "attachment3_mapping_manifest": "../预处理审计输出_Q3修订版_点值语义/attachment3_mapping_manifest.json",
   "official_result3_template": "../../C题/附件/附件5/result3.xlsx",
   "audit_manifest": "../预处理审计输出_时间口径修订版/audit/manifest.json",
   "audit_summary": "../预处理审计输出_时间口径修订版/audit/audit_summary.json",
@@ -38,6 +40,7 @@
     "time_limit_seconds": 300.0,
     "downward_adjustment_multiplier": 0.5,
     "upward_adjustment_multiplier": 1.5,
-    "solver_console_output": false
+    "solver_console_output": false,
+    "cost_semantics": "MODEL_B"
   }
 }

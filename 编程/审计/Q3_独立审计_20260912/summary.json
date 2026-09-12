@@ -1,0 +1,62 @@
+{
+  "raw_a3_header": [
+    "日期",
+    "预报时刻",
+    "预报1小时",
+    "预报2小时",
+    "预报3小时",
+    "预报4小时",
+    "预报5小时",
+    "预报6小时",
+    "预报7小时",
+    "预报8小时",
+    "预报9小时",
+    "预报10小时",
+    "预报11小时",
+    "预报12小时",
+    "预报13小时",
+    "预报14小时",
+    "预报15小时",
+    "预报16小时",
+    "预报17小时",
+    "预报18小时",
+    "预报19小时",
+    "预报20小时",
+    "预报21小时",
+    "预报22小时",
+    "预报23小时",
+    "预报24小时"
+  ],
+  "raw_a3_rows": 1460,
+  "raw_a2_pv_points": 52560,
+  "normalized_a3_value_mismatches": 0,
+  "actual_csv_fields": [
+    "source_date",
+    "interval_index",
+    "sample_minute",
+    "interval_start_date",
+    "interval_start_minute",
+    "interval_end_date",
+    "interval_end_minute",
+    "load_kw",
+    "pv_actual_kw",
+    "load_kwh",
+    "pv_actual_kwh"
+  ],
+  "source_hashes": [
+    {
+      "path": "F:\\2026数模国赛\\国赛团队共享工作区\\C题\\附件\\附件2.xlsx",
+      "sha256": "2e95fd446bfafa0d8c59577b5c2e2ea8b3f1def20dde54a3062556f4da9b4c72"
+    },
+    {
+      "path": "F:\\2026数模国赛\\国赛团队共享工作区\\C题\\附件\\附件3.xlsx",
+      "sha256": "8a61b06c52bd0d639a1cc37c61a7d9f5b75edcbca718f64c1bd3498ec9f9d843"
+    },
+    {
+      "path": "F:\\2026数模国赛\\国赛团队共享工作区\\C题\\C题.pdf",
+      "sha256": "2c098f6ae9dd47ae965aebdec3b9facf3de6c173f999783c1012c08fc5fb9d2d"
+    }
+  ],
+  "purpose": "diagnostic hindsight comparison only; no solver; no forecast policy tuning",
+  "comparison_support": "H0/H1 same issue-lead records; ZOH/INTERP same physical targets, lead1..23; excludes unsupported first hour and beyond lead24"
+}

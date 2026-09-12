@@ -1,0 +1,8 @@
+# Python interpreter/test caches are generated locally and are not deliverables.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local virtual environments must not be mixed with reproducible source/evidence.
+.venv/
+venv/

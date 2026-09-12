@@ -12,9 +12,12 @@ from q2_baseline.config import Q2Parameters
 
 TRACKS = (
     "REF_Q2_FROZEN",
-    "Q3_ATTACHMENT3_0ONLY",
-    "Q3_ROLLING_4ISSUE",
-    "Q3_NOSTORAGE_REFERENCE",
+    "Q3_A3_0ONLY_ZOH",
+    "Q3_A3_0ONLY_INTERP",
+    "Q3_ROLLING_ZOH",
+    "Q3_ROLLING_INTERP",
+    "Q3_NOSTORAGE",
+    "Q3_COST_A_SENSITIVITY",
 )
 
 
@@ -23,6 +26,7 @@ class Q3Parameters(Q2Parameters):
     downward_adjustment_multiplier: float = 0.5
     upward_adjustment_multiplier: float = 1.5
     solver_console_output: bool = False
+    cost_semantics: str = "MODEL_B"
 
     def validate(self) -> None:
         super().validate()
@@ -32,6 +36,8 @@ class Q3Parameters(Q2Parameters):
             raise ValueError("Q3 upward adjustment multiplier must be 1.5")
         if not isinstance(self.solver_console_output, bool):
             raise ValueError("solver_console_output must be boolean")
+        if self.cost_semantics not in {"MODEL_A", "MODEL_B"}:
+            raise ValueError("cost_semantics must be MODEL_A or MODEL_B")
 
     def normalize_soc(self, value: float) -> float:
         """Snap tolerance-scale boundary drift before fixing SOC in a MILP."""
@@ -55,8 +61,10 @@ class Q3Config:
     data_version: str
     normalized_price_input: Path
     normalized_actual_input: Path
-    attachment3_forecast_input: Path
-    attachment3_mapped_input: Path
+    attachment3_point_input: Path
+    attachment3_zoh_input: Path
+    attachment3_interp_input: Path
+    attachment3_mapping_manifest: Path
     official_result3_template: Path
     audit_manifest: Path
     audit_summary: Path
@@ -78,10 +86,9 @@ class Q3Config:
             raise ValueError("locked formal Q3 output is 2025-02-01..2025-12-31")
         if (self.output_end - self.output_start).days + 1 != 334:
             raise AssertionError("formal Q3 output must contain 334 template days")
-        allowed = {0, 360, 720, 1080}
-        for name, values in self.issue_sets.items():
-            if not values or values[0] != 0 or not set(values) <= allowed:
-                raise ValueError(f"invalid official issue set {name}: {values}")
+        required = {"0only": (0,), "0_12": (0, 720), "rolling4": (0, 360, 720, 1080)}
+        if self.issue_sets != required:
+            raise ValueError(f"Q3 issue sets must equal official locked subsets: {self.issue_sets}")
 
     def snapshot(self) -> dict[str, Any]:
         return {
@@ -90,8 +97,10 @@ class Q3Config:
             "data_version": self.data_version,
             "normalized_price_input": str(self.normalized_price_input),
             "normalized_actual_input": str(self.normalized_actual_input),
-            "attachment3_forecast_input": str(self.attachment3_forecast_input),
-            "attachment3_mapped_input": str(self.attachment3_mapped_input),
+            "attachment3_point_input": str(self.attachment3_point_input),
+            "attachment3_zoh_input": str(self.attachment3_zoh_input),
+            "attachment3_interp_input": str(self.attachment3_interp_input),
+            "attachment3_mapping_manifest": str(self.attachment3_mapping_manifest),
             "official_result3_template": str(self.official_result3_template),
             "audit_manifest": str(self.audit_manifest),
             "audit_summary": str(self.audit_summary),
@@ -119,8 +128,10 @@ def load_config(path: Path) -> Q3Config:
         data_version=str(payload["data_version"]),
         normalized_price_input=resolve(payload["normalized_price_input"]),
         normalized_actual_input=resolve(payload["normalized_actual_input"]),
-        attachment3_forecast_input=resolve(payload["attachment3_forecast_input"]),
-        attachment3_mapped_input=resolve(payload["attachment3_mapped_input"]),
+        attachment3_point_input=resolve(payload["attachment3_point_input"]),
+        attachment3_zoh_input=resolve(payload["attachment3_zoh_input"]),
+        attachment3_interp_input=resolve(payload["attachment3_interp_input"]),
+        attachment3_mapping_manifest=resolve(payload["attachment3_mapping_manifest"]),
         official_result3_template=resolve(payload["official_result3_template"]),
         audit_manifest=resolve(payload["audit_manifest"]),
         audit_summary=resolve(payload["audit_summary"]),

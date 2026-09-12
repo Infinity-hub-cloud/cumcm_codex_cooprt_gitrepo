@@ -50,14 +50,27 @@ def validate_run(
         max_balance = max(max_balance, abs(balance))
         expected_soc = row.soc_before + params.charge_efficiency * row.C - row.D / params.discharge_efficiency
         max_soc_residual = max(max_soc_residual, abs(row.soc_after - expected_soc))
+        uminus, uplus = max(row.G - row.Q, 0.0), max(row.Q - row.G, 0.0)
+        expected_regular = (
+            row.price * min(row.G, row.Q) + 0.5 * row.price * uminus + 1.5 * row.price * uplus
+            if params.cost_semantics == "MODEL_B"
+            else row.price * row.G + 0.5 * row.price * uminus + 1.5 * row.price * uplus
+        )
+        if row.cost_semantics != params.cost_semantics or abs(row.regular_purchase_cost - expected_regular) > params.aggregate_tolerance:
+            failures.append(f"cost_semantics:{row.interval_start}")
+            break
         if row.issue_datetime is not None and row.issue_datetime > row.interval_start:
             failures.append(f"future_issue:{row.interval_start}")
             break
     for day, plan in plans.items():
         if len(plan.G) != 144 or len(plan.Q) != 144:
             failures.append(f"plan_shape:{day}")
-        if frozen_days[day].initial_pv[-1].forecast_source != "fallback_q2_pv":
-            failures.append(f"slot144_fallback:{day}")
+        for selection in frozen_days[day].initial_pv:
+            if selection.issue_datetime is not None:
+                if selection.target_time != selection.issue_datetime + timedelta(hours=int(selection.lead_hour)):
+                    failures.append(f"point_time_semantics:{day}:{selection.template_slot}")
+                if selection.endpoint_hold and not (selection.lead_hour == 24 and selection.interval_start == selection.target_time):
+                    failures.append(f"endpoint_hold_scope:{day}:{selection.template_slot}")
         if not np.array_equal(frozen_days[day].load_plan_kw, frozen_days[day].q2_forecast.planning_load_kw):
             failures.append(f"load_not_frozen:{day}")
     version_g: dict[tuple[str, int], float] = {}

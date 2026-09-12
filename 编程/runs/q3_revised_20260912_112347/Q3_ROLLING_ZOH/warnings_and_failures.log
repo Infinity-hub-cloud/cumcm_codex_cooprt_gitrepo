@@ -1,0 +1,2 @@
+WARNING-Q3-PLAN-SURPLUS-001: W_pred is retained in planning balance for physical feasibility; actual W is computed only after replay.
+INFO-Q3-SOLVER-LOG-001: solver_audit.log is the guaranteed structured audit log; native HiGHS log files are listed only when physically present.

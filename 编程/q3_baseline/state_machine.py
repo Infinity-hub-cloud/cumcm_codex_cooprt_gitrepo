@@ -5,7 +5,7 @@ from datetime import datetime
 
 import numpy as np
 
-from q2_baseline.data import ActualInterval
+from q2_baseline.data import ActualInterval, Q2InputData
 from q2_baseline.time_axis import TargetInterval
 
 from .config import Q3Parameters
@@ -32,10 +32,43 @@ class ExecutedInterval:
     load_actual_kwh: float
     pv_actual_kwh: float
     planned_purchase_cost: float
+    fulfilled_normal_purchase_cost: float
+    cancelled_purchase_principal: float
     downward_adjustment_penalty: float
     upward_adjustment_cost: float
+    regular_purchase_cost: float
     emergency_purchase_cost: float
     total_cost: float
+    cost_semantics: str
+
+
+@dataclass(frozen=True)
+class CausalActualView:
+    """Capability boundary: actuals are inaccessible until their interval ends."""
+    by_template_key: dict[tuple[object, int], ActualInterval]
+
+    def get(self, key: tuple[object, int], decision_time: datetime) -> ActualInterval:
+        row = self.by_template_key[key]
+        if row.interval_end > decision_time:
+            raise PermissionError(
+                "Q3_CAUSAL_ACTUAL_HARD_FAIL: interval_end is after decision_time"
+            )
+        return row
+
+    def snapshot(self, decision_time: datetime, price: np.ndarray) -> Q2InputData:
+        completed = tuple(sorted(
+            (row for row in self.by_template_key.values() if row.interval_end <= decision_time),
+            key=lambda row: row.interval_start,
+        ))
+        by_clock: dict[int, list[ActualInterval]] = {}
+        for row in completed:
+            by_clock.setdefault(row.natural_clock_minute, []).append(row)
+        return Q2InputData(
+            price=price,
+            actual=completed,
+            actual_by_template_key={(row.source_date, row.template_slot): row for row in completed},
+            actual_by_clock={key: tuple(value) for key, value in by_clock.items()},
+        )
 
 
 @dataclass(frozen=True)
@@ -55,6 +88,15 @@ class PlanVersionRow:
     soc_after_planned: float
     pv_forecast: float
     pv_forecast_source: str
+    forecast_kwh: float
+    forecast_version: str
+    lead_hour: int | None
+    target_time: datetime | None
+    mapping_method: str
+    interpolation_left_lead: int | None
+    interpolation_right_lead: int | None
+    endpoint_hold: bool
+    fallback_reason: str
     solver_status: str
 
 
@@ -86,6 +128,11 @@ def execute_r0_interval(
     if actual.template_slot != slot or actual.source_date != plan.template_date:
         raise ValueError("actual interval does not match Q3 template slot")
     G, Q, C, D = (float(plan.G[i]), float(plan.Q[i]), float(plan.C[i]), float(plan.D[i]))
+    tol = params.feasibility_tolerance
+    if C < -tol or D < -tol or C > params.charge_energy_max + tol or D > params.discharge_energy_max + tol:
+        raise AssertionError("Q3 charge/discharge exceeds exact physical energy bound")
+    if C > tol and D > tol:
+        raise AssertionError("Q3 simultaneous charge/discharge is forbidden")
     shortage = actual.load_kwh + C - Q - actual.pv_kwh - D
     E = max(shortage, 0.0)
     W = max(-shortage, 0.0)
@@ -93,8 +140,11 @@ def execute_r0_interval(
     uminus = max(G - Q, 0.0)
     uplus = max(Q - G, 0.0)
     planned = price * G
+    fulfilled = price * min(G, Q)
+    cancelled_principal = price * uminus
     down = params.downward_adjustment_multiplier * price * uminus
     up = params.upward_adjustment_multiplier * price * uplus
+    regular = (fulfilled + down + up) if params.cost_semantics == "MODEL_B" else (planned + down + up)
     emergency = params.emergency_price_multiplier * price * E
     balance = Q + actual.pv_kwh + D + E - actual.load_kwh - C - W
     if abs(balance) > params.feasibility_tolerance:
@@ -118,10 +168,14 @@ def execute_r0_interval(
         actual.load_kwh,
         actual.pv_kwh,
         planned,
+        fulfilled,
+        cancelled_principal,
         down,
         up,
+        regular,
         emergency,
-        planned + down + up + emergency,
+        regular + emergency,
+        params.cost_semantics,
     )
 
 
@@ -144,6 +198,7 @@ def plan_version_rows(
         from q2_baseline.time_axis import target_interval
 
         target = target_interval(plan.template_date, slot)
+        metadata = plan.pv_metadata[i]
         rows.append(
             PlanVersionRow(
                 plan.template_date.isoformat(),
@@ -161,6 +216,15 @@ def plan_version_rows(
                 float(plan.S[i + 1]),
                 float(pv_kw[i]),
                 plan.pv_source[i],
+                metadata.forecast_kwh,
+                metadata.forecast_version,
+                metadata.lead_hour,
+                metadata.target_time,
+                metadata.mapping_method,
+                metadata.interpolation_left_lead,
+                metadata.interpolation_right_lead,
+                metadata.endpoint_hold,
+                metadata.fallback_reason,
                 plan.solver_status[i],
             )
         )

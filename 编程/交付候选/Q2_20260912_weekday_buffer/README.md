@@ -1,37 +1,36 @@
-# Q2候选交付包：weekday_buffer
+# Q2 冻结交付包：weekday_buffer
 
-状态：TECHNICALLY_REVIEWED_PENDING_HUMAN_ACCEPTANCE。费用15212046.69071083元；统计期为2025-02-01至12-31的334个模板日，不含1月预热。
+更新时间：2026-09-12。
 
-本目录的`result2.xlsx`已填写三张表，是成功人工运行包`../../runs/q2_low_complexity_20260912_002010/weekday_buffer/result2_candidate.xlsx`的原样复制。原始官方模板保持不变。候选、人工接受模型、最终提交批准是三个不同状态。
+- 主模型状态：`ACCEPTED / FROZEN`。
+- 模型版本：`M2-Q2-EXPERIMENT-weekday_buffer-v1.0`。
+- 技术复核：`PASS`。
+- 论文表转录：`PENDING`。
+- 比赛提交文件批准：`PENDING_SUBMISSION_APPROVAL`。
+- 正式统计期：2025-02-01 至 2025-12-31，共 334 个模板日；1 月只作 SOC/历史预热。
 
-## 人工需要做什么
+`result2.xlsx` 是成功运行包 `../../runs/q2_low_complexity_20260912_002010/weekday_buffer/result2_candidate.xlsx` 的字节一致复制，SHA-256 为 `CEF7AE5579459E274BBE1387FB22F4A031081CB09AB62D34FF75237E6E8853FC`。官方 `../../../C题/附件/附件5/result2.xlsx` 未被覆盖。
 
-1. 阅读[复核报告与补做顺序](../../Q2_结果复核与定版建议_20260912.md)。
-2. 若无等效测试记录，按报告第5节执行短补测并保存新日志；不重跑四组。
-3. 核对`result2.xlsx`和[论文表1至表3](论文表1至表3.md)，填写[人工验收](人工验收.md)。
-4. 模型接受、论文转录和提交批准分别记录；不要改原运行manifest以伪装当时已经验收。
+## 论文手入口
+
+1. 阅读 `../../Q2_结果复核与定版建议_20260912.md`，确认指标口径、负面比较和限制。
+2. 使用本目录 `论文表1至表3.md` 与三个 `table*.csv`；转录后仍需人工逐表复核。
+3. 数值追溯到 `audit_evidence.json`、`provenance.json` 和原运行目录，不能只引用候选 Excel。
+4. 查看 `人工验收.md` 区分主模型接受、论文表接受和最终提交批准。
 
 ## 文件用途
 
-- `result2.xlsx`：待人工批准的交付候选；计划334天，储能2004条，紧急购电3861条。
-- `论文表1至表3.md`及`table1_purchase.csv`、`table2_storage.csv`、`table3_emergency.csv`：题面四个指定日期的数据；没有替队友编辑论文Word。
-- `audit_evidence.json`：本次独立数值复核快照（不调用求解器）。
-- `provenance.json`：75个来源文件的SHA-256、输入身份、模型选择和验收状态快照。正式运行的完整细节仍在`runs/`，不重复复制大CSV。
-- `人工验收.md`：唯一后续人工状态记录，可引用四个仍未回填的历史反馈表。它不属于只读运行指纹快照。
+| 文件 | 用途 | 状态 |
+|---|---|---|
+| `result2.xlsx` | 已冻结模型的交付候选 | 内容已技术复核；最终提交批准待人工 |
+| `论文表1至表3.md` | 四个指定日期的表格汇总 | 待论文手转录/复核 |
+| `table1_purchase.csv` | 表 1 购电数据 | 同上 |
+| `table2_storage.csv` | 表 2 储能数据 | 同上 |
+| `table3_emergency.csv` | 表 3 紧急购电事件 | 同上 |
+| `audit_evidence.json` | 独立数值与一致性复核快照 | 技术证据 |
+| `provenance.json` | 生成时的来源、哈希和历史状态快照 | 不回写；其中旧 PENDING 是当时状态 |
+| `人工验收.md` | 当前人工状态记录 | 主模型已接受，其他门禁分别维护 |
 
-## 不可混淆
+冻结模型使用同星期负载预测、最近同刻光伏预测，以及 28 天同刻净负载残差缓冲（至少 7 样本、正部 0.8 分位数）。不能把缓冲误写成单独负载残差，也不能声称存在独立留出验证或全局最优保证。
 
-`config/q2_baseline.json`及普通CLI默认仍选择baseline；复现推荐模型必须显式传`--experiment weekday_buffer`。保留旧默认是为了可复核，不是推荐继续使用旧结果。
-
-只在人工需要重新求解时使用全新目录：
-
-```powershell
-$q2RecheckStamp = Get-Date -Format 'yyyyMMdd_HHmmss'
-python -m q2_baseline.cli run --config config/q2_baseline.json --experiment weekday_buffer --output-dir "runs/q2_weekday_buffer_$q2RecheckStamp"
-if ($LASTEXITCODE -ne 0) { throw 'Q2 rerun failed' }
-```
-
-本次不要求执行上面这段。未来重新运行即产生新证据包，不能直接覆盖当前交付候选；有数值差异先核验代码、求解器、输入和可替代最优解。
-
-候选文件SHA-256：
-`CEF7AE5579459E274BBE1387FB22F4A031081CB09AB62D34FF75237E6E8853FC`
+若未来确需复现，必须从编程根目录显式使用 `--experiment weekday_buffer` 并写入全新目录；不得覆盖本包或原运行证据。历史压缩快照位于 `../../归档/历史压缩快照/`，不是当前源码来源。

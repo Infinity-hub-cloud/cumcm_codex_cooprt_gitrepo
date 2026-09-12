@@ -7,6 +7,7 @@ import numpy as np
 from q2_baseline.forecast import ForecastDay, ForecastRow
 from q2_baseline.time_axis import target_day
 from q3_baseline.attachment3 import Attachment3Data, PVForecastInterval
+from q3_baseline.forecast import PVSelection
 
 
 def q2_frozen_day(day: date, load_kw: float = 100.0, pv_kw: float = 20.0) -> ForecastDay:
@@ -42,26 +43,37 @@ def q2_frozen_day(day: date, load_kw: float = 100.0, pv_kw: float = 20.0) -> For
     return result
 
 
-def attachment3_issues(day: date, issue_minutes: tuple[int, ...] = (0, 360, 720, 1080)) -> Attachment3Data:
+def attachment3_issues(day: date, issue_minutes: tuple[int, ...] = (0, 360, 720, 1080), method: str = "INTERP") -> Attachment3Data:
     rows: list[PVForecastInterval] = []
     by_issue = {}
     for issue_minute in issue_minutes:
         issue = datetime.combine(day, time.min) + timedelta(minutes=issue_minute)
         mapping = {}
-        for i in range(144):
-            start = issue + timedelta(minutes=10 * i)
+        for i in range(139):
+            start = issue + timedelta(hours=1, minutes=10 * i)
+            lead = min(24, 1 + i // 6)
+            target = issue + timedelta(hours=lead)
+            endpoint = lead == 24
             row = PVForecastInterval(
-                issue,
-                start,
-                start + timedelta(minutes=10),
-                50.0 + issue_minute / 60.0,
-                i // 6 + 1,
-                start.hour * 6 + start.minute // 10 + 1,
+                issue, issue, lead, target, start, start + timedelta(minutes=10),
+                50.0 + issue_minute / 60.0, (50.0 + issue_minute / 60.0) / 6,
+                "attachment3", "TOY-POINT-v1", method, lead,
+                None if method == "ZOH" or endpoint else lead + 1, endpoint,
             )
             rows.append(row)
             mapping[row.physical_key] = row
         by_issue[issue] = mapping
-    return Attachment3Data(tuple(rows), by_issue)
+    return Attachment3Data(tuple(rows), method, by_issue)
+
+
+def pv_selection(day: date, slot: int, start: datetime, decision: datetime | None = None, issue: datetime | None = None, kw: float = 20.0) -> PVSelection:
+    decision = decision or start
+    issue = issue or (start - timedelta(hours=1))
+    lead = max(1, int((start - issue).total_seconds() // 3600))
+    target = issue + timedelta(hours=lead)
+    return PVSelection(day, slot, start, start + timedelta(minutes=10), decision, issue,
+                       lead, target, kw, kw / 6, "attachment3", "TOY-POINT-v1",
+                       "ZOH", lead, None, lead == 24 and start == target, "")
 
 
 def zero_vector_plan(day: date):
@@ -80,4 +92,5 @@ def zero_vector_plan(day: date):
         ["attachment3"] * 144,
         [datetime.combine(day, time.min)] * 144,
         ["TOY"] * 144,
+        [pv_selection(day, slot, target.interval_start, issue=datetime.combine(day, time.min) - timedelta(hours=6)) for slot, target in enumerate(target_day(day), 1)],
     )

@@ -1,0 +1,106 @@
+{
+  "question_id": "Q3",
+  "stage": 5,
+  "track": "Q3_A3_0ONLY_INTERP",
+  "model_version": "M3-Q3-POINT-MODEL-B-v2.0",
+  "q2_frozen_model_version": "M2-Q2-EXPERIMENT-weekday_buffer-v1.0",
+  "run_status": "HUMAN_RUN_UNREVIEWED_CANDIDATE",
+  "final_competition_result": false,
+  "created_at": "2026-09-12T11:28:18.137846+08:00",
+  "data_version": "PREP-TIME-REV-20260911T170805+0800",
+  "integrity": {
+    "data_version": "PREP-TIME-REV-20260911T170805+0800",
+    "verified_input_sha256": {
+      "price": "695E14DD02D011E24AE8CE1C5CD7BFF4CA963F5C92FA884BACC0386059AD07E3",
+      "actual": "00DA155528AFC173776F59E620C8AEFCD661A5C5D8520472CE3AA9F0A91631ED",
+      "attachment3_point": "12870FE09394D50638E27A39D2B3DE9E041D86D7E267F54F69904FD8D604F77F",
+      "attachment3_zoh": "BC2E91D709E2491DC2D4D97DA8E32F0DFA395B21E891A699E0528174D973D6DE",
+      "attachment3_interp": "C9D86D174104484EB6DC64C17DFB86C6604956525FD9149B18698649C80E7301",
+      "attachment3_mapping_manifest": "26C9299CC168D73139730EF6544DDD034A38BAC8F87611B58C8B525E242A9142",
+      "old_attachment3_mapping_preserved": "5830C5F598039F765CDDA4C70E8B14FE152AC7C7D3BDDA031737A98CAB5D8DFD",
+      "official_result3": "C59DA470CABD0BE23F602C95C8AA9D11EC224A0CDAC216B3E1F218E65D006BDC"
+    },
+    "input_manifest_sha256": "E489553660EB610271F2B192272BF1EB94BDE3D88CECE3D40048792349EE1B06",
+    "audit_summary_sha256": "95F8E17FC0428EFAA4B2BD256D2E6B51C7F5066B2835C9F6B17EB88D3A916AED",
+    "audit_status": "PASS",
+    "q2_reference_manifest_sha256": "7661EB804A73A1546A455D2A3E7883D276AB1672379AC8F2A22B58952C624716",
+    "mapping_version": "Q3-A3-POINT-v1.0",
+    "old_mapping_preserved": true
+  },
+  "issue_set_minutes": [
+    0
+  ],
+  "issue_set_experiment": null,
+  "mapping_method": "INTERP",
+  "cost_semantics": "MODEL_B",
+  "midnight_sequence": "Q3-MIDNIGHT-SEQUENCE-001",
+  "environment": {
+    "python": "3.13.11 | packaged by Anaconda, Inc. | (main, Dec 10 2025, 21:21:58) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "solver_name": "highs",
+  "solver_backend_versions": [
+    "1.15.1",
+    "N/A"
+  ],
+  "code_identity": {
+    "core_python_sha256": {
+      "attachment3.py": "9A2BAF89BBCDB58125AE2EFD07361CF0D2AE53F7BD6AEB161D1CD47755F488CD",
+      "forecast.py": "CFB793ED59315FE7BF53F5A6DBC7E9AE439601ED5339175D683449E2069C101C",
+      "planner.py": "B691F930D354AC9B9EB0125318F0FDF8541E1DB0CBA042FCD2B886F28372274A",
+      "state_machine.py": "7DC1D6CDF3E2ED06DF74037F6E1CA8C5EAF184A2C19AA41F4E97F675F39C5639",
+      "runner.py": "C7378A8CEDF278F7B6B20BE5240C2AA6DC0F27EFB3D4430EC0BCF9D787F2E230",
+      "metrics.py": "43978AE9F92B73846311275D2D9C618DCBFD5F28A0646FDEC4BB5AC79EE8CC7D",
+      "validation.py": "ABBC2B2E1C387038FAC758B3F1060DFA982FB46236B11788791808117002C7DC",
+      "exporter.py": "1FD099A9E799223B105B5FE9B1043394F0AC3D14BEB2CB214B9B5B24591BF311",
+      "export_validation.py": "7263BB2EF505445C05038F785FB5D2FE4666D3F92C0797E7FD51FC0A9FF894DF",
+      "integrity.py": "EDC0D782BF465EC08CD393C04C17C17B6E103FDC54FF238DF3C9E6F53E312316"
+    },
+    "config_sha256": "4CB1D2C3CAD2B555239D529BB31F2C77223930C2EB7E3F0C6C507ED3BA5719E3",
+    "revised_mapping_sha256": "C9D86D174104484EB6DC64C17DFB86C6604956525FD9149B18698649C80E7301",
+    "git_head": "8d8bf6f92b5f3d08bf65fddd01608ba8b184c7fb",
+    "git_dirty": true
+  },
+  "formal_output_days": 334,
+  "formal_output_start": "2025-02-01",
+  "formal_output_end": "2025-12-31",
+  "assertions_passed": true,
+  "export_validation_passed": true,
+  "metrics": {
+    "total_cost": 15166440.65884618,
+    "planned_purchase_cost": 13782350.11264918,
+    "fulfilled_normal_purchase_cost": 13782350.11264918,
+    "cancelled_purchase_principal": 4.861249180976301e-13,
+    "downward_penalty": 2.4306245904881506e-13,
+    "upward_adjustment_cost": 0.0,
+    "regular_purchase_cost": 13782350.11264918,
+    "emergency_purchase_cost": 1384090.5461970004,
+    "emergency_energy": 353399.9479366668,
+    "spill_energy": 3617227.8693026123,
+    "planned_grid_energy": 22519082.405572794,
+    "final_grid_energy": 22519082.405572794,
+    "total_charge": 6926657.605825514,
+    "total_discharge": 5610592.660718666,
+    "storage_throughput": 12537250.26654418,
+    "adjust_down_energy": 1.1368683772161603e-12,
+    "adjust_up_energy": 0.0,
+    "adjustment_count": 0.0,
+    "soc_min": 1200.0,
+    "soc_max": 10800.0,
+    "soc_boundary_hits": 32394.0,
+    "solver_runtime_seconds": 11.456759699736722,
+    "failed_updates": 0.0,
+    "infeasible_updates": 0.0
+  },
+  "export": {
+    "candidate_path": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\runs\\q3_revised_20260912_112347\\Q3_A3_0ONLY_INTERP\\result3_candidate.xlsx",
+    "candidate_sha256": "47C0B2C9AE9647A7E04D4D77508AC43D607B9E3A3BF51C74834725B9B8028403",
+    "official_template_path": "F:\\2026数模国赛\\国赛团队共享工作区\\C题\\附件\\附件5\\result3.xlsx",
+    "official_sha256_before": "C59DA470CABD0BE23F602C95C8AA9D11EC224A0CDAC216B3E1F218E65D006BDC",
+    "official_sha256_after": "C59DA470CABD0BE23F602C95C8AA9D11EC224A0CDAC216B3E1F218E65D006BDC",
+    "official_template_unchanged": true,
+    "plan_days": 334,
+    "storage_rows": 2004,
+    "emergency_event_rows": 3775
+  }
+}

@@ -66,8 +66,11 @@ def economic_metrics(executed: Iterable[ExecutedInterval]) -> dict[str, float]:
     return {
         "total_cost": sum(row.total_cost for row in rows),
         "planned_purchase_cost": sum(row.planned_purchase_cost for row in rows),
+        "fulfilled_normal_purchase_cost": sum(row.fulfilled_normal_purchase_cost for row in rows),
+        "cancelled_purchase_principal": sum(row.cancelled_purchase_principal for row in rows),
         "downward_penalty": sum(row.downward_adjustment_penalty for row in rows),
         "upward_adjustment_cost": sum(row.upward_adjustment_cost for row in rows),
+        "regular_purchase_cost": sum(row.regular_purchase_cost for row in rows),
         "emergency_purchase_cost": sum(row.emergency_purchase_cost for row in rows),
         "emergency_energy": sum(row.E for row in rows),
         "spill_energy": sum(row.W for row in rows),
@@ -75,6 +78,7 @@ def economic_metrics(executed: Iterable[ExecutedInterval]) -> dict[str, float]:
         "final_grid_energy": sum(row.Q for row in rows),
         "total_charge": sum(row.C for row in rows),
         "total_discharge": sum(row.D for row in rows),
+        "storage_throughput": sum(row.C + row.D for row in rows),
         "adjust_down_energy": sum(max(row.G - row.Q, 0.0) for row in rows),
         "adjust_up_energy": sum(max(row.Q - row.G, 0.0) for row in rows),
         "adjustment_count": float(sum(abs(row.Q - row.G) > 1e-9 for row in rows)),
@@ -99,11 +103,11 @@ def soc_boundary_hits(
 
 
 def value_decomposition(costs: dict[str, float]) -> dict[str, float]:
-    required = {"REF_Q2_FROZEN", "Q3_ATTACHMENT3_0ONLY", "Q3_ROLLING_4ISSUE"}
+    required = {"REF_Q2_FROZEN", "Q3_A3_0ONLY_INTERP", "Q3_ROLLING_INTERP"}
     if not required <= costs.keys():
         raise ValueError(f"missing value-decomposition tracks: {sorted(required - costs.keys())}")
     return {
-        "Value_Attachment3_Initial": costs["REF_Q2_FROZEN"] - costs["Q3_ATTACHMENT3_0ONLY"],
-        "Value_Intraday_Rolling": costs["Q3_ATTACHMENT3_0ONLY"] - costs["Q3_ROLLING_4ISSUE"],
-        "Total_Q3_Improvement": costs["REF_Q2_FROZEN"] - costs["Q3_ROLLING_4ISSUE"],
+        "Value_A3_initial": costs["REF_Q2_FROZEN"] - costs["Q3_A3_0ONLY_INTERP"],
+        "Value_intraday_update": costs["Q3_A3_0ONLY_INTERP"] - costs["Q3_ROLLING_INTERP"],
+        "Total_Q3_Improvement": costs["REF_Q2_FROZEN"] - costs["Q3_ROLLING_INTERP"],
     }

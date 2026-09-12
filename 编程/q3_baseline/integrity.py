@@ -35,11 +35,18 @@ def verify_input_integrity(config: Q3Config) -> dict[str, Any]:
     ]
     if len(result3_rows) != 1 or result3_rows[0].get("sha256") != LOCKED_SHA256["result3.xlsx"]:
         raise RuntimeError("AUDIT_MANIFEST_RESULT3_HASH_MISMATCH")
+    revised = json.loads(config.attachment3_mapping_manifest.read_text(encoding="utf-8"))
+    if revised.get("mapping_version") != "Q3-A3-POINT-v1.0" or revised.get("time_semantics") != "lead h is a point forecast at issue_datetime + h hours":
+        raise RuntimeError("Q3_REVISED_MAPPING_MANIFEST_MISMATCH")
+    revised_outputs = revised["outputs"]
     verified = {
         "price": assert_file_sha256(config.normalized_price_input, LOCKED_SHA256["attachment1_single_day.csv"]),
         "actual": assert_file_sha256(config.normalized_actual_input, LOCKED_SHA256["attachment2_actual_long.csv"]),
-        "attachment3_long": assert_file_sha256(config.attachment3_forecast_input, LOCKED_SHA256["attachment3_forecast_long.csv"]),
-        "attachment3_mapped": assert_file_sha256(config.attachment3_mapped_input, LOCKED_SHA256["attachment3_mapped_10min.csv"]),
+        "attachment3_point": assert_file_sha256(config.attachment3_point_input, revised_outputs["point_long"]["sha256"]),
+        "attachment3_zoh": assert_file_sha256(config.attachment3_zoh_input, revised_outputs["zoh"]["sha256"]),
+        "attachment3_interp": assert_file_sha256(config.attachment3_interp_input, revised_outputs["interp"]["sha256"]),
+        "attachment3_mapping_manifest": sha256_file(config.attachment3_mapping_manifest),
+        "old_attachment3_mapping_preserved": assert_file_sha256(Path(revised["old_mapping"]["path"]), revised["old_mapping"]["sha256"]),
         "official_result3": assert_file_sha256(config.official_result3_template, LOCKED_SHA256["result3.xlsx"]),
     }
     q2_manifest = config.q2_reference_run / "run_manifest.json"
@@ -55,7 +62,8 @@ def verify_input_integrity(config: Q3Config) -> dict[str, Any]:
         "audit_summary_sha256": sha256_file(config.audit_summary),
         "audit_status": "PASS",
         "q2_reference_manifest_sha256": sha256_file(q2_manifest),
-        "warning": "WARNING-Q3-MANIFEST-NORMALIZED-001: normalized CSV hashes are locked from the formal handoff because audit/manifest.json lists raw inputs only",
+        "mapping_version": revised["mapping_version"],
+        "old_mapping_preserved": bool(revised["old_mapping"]["preserved"]),
     }
 
 

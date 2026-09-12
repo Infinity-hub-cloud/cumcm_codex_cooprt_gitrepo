@@ -1,0 +1,3 @@
+﻿mapping_method,issue_count,rows,rows_per_issue,first_supported_offset_minutes,last_interval_offset_minutes,endpoint_hold_rows,cross_issue_interpolation_rows
+ZOH,1460,202940,139,60,1440,1460,0
+INTERP,1460,202940,139,60,1440,1460,0

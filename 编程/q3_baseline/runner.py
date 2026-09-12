@@ -4,8 +4,9 @@ import csv
 import json
 import platform
 import shutil
+import subprocess
 import sys
-from dataclasses import asdict
+from dataclasses import asdict, replace
 from datetime import date, datetime, time, timedelta
 from pathlib import Path
 from typing import Any, Iterable
@@ -19,7 +20,7 @@ from q2_baseline.data import Q2InputData, read_q2_inputs
 from q2_baseline.planner import cold_start_plan
 from q2_baseline.time_axis import date_range, target_day
 
-from .attachment3 import Attachment3Data, read_attachment3_mapped, validate_long_mapped_consistency
+from .attachment3 import Attachment3Data, read_attachment3_mapped, validate_point_mapped_consistency
 from .config import Q3Config, TRACKS, load_config
 from .export_validation import validate_result3_candidate
 from .exporter import export_result3_candidate
@@ -29,6 +30,7 @@ from .metrics import economic_metrics, evaluate_pv_predictions, soc_boundary_hit
 from .planner import RollingPlan, solve_and_apply_adjustment, solve_initial_plan
 from .state_machine import (
     ExecutedInterval,
+    CausalActualView,
     PlanVersionRow,
     execute_r0_interval,
     plan_version_rows,
@@ -50,40 +52,69 @@ def _write_csv(path: Path, rows: Iterable[dict[str, Any]], fieldnames: list[str]
 def _json(path: Path, value: Any) -> None:
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2, default=str) + "\n", encoding="utf-8")
 
+def _code_identity(config_path: Path, mapping_path: Path) -> dict[str, Any]:
+    root = Path(__file__).resolve().parents[1]
+    core = [root / "q3_baseline" / name for name in (
+        "attachment3.py", "forecast.py", "planner.py", "state_machine.py", "runner.py",
+        "metrics.py", "validation.py", "exporter.py", "export_validation.py", "integrity.py",
+    )]
+    repo = root.parent
+    def git(*args: str) -> str:
+        result = subprocess.run(["git", "-c", f"safe.directory={repo}", "-C", str(repo), *args], capture_output=True, text=True, check=False)
+        return result.stdout.strip() if result.returncode == 0 else f"UNAVAILABLE: {result.stderr.strip()}"
+    return {
+        "core_python_sha256": {path.name: sha256_file(path) for path in core},
+        "config_sha256": sha256_file(config_path.resolve()),
+        "revised_mapping_sha256": sha256_file(mapping_path),
+        "git_head": git("rev-parse", "HEAD"),
+        "git_dirty": bool(git("status", "--porcelain")) if not git("status", "--porcelain").startswith("UNAVAILABLE") else "UNAVAILABLE",
+    }
+
 
 def _track_settings(
     config: Q3Config, track: str, issue_set_name: str | None = None
-) -> tuple[tuple[int, ...], bool]:
+) -> tuple[tuple[int, ...], bool, str, str]:
     if issue_set_name is not None:
-        if track != "Q3_ROLLING_4ISSUE":
+        if track not in {"Q3_ROLLING_ZOH", "Q3_ROLLING_INTERP"}:
             raise ValueError("issue-set override is only valid for the rolling experiment track")
         if issue_set_name not in config.issue_sets:
             raise ValueError(f"unknown issue-set experiment: {issue_set_name}")
-        return config.issue_sets[issue_set_name], False
-    if track == "Q3_ATTACHMENT3_0ONLY":
-        return config.issue_sets["0only"], False
-    if track == "Q3_ROLLING_4ISSUE":
-        return config.issue_sets["rolling4"], False
-    if track == "Q3_NOSTORAGE_REFERENCE":
-        return config.issue_sets["rolling4"], True
+        return config.issue_sets[issue_set_name], False, "INTERP" if track.endswith("INTERP") else "ZOH", "MODEL_B"
+    if track == "Q3_A3_0ONLY_ZOH":
+        return config.issue_sets["0only"], False, "ZOH", "MODEL_B"
+    if track == "Q3_A3_0ONLY_INTERP":
+        return config.issue_sets["0only"], False, "INTERP", "MODEL_B"
+    if track == "Q3_ROLLING_ZOH":
+        return config.issue_sets["rolling4"], False, "ZOH", "MODEL_B"
+    if track == "Q3_ROLLING_INTERP":
+        return config.issue_sets["rolling4"], False, "INTERP", "MODEL_B"
+    if track == "Q3_NOSTORAGE":
+        return config.issue_sets["rolling4"], True, "INTERP", "MODEL_B"
+    if track == "Q3_COST_A_SENSITIVITY":
+        return config.issue_sets["rolling4"], False, "INTERP", "MODEL_A"
     raise ValueError(f"track has no Q3 simulation settings: {track}")
 
 
 def validate_input_only(config_path: str | Path) -> dict[str, Any]:
     config = load_config(Path(config_path))
     integrity = verify_input_integrity(config)
-    attachment3 = read_attachment3_mapped(config.attachment3_mapped_input)
-    consistency = validate_long_mapped_consistency(config.attachment3_forecast_input, attachment3)
+    zoh = read_attachment3_mapped(config.attachment3_zoh_input, "ZOH")
+    interp = read_attachment3_mapped(config.attachment3_interp_input, "INTERP")
+    consistency = {
+        "zoh": validate_point_mapped_consistency(config.attachment3_point_input, zoh),
+        "interp": validate_point_mapped_consistency(config.attachment3_point_input, interp),
+    }
     data = read_q2_inputs(config.normalized_price_input, config.normalized_actual_input, config.parameters)
     sample_day = config.output_start
-    predictor = CandidatePredictor(data, "weekday", True)
-    frozen = initial_planning_day(sample_day, predictor.forecast_day(sample_day), attachment3)
+    sample_decision = datetime.combine(sample_day, time.min)
+    predictor = CandidatePredictor(CausalActualView(data.actual_by_template_key).snapshot(sample_decision, data.price), "weekday", True)
+    frozen = initial_planning_day(sample_day, predictor.forecast_day(sample_day), interp, config.issue_sets["rolling4"])
     return {
         "status": "PASS",
         "integrity": integrity,
         "attachment3_consistency": consistency,
-        "sample_direct_overlap": sum(row.forecast_source == "attachment3" for row in frozen.initial_pv),
-        "sample_slot144_source": frozen.initial_pv[-1].forecast_source,
+        "sample_fallback_count": sum(row.forecast_source == "fallback_q2_pv" for row in frozen.initial_pv),
+        "sample_mapping_method": interp.mapping_method,
         "model_version": config.model_version,
     }
 
@@ -125,7 +156,7 @@ def _update_suffix(
         raise AssertionError("Q3 update attempted to touch an executed interval")
     original_g = plan.G.copy()
     log_path = log_dir / f"{plan.template_date}_{version_name}.log"
-    objective, gap, status, termination, runtime = solve_and_apply_adjustment(
+    audit = solve_and_apply_adjustment(
         plan,
         frozen,
         rows,
@@ -148,11 +179,7 @@ def _update_suffix(
             "plan_version": version_name,
             "start_slot": start_slot,
             "remaining_intervals": len(rows),
-            "solver_status": status,
-            "termination_condition": termination,
-            "mip_gap": gap,
-            "runtime_seconds": runtime,
-            "adjustment_objective": objective,
+            **audit,
         }
     )
 
@@ -208,11 +235,15 @@ def run_q3_track(
 
     integrity = verify_input_integrity(config)
     data = read_q2_inputs(config.normalized_price_input, config.normalized_actual_input, config.parameters)
-    attachment3 = read_attachment3_mapped(config.attachment3_mapped_input)
-    long_check = validate_long_mapped_consistency(config.attachment3_forecast_input, attachment3)
-    predictor = CandidatePredictor(data, "weekday", True)
+    issue_set, no_storage, mapping_method, cost_semantics = _track_settings(config, track, issue_set_name)
+    params = replace(config.parameters, cost_semantics=cost_semantics)
+    config = replace(config, parameters=params)
+    mapping_path = config.attachment3_interp_input if mapping_method == "INTERP" else config.attachment3_zoh_input
+    code_identity = _code_identity(Path(config_path), mapping_path)
+    attachment3 = read_attachment3_mapped(mapping_path, mapping_method)
+    long_check = validate_point_mapped_consistency(config.attachment3_point_input, attachment3)
     backend = backend_by_name(config.solver_name)
-    issue_set, no_storage = _track_settings(config, track, issue_set_name)
+    actual_view = CausalActualView(data.actual_by_template_key)
 
     plans: dict[date, RollingPlan] = {}
     frozen_days: dict[date, FrozenPlanningDay] = {}
@@ -257,8 +288,10 @@ def run_q3_track(
             )
             pending_prior = prior
 
+        # The predictor receives a capability-limited snapshot, not the full year.
+        predictor = CandidatePredictor(actual_view.snapshot(midnight, data.price), "weekday", True)
         q2_day = predictor.forecast_day(day)
-        frozen = initial_planning_day(day, q2_day, attachment3)
+        frozen = initial_planning_day(day, q2_day, attachment3, issue_set)
         initial_log = log_dir / f"{day}_initial_0000.log"
         if np.all(q2_day.cold_mask):
             daily = cold_start_plan(
@@ -286,16 +319,21 @@ def run_q3_track(
                 "plan_version": "initial_0000",
                 "start_slot": 1,
                 "remaining_intervals": 144,
+                "solver_name": plan.initial_solver_name,
+                "solver_version": plan.initial_solver_version,
                 "solver_status": plan.solver_status[0],
-                "termination_condition": "INITIAL_PLAN",
-                "mip_gap": None,
-                "runtime_seconds": 0.0,
-                "adjustment_objective": 0.0,
+                "termination_condition": plan.initial_termination,
+                "mip_gap": plan.initial_mip_gap,
+                "runtime_seconds": plan.initial_runtime,
+                "objective": plan.initial_objective,
+                "rows": plan.initial_rows,
+                "columns": plan.initial_columns,
+                "binary_count": plan.initial_binary_count,
             }
         )
 
         if pending_prior is not None and previous_day is not None:
-            actual = data.actual_by_template_key[(previous_day, 144)]
+            actual = actual_view.get((previous_day, 144), datetime.combine(day, time.min) + timedelta(minutes=10))
             result = execute_r0_interval(
                 pending_prior, 144, actual, float(data.price[143]), soc, config.parameters
             )
@@ -326,7 +364,7 @@ def run_q3_track(
                     solver_updates=solver_updates,
                     no_storage=no_storage,
                 )
-            actual = data.actual_by_template_key[(day, slot)]
+            actual = actual_view.get((day, slot), target.interval_end)
             result = execute_r0_interval(plan, slot, actual, float(data.price[slot - 1]), soc, config.parameters)
             executed.append(result)
             soc = result.soc_after
@@ -336,7 +374,7 @@ def run_q3_track(
     if previous_day is None:
         raise AssertionError("Q3 simulation produced no template day")
     prior = plans[previous_day]
-    final_actual = data.actual_by_template_key[(previous_day, 144)]
+    final_actual = actual_view.get((previous_day, 144), target_day(previous_day)[143].interval_end)
     final_result = execute_r0_interval(prior, 144, final_actual, float(data.price[143]), soc, config.parameters)
     executed.append(final_result)
 
@@ -416,10 +454,20 @@ def run_q3_track(
         pv_metric_material.append(
             {
                 "issue_datetime": row.issue_datetime,
+                "decision_time": row.decision_time,
+                "target_time": row.target_time,
                 "interval_start": row.interval_start,
                 "interval_end": row.interval_end,
                 "lead_hour": row.lead_hour,
                 "forecast_source": row.source,
+                "forecast_version": row.forecast_version,
+                "mapping_method": row.mapping_method,
+                "interpolation_left_lead": row.interpolation_left_lead,
+                "interpolation_right_lead": row.interpolation_right_lead,
+                "endpoint_hold": row.endpoint_hold,
+                "fallback_reason": row.fallback_reason,
+                "forecast_kw": row.forecast_kw,
+                "forecast_kwh": row.forecast_kwh,
                 "predicted_kw": row.forecast_kw,
                 "actual_kw": actual.pv_kw,
             }
@@ -457,12 +505,15 @@ def run_q3_track(
         (
             {
                 "template_date": day.isoformat(),
-                "attachment3_0000_start": datetime.combine(day, time.min).isoformat(),
-                "attachment3_0000_end": (datetime.combine(day, time.min) + timedelta(days=1)).isoformat(),
+                "time_semantics": "target_time=issue_datetime+lead_hour",
+                "mapping_method": mapping_method,
                 "template_start": target_day(day)[0].interval_start.isoformat(),
                 "template_end": target_day(day)[-1].interval_end.isoformat(),
-                "direct_overlap_count": 143,
-                "slot144_initial_source": frozen_days[day].initial_pv[-1].forecast_source,
+                "initial_attachment3_count": sum(row.forecast_source == "attachment3" for row in frozen_days[day].initial_pv),
+                "initial_fallback_count": sum(row.forecast_source == "fallback_q2_pv" for row in frozen_days[day].initial_pv),
+                "first_slot_issue": frozen_days[day].initial_pv[0].issue_datetime,
+                "slot144_issue": frozen_days[day].initial_pv[-1].issue_datetime,
+                "slot144_endpoint_hold": frozen_days[day].initial_pv[-1].endpoint_hold,
             }
             for day in date_range(config.warmup_start, config.output_end)
         ),
@@ -475,9 +526,12 @@ def run_q3_track(
         "numerical_validation": numerical_validation,
         "checks": {
             "input_hash_gate": True,
-            "attachment3_long_mapped": long_check,
-            "direct_overlap_143": True,
-            "slot144_fallback": True,
+            "attachment3_point_mapped": long_check,
+            "point_time_semantics": True,
+            "issue_set_strict": True,
+            "first_hour_previous_issue_or_fallback": True,
+            "endpoint_hold_t24_only": True,
+            "cost_semantics": cost_semantics,
             "issue_datetime_lte_decision_time": True,
             "executed_history_immutable": True,
             "initial_G_immutable": True,
@@ -509,11 +563,14 @@ def run_q3_track(
         for path in log_files:
             combined.write(f"\n===== {path.name} =====\n")
             combined.write(path.read_text(encoding="utf-8", errors="replace"))
+    with (destination / "solver_audit.log").open("w", encoding="utf-8") as audit_log:
+        for row in solver_updates:
+            audit_log.write(json.dumps(row, ensure_ascii=False, default=str) + "\n")
     warning = (
-        "WARNING-Q3-MANIFEST-NORMALIZED-001: audit/manifest.json lacks normalized CSV entries; "
-        "formal handoff hashes were enforced.\n"
         "WARNING-Q3-PLAN-SURPLUS-001: W_pred is retained in planning balance for physical feasibility; "
         "actual W is computed only after replay.\n"
+        "INFO-Q3-SOLVER-LOG-001: solver_audit.log is the guaranteed structured audit log; "
+        "native HiGHS log files are listed only when physically present.\n"
     )
     (destination / "warnings_and_failures.log").write_text(warning, encoding="utf-8")
     manifest = {
@@ -529,20 +586,32 @@ def run_q3_track(
         "integrity": integrity,
         "issue_set_minutes": list(issue_set),
         "issue_set_experiment": issue_set_name,
+        "mapping_method": mapping_method,
+        "cost_semantics": cost_semantics,
         "midnight_sequence": "Q3-MIDNIGHT-SEQUENCE-001",
         "environment": {"python": sys.version, "platform": platform.platform()},
         "solver_name": config.solver_name,
+        "solver_backend_versions": sorted({str(row.get("solver_version")) for row in solver_updates}),
+        "code_identity": code_identity,
         "formal_output_days": 334,
+        "formal_output_start": config.output_start.isoformat(),
+        "formal_output_end": config.output_end.isoformat(),
         "assertions_passed": True,
         "export_validation_passed": True,
         "metrics": metrics,
         "export": export_info,
     }
+    identity_after = _code_identity(Path(config_path), mapping_path)
+    if identity_after["core_python_sha256"] != code_identity["core_python_sha256"] or identity_after["config_sha256"] != code_identity["config_sha256"] or identity_after["revised_mapping_sha256"] != code_identity["revised_mapping_sha256"]:
+        raise RuntimeError("Q3_CODE_OR_CONFIG_CHANGED_DURING_RUN")
     _json(destination / "run_manifest.json", manifest)
     (destination / "human_feedback.md").write_text(
         "# Q3人工验收\n\n"
-        f"- 轨道：{track}\n- 实际运行命令：待填写\n- 断言是否全通过：待填写\n"
-        "- Excel回读是否通过：待填写\n- 异常/警告：待填写\n- 人工结论：待填写\n",
+        f"- 轨道：{track}\n- 映射：{mapping_method}\n- 费用语义：{cost_semantics}\n"
+        "- 实际运行命令：待填写\n- 环境与Solver版本：待填写\n"
+        "- 输入/代码身份检查：待填写\n- 断言是否全通过：待填写\n"
+        "- 四工作表Excel回读：待填写\n- 候选Excel人工打开抽查：待填写\n"
+        "- Solver evidence完整性：待填写\n- 异常/警告：待填写\n- 人工结论：待填写\n",
         encoding="utf-8",
     )
     return destination
@@ -550,7 +619,7 @@ def run_q3_track(
 
 def value_decomposition(reference_cost: float, initial_cost: float, rolling_cost: float) -> dict[str, float]:
     return {
-        "Value_Attachment3_Initial": reference_cost - initial_cost,
-        "Value_Intraday_Rolling": initial_cost - rolling_cost,
+        "Value_A3_initial": reference_cost - initial_cost,
+        "Value_intraday_update": initial_cost - rolling_cost,
         "Total_Q3_Improvement": reference_cost - rolling_cost,
     }

@@ -1,0 +1,11 @@
+{
+  "Value_A3_initial": 45606.03186465055,
+  "Value_intraday_update": 199936.1441932898,
+  "Value_interpolation": 2642571.359125456,
+  "Value_storage": 3895977.439894194,
+  "Cost_semantics_sensitivity_A_minus_B": 183254.61615109257,
+  "identity_gate": "PASS",
+  "sign_convention": "positive means the named feature lowered formal_output total_cost",
+  "note": "Q2 reference is a frozen external model; Q3 pairwise attributions passed same-core-code/data/date gates. A/B is sensitivity, not direct attribution.",
+  "Value_issue_frequency": 44464.29630252719
+}

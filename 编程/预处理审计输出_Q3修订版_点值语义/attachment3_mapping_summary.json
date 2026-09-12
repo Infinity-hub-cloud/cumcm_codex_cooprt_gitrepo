@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "mapping_version": "Q3-A3-POINT-v1.0",
+  "created_at": "2026-09-12T04:36:07+08:00",
+  "time_semantics": "lead h is a point forecast at issue_datetime + h hours",
+  "issue_selection_rule": "latest allowed issue <= decision that contains exact physical interval",
+  "interpolation_rule": "same-issue adjacent points only; interval-start power / 6",
+  "endpoint_rule": "P24 hold for [t24,t24+10min) only",
+  "fallback_rule": "fallback_q2_pv only when no legal Attachment3 row exists",
+  "point_rows": 35040,
+  "mapped_rows_each": 202940
+}

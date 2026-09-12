@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "mapping_version": "Q3-A3-POINT-v1.0",
+  "created_at": "2026-09-12T04:36:07+08:00",
+  "time_semantics": "lead h is a point forecast at issue_datetime + h hours",
+  "issue_selection_rule": "latest allowed issue <= decision that contains exact physical interval",
+  "interpolation_rule": "same-issue adjacent points only; interval-start power / 6",
+  "endpoint_rule": "P24 hold for [t24,t24+10min) only",
+  "fallback_rule": "fallback_q2_pv only when no legal Attachment3 row exists",
+  "point_rows": 35040,
+  "mapped_rows_each": 202940,
+  "raw_source": {
+    "path": "F:\\2026数模国赛\\国赛团队共享工作区\\C题\\附件\\附件3.xlsx",
+    "sha256": "8A61B06C52BD0D639A1CC37C61A7D9F5B75EDCBCA718F64C1BD3498EC9F9D843"
+  },
+  "old_mapping": {
+    "path": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\预处理审计输出_时间口径修订版\\normalized\\attachment3_mapped_10min.csv",
+    "sha256": "5830C5F598039F765CDDA4C70E8B14FE152AC7C7D3BDDA031737A98CAB5D8DFD",
+    "preserved": true
+  },
+  "source_long": {
+    "path": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\预处理审计输出_时间口径修订版\\normalized\\attachment3_forecast_long.csv",
+    "sha256": "B9F67A02CC979DDE70E9045E7B18A32DC9B1FBCC002C23AEB04DAAA697452328"
+  },
+  "outputs": {
+    "point_long": {
+      "path": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\预处理审计输出_Q3修订版_点值语义\\attachment3_point_forecast_long.csv",
+      "sha256": "12870FE09394D50638E27A39D2B3DE9E041D86D7E267F54F69904FD8D604F77F"
+    },
+    "zoh": {
+      "path": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\预处理审计输出_Q3修订版_点值语义\\attachment3_mapped_10min_q3rev_zoh.csv",
+      "sha256": "BC2E91D709E2491DC2D4D97DA8E32F0DFA395B21E891A699E0528174D973D6DE"
+    },
+    "interp": {
+      "path": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\预处理审计输出_Q3修订版_点值语义\\attachment3_mapped_10min_q3rev_interp.csv",
+      "sha256": "C9D86D174104484EB6DC64C17DFB86C6604956525FD9149B18698649C80E7301"
+    },
+    "audit": {
+      "path": "F:\\2026数模国赛\\国赛团队共享工作区\\编程\\预处理审计输出_Q3修订版_点值语义\\attachment3_mapping_audit.csv",
+      "sha256": "12C4913479A3A1AEA39B24D782F62B5FD675446CE169B4BA2A232D65C1D50B7F"
+    }
+  }
+}
