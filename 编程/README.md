@@ -1,6 +1,6 @@
 # 编程分区导航
 
-更新时间：2026-09-12。当前阶段：Stage 5；Q3 修订版已人工验收并冻结，未获准进入问题4。所有正式附件只读，任何新运行必须写入全新目录。
+更新时间：2026-09-12。当前阶段：Stage 5；Q2/Q3 已人工验收并冻结。Q4 已完成价格数据只读审计与模型规格草案，但价格边界可见性仍是 Hard Blocker；尚未获准生成 Q4 生产代码或运行调度 Solver。
 
 ## 状态总表
 
@@ -9,9 +9,9 @@
 | Q1 | `q1_baseline/`，`config/q1_baseline.json` | `PASSED` | `runs/q1_human_run_20260911_204149/` |
 | Q2 | `q2_baseline/`，显式 `--experiment weekday_buffer` | `ACCEPTED / FROZEN` | `runs/q2_low_complexity_20260912_002010/weekday_buffer/`、`交付候选/Q2_20260912_weekday_buffer/` |
 | Q3 | `q3_baseline/`，`config/q3_baseline.json` | `ACCEPTED / FROZEN` | `runs/q3_revised_20260912_112347/`、技术核查和统一人工验收 |
-| Q4 | 无 | `NOT_STARTED` | 无 |
+| Q4 | `审计/Q4_价格审计_20260912/` | `Q4-PRICE-AUDIT-GATE = BLOCKED` | `Q4_价格审计与模型规格报告.md`、`summary.json` |
 
-人工授权 `HUMAN-OVERRIDE-CODE-001 = CONFIRMED` 仅覆盖既有阶段 5 代码生成边界；Q1 时间门禁和 Q3 时间/重优化语义门禁均已人工关闭。未授权自动进入 Q4。
+人工现仅授权 Q4 的 `PRICE AUDIT + MODEL SPEC`。Q4 正式全年调度 Solver、Q4-3 生产实现/求解及 result4 导出仍未授权；Q2/Q3 冻结代码和证据不得修改。
 
 ## 当前生产入口
 
@@ -40,6 +40,13 @@
 - 已完成人工验收：8份`human_feedback.md`已签认；主轨道候选Excel、MODEL-B分账和已登记WARNING已接受；`Q3_ROLLING_INTERP`正式冻结为问题三主轨道。
 - 旧 `runs/q3_20260912_*` 全部采用已废止的旧时间/费用语义，只能用于审计问题复现。
 
+### Q4
+
+- 当前草案规格：`M4-Q4-2-PRICE-AWARE-v0.1-spec`。
+- 已完成：Attachment4 原始/规范化逐项核对、全年事后统计、两种价格可见性规则下的纯因果预测诊断、Q4-2 数学规格和 Q4-3 接口设计。
+- 当前阻塞：官方材料不能唯一确定决策边界时刻价格是即时可见还是区间结束后可见；详见[Q4 价格审计与模型规格报告](审计/Q4_价格审计_20260912/Q4_价格审计与模型规格报告.md)。
+- 未执行：Q4 正式调度 Solver、候选 Excel、Q4-3 生产代码和结果导出。
+
 ## 目录索引
 
 | 目录/文件 | 用途 | 当前性 |
@@ -62,6 +69,6 @@
 
 ## 运行边界
 
-Q3当前无需重跑。若后续确需复现，仍须使用全新`runs/q3_revised_<timestamp>/`；MODEL-A结果不得与MODEL-B主结果混用。进入问题4必须等待新的人工授权。
+Q3当前无需重跑。若后续确需复现，仍须使用全新`runs/q3_revised_<timestamp>/`；MODEL-A结果不得与MODEL-B主结果混用。Q4 必须先由人工选择并锁定价格可见性规则、关闭 `BLOCKER-Q4-PRICE-TIME-001`，再另行授权生产代码。
 
-正式 Solver 和候选 Excel 均由人工运行产生；Codex 的后续技术核查没有重新求解、没有修改 Q1/Q2 既有结果，也没有执行 Git 写操作。
+既有正式 Solver 和候选 Excel 均由人工运行产生；Q4 本轮只执行审计脚本和纯预测诊断，没有调度求解、没有修改 Q1/Q2/Q3 既有结果，也没有执行 Git 写操作。
